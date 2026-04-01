@@ -172,6 +172,29 @@ body {
   transform: translateY(0);
 }
 
+.reveal-scale {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo);
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ── Stat counter glow ──────────────────── */
+
+@keyframes statGlow {
+  0% { text-shadow: none; }
+  50% { text-shadow: 0 0 40px rgba(212, 107, 26, 0.15); }
+  100% { text-shadow: none; }
+}
+
+.stat-number {
+  animation: statGlow 3s ease-in-out infinite;
+}
+
 /* ── CTA Button ──────────────────────────── */
 
 .cta-button {

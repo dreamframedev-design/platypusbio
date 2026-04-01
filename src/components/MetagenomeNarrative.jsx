@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import AnimatedCounter from './AnimatedCounter'
 
 const narrativeCards = [
   {
@@ -53,7 +54,7 @@ export default function MetagenomeNarrative() {
       },
       { threshold: 0.1 }
     )
-    const elements = sectionRef.current?.querySelectorAll('.reveal')
+    const elements = sectionRef.current?.querySelectorAll('.reveal, .reveal-scale')
     elements?.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
   }, [])
@@ -97,24 +98,24 @@ export default function MetagenomeNarrative() {
         </div>
 
         {/* Massive Stats Typography */}
-        <div className="reveal" style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginBottom: '120px', textAlign: 'center' }}>
+        <div className="reveal-scale" style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginBottom: '120px', textAlign: 'center' }}>
           <div>
-            <h3 style={{ fontSize: 'clamp(3rem, 10vw, 7rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.04em', lineHeight: 1 }}>
-              100K<span style={{ color: '#d46b1a' }}>+</span>
+            <h3 className="stat-number" style={{ fontSize: 'clamp(3rem, 10vw, 7rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.04em', lineHeight: 1 }}>
+              <AnimatedCounter end={100} duration={2500} suffix="K" /><span style={{ color: '#d46b1a' }}>+</span>
             </h3>
             <p style={{ color: '#7e99a8', fontSize: '0.875rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase' }}>Unique Metagenomic Sequences</p>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '64px', flexWrap: 'wrap', marginTop: '16px' }}>
             <div>
-              <h4 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', lineHeight: 1 }}>85<span style={{ color: '#2dd4bf' }}>%</span></h4>
+              <h4 className="stat-number" style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', lineHeight: 1 }}><AnimatedCounter end={85} duration={2000} /><span style={{ color: '#2dd4bf' }}>%</span></h4>
               <p style={{ color: '#7e99a8', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Novel Enzymes</p>
             </div>
             <div>
-              <h4 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', lineHeight: 1 }}>12</h4>
+              <h4 className="stat-number" style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', lineHeight: 1 }}><AnimatedCounter end={12} duration={1800} /></h4>
               <p style={{ color: '#7e99a8', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Biome Regions</p>
             </div>
             <div>
-              <h4 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', lineHeight: 1 }}>3</h4>
+              <h4 className="stat-number" style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', lineHeight: 1 }}><AnimatedCounter end={3} duration={1500} /></h4>
               <p style={{ color: '#7e99a8', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Therapy Programs</p>
             </div>
           </div>
