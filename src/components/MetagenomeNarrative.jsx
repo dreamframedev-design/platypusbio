@@ -59,9 +59,24 @@ export default function MetagenomeNarrative() {
   }, [])
 
   return (
-    <section id="narrative" ref={sectionRef} style={{ position: 'relative', paddingTop: '128px', paddingBottom: '128px' }}>
+    <section id="narrative" ref={sectionRef} style={{ position: 'relative', paddingTop: '128px', paddingBottom: '128px', overflow: 'hidden' }}>
+      {/* Parallax abstract background */}
+      <div style={{
+        position: 'absolute', inset: 0, zIndex: 0,
+        backgroundImage: 'url(/abtract2.webp)',
+        backgroundSize: 'cover', backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        opacity: 0.12,
+        pointerEvents: 'none',
+      }} />
+      {/* Gradient overlay to blend edges */}
+      <div style={{
+        position: 'absolute', inset: 0, zIndex: 1,
+        background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 20%, transparent 80%, var(--color-midnight) 100%)',
+        pointerEvents: 'none',
+      }} />
       {/* Background glow */}
-      <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '800px', height: '800px', background: 'rgba(212,107,26,0.025)', borderRadius: '50%', filter: 'blur(160px)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '800px', height: '800px', background: 'rgba(212,107,26,0.025)', borderRadius: '50%', filter: 'blur(160px)', pointerEvents: 'none', zIndex: 1 }} />
 
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         {/* Divider */}

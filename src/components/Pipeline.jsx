@@ -51,9 +51,24 @@ export default function Pipeline() {
   }, [])
 
   return (
-    <section id="pipeline" ref={sectionRef} style={{ position: 'relative', paddingTop: '128px', paddingBottom: '160px' }}>
-      <div style={{ position: 'absolute', top: '25%', right: 0, width: '500px', height: '500px', background: 'rgba(45,212,191,0.025)', borderRadius: '50%', filter: 'blur(150px)', pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', bottom: '15%', left: 0, width: '600px', height: '600px', background: 'rgba(212,107,26,0.02)', borderRadius: '50%', filter: 'blur(160px)', pointerEvents: 'none' }} />
+    <section id="pipeline" ref={sectionRef} style={{ position: 'relative', paddingTop: '128px', paddingBottom: '160px', overflow: 'hidden' }}>
+      {/* Parallax abstract background */}
+      <div style={{
+        position: 'absolute', inset: 0, zIndex: 0,
+        backgroundImage: 'url(/abstract%20background.webp)',
+        backgroundSize: 'cover', backgroundPosition: 'center bottom',
+        backgroundAttachment: 'fixed',
+        opacity: 0.1,
+        pointerEvents: 'none',
+      }} />
+      {/* Gradient overlay to blend edges */}
+      <div style={{
+        position: 'absolute', inset: 0, zIndex: 1,
+        background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 25%, transparent 75%, var(--color-midnight) 100%)',
+        pointerEvents: 'none',
+      }} />
+      <div style={{ position: 'absolute', top: '25%', right: 0, width: '500px', height: '500px', background: 'rgba(45,212,191,0.025)', borderRadius: '50%', filter: 'blur(150px)', pointerEvents: 'none', zIndex: 1 }} />
+      <div style={{ position: 'absolute', bottom: '15%', left: 0, width: '600px', height: '600px', background: 'rgba(212,107,26,0.02)', borderRadius: '50%', filter: 'blur(160px)', pointerEvents: 'none', zIndex: 1 }} />
 
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         {/* Divider */}
