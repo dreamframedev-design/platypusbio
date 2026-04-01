@@ -19,9 +19,9 @@ export default function Hero({ cursorPos }) {
         <img src="/PLA_logos-01.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
       </div>
 
-      {/* Gradient overlays */}
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(12,26,36,0.5), transparent 40%, var(--color-midnight))', zIndex: 1 }} />
-      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 60% at 50% 40%, transparent, var(--color-midnight))', zIndex: 1 }} />
+      {/* Gradient overlays — lightened to let network canvas show through */}
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(12,26,36,0.15), transparent 35%, var(--color-midnight))', zIndex: 1 }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 60% at 50% 40%, transparent, rgba(12,26,36,0.6))', zIndex: 1 }} />
 
       <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', maxWidth: '960px', margin: '140px auto 0', padding: '0 32px' }}>
         {/* Animated Platypus Logo Mark — "dives in" on load */}

@@ -64,9 +64,9 @@ export default function Pipeline() {
           <p style={{ color: '#2dd4bf', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
             Precision Medicine Pipeline
           </p>
-          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.05, letterSpacing: '-0.03em', marginBottom: '24px' }}>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.5rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '24px' }}>
             From Soil to{' '}
-            <span className="gradient-text">Therapeutic Insight</span>
+            <span className="gradient-text" style={{ whiteSpace: 'nowrap' }}>Therapeutic Insight</span>
           </h2>
           <p style={{ color: '#7e99a8', fontSize: '1.125rem', lineHeight: 1.8, maxWidth: '640px', margin: '0 auto' }}>
             Our three-stage pipeline transforms raw metagenomic data into clinically validated RNA therapeutics — each step engineered for speed, precision, and immense scale.

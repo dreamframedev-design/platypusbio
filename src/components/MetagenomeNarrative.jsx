@@ -72,9 +72,9 @@ export default function MetagenomeNarrative() {
           <p style={{ color: '#d46b1a', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
             The Australian Edge
           </p>
-          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.05, letterSpacing: '-0.03em', marginBottom: '24px' }}>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.5rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '24px' }}>
             An Entire Continent of{' '}
-            <span className="gradient-text-warm">Untapped Molecular Intelligence</span>
+            <span className="gradient-text-warm" style={{ whiteSpace: 'nowrap' }}>Untapped Molecular Intelligence</span>
           </h2>
           <p style={{ color: '#7e99a8', fontSize: '1.125rem', lineHeight: 1.8, maxWidth: '640px', margin: '0 auto' }}>
             Australia's ancient landscapes harbour the most genetically distinct microbial ecosystems on Earth. We are translating this biological dark matter into the next generation of precision medicines.

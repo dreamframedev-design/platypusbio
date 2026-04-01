@@ -12,12 +12,12 @@ export default function Footer() {
         
         {/* Top Massive CTA/Brand presense */}
         <div style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '64px', marginBottom: '64px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <img src="/PLA_logos-02.svg" alt="Platypus Bio" style={{ width: '64px', height: '64px', objectFit: 'contain', filter: 'brightness(1.15) drop-shadow(0 4px 12px rgba(212,107,26,0.3))' }} />
-            <img src="/PLA_logos-03.svg" alt="platypusbio" style={{ height: '24px', objectFit: 'contain', filter: 'brightness(0) invert(1) opacity(0.95)' }} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+            <img src="/PLA_logos-02.svg" alt="Platypus Bio" style={{ width: '80px', height: '80px', objectFit: 'contain', filter: 'brightness(1.15) drop-shadow(0 4px 12px rgba(212,107,26,0.3))' }} />
+            <img src="/PLA_logos-03.svg" alt="platypusbio" style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1) opacity(0.95)' }} />
           </div>
-          <h2 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', lineHeight: 1.1, maxWidth: '800px' }}>
-            Decoding the molecular intelligence of <span className="gradient-text-warm">Australia.</span>
+          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', lineHeight: 1.15, maxWidth: '800px' }}>
+            Decoding the molecular intelligence of&nbsp;<span className="gradient-text-warm">Australia.</span>
           </h2>
         </div>
 
