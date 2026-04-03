@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import ContactPage from './pages/ContactPage'
+import BrandDesignPage from './pages/BrandDesignPage'
 import Footer from './components/Footer'
 import CustomCursor from './components/CustomCursor'
 
@@ -98,6 +99,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home cursorPos={cursorPos} />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/__design" element={<BrandDesignPage />} />
       </Routes>
       
       <Footer />
