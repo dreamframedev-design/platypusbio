@@ -6,6 +6,7 @@ import ContactPage from './pages/ContactPage'
 import BrandDesignPage from './pages/BrandDesignPage'
 import Footer from './components/Footer'
 import CustomCursor from './components/CustomCursor'
+import SitePasswordWall, { readSiteAccess } from './components/SitePasswordWall'
 
 // Scroll handler hook
 function ScrollHandler() {
@@ -26,6 +27,32 @@ function ScrollHandler() {
   }, [pathname, hash])
 
   return null
+}
+
+function MainLayout({ cursorPos }) {
+  const { pathname } = useLocation()
+  const isPublic = pathname === '/__design'
+  const [unlocked, setUnlocked] = useState(() => readSiteAccess())
+
+  useEffect(() => {
+    if (!isPublic) setUnlocked(readSiteAccess())
+  }, [pathname, isPublic])
+
+  if (!isPublic && !unlocked) {
+    return <SitePasswordWall onUnlocked={() => setUnlocked(true)} />
+  }
+
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home cursorPos={cursorPos} />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/__design" element={<BrandDesignPage />} />
+      </Routes>
+      <Footer />
+    </>
+  )
 }
 
 function App() {
@@ -93,16 +120,8 @@ function App() {
       <ScrollHandler />
       <div className="genomic-noise" />
       <CustomCursor x={cursorPos.x} y={cursorPos.y} isHovering={isHovering} />
-      
-      <Navbar />
-      
-      <Routes>
-        <Route path="/" element={<Home cursorPos={cursorPos} />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/__design" element={<BrandDesignPage />} />
-      </Routes>
-      
-      <Footer />
+
+      <MainLayout cursorPos={cursorPos} />
     </BrowserRouter>
   )
 }
