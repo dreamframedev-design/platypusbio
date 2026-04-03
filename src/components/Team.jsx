@@ -14,15 +14,15 @@ const teamMembers = [
     role: 'Co-Founder & CSO',
     bio: 'World-leading CRISPR and phage biology researcher. Professor at the University of Otago with 150+ publications.',
     photo: '/Peter Fineran Headshot.png',
-    accentFrom: '#2dd4bf',
-    accentTo: '#22d3ee',
+    accentFrom: '#0d9488',
+    accentTo: '#0891b2',
   },
   {
     name: 'Rob Fagerlund',
     role: 'Co-Founder & CTO',
     bio: 'Expert in metagenomic sequencing and computational biology. Pioneer in environmental RNA discovery platforms.',
     photo: '/Rob Fagerlund Headshot.jpg',
-    accentFrom: '#f0a040',
+    accentFrom: '#d97706',
     accentTo: '#d46b1a',
   },
   {
@@ -30,8 +30,8 @@ const teamMembers = [
     role: 'Co-Founder & COO',
     bio: 'Operations leader with a track record in scaling deep-tech startups from lab to market.',
     photo: '/Simon Jackson Headshot.png',
-    accentFrom: '#34d399',
-    accentTo: '#2dd4bf',
+    accentFrom: '#059669',
+    accentTo: '#0d9488',
   },
 ]
 
@@ -64,77 +64,59 @@ export default function Team() {
   }, [])
 
   return (
-    <section id="team" ref={sectionRef} style={{ position: 'relative', paddingTop: '160px', paddingBottom: '160px', overflow: 'hidden' }}>
+    <section id="team" ref={sectionRef} className="relative py-[160px] overflow-hidden bg-[#fbfbf9]">
       {/* Ambient background watermark */}
-      <div style={{ position: 'absolute', top: '10%', left: '-15%', opacity: 0.015, width: '1200px', height: '1200px', transform: 'rotate(-10deg)', pointerEvents: 'none', zIndex: 0 }}>
-        <img src="/PLA_logo.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+      <div className="absolute top-[10%] -left-[15%] opacity-[0.03] w-[1200px] h-[1200px] -rotate-12 pointer-events-none z-0 grayscale">
+        <img src="/PLA_logo.svg" alt="" className="w-full h-full object-contain" />
       </div>
 
-      <div style={{ position: 'absolute', top: '40%', right: '10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(45, 212, 191, 0.04) 0%, transparent 70%)', filter: 'blur(100px)', pointerEvents: 'none', zIndex: 0 }} />
+      <div className="absolute top-[40%] right-[10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(13,148,136,0.06)_0%,transparent_70%)] blur-[100px] pointer-events-none z-0" />
 
-      <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
+      {/* Gradient overlay blending from previous dark section */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[var(--color-midnight)] to-transparent opacity-80 pointer-events-none z-1" />
+
+      <div className="section-container relative z-10">
         {/* Divider */}
-        <div className="section-divider" style={{ marginBottom: '120px' }} />
+        <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent max-w-[800px] mx-auto mb-[120px]" />
 
         {/* Header */}
-        <div className="reveal" style={{ maxWidth: '800px', marginBottom: '100px' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '24px', padding: '8px 24px', borderRadius: '9999px', border: '1px solid rgba(212,107,26,0.15)', background: 'rgba(212,107,26,0.04)' }}>
-            <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#d46b1a', boxShadow: '0 0 12px rgba(212,107,26,0.5)' }} />
-            <span style={{ color: '#d46b1a', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase' }}>Our Team</span>
+        <div className="reveal max-w-[800px] mb-[100px]">
+          <div className="inline-flex items-center gap-[10px] mb-[24px] px-[24px] py-[8px] rounded-full border border-orange-500/15 bg-orange-500/5">
+            <span className="w-[7px] h-[7px] rounded-full bg-[#d46b1a] shadow-[0_0_12px_rgba(212,107,26,0.5)]" />
+            <span className="text-[#d46b1a] text-[0.6875rem] font-semibold tracking-[0.2em] uppercase">Our Team</span>
           </div>
-          <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.05, letterSpacing: '-0.03em', marginBottom: '32px' }}>
+          <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-slate-900 leading-[1.05] tracking-[-0.03em] mb-[32px]">
             Built by Scientists,<br/>
-            <span className="gradient-text-warm">Driven by&nbsp;Discovery.</span>
+            <span className="bg-gradient-to-br from-[#d46b1a] to-[#f0a040] bg-clip-text text-transparent">Driven by&nbsp;Discovery.</span>
           </h2>
-          <p style={{ color: '#7e99a8', fontSize: '1.1875rem', lineHeight: 1.7, maxWidth: '600px' }}>
+          <p className="text-slate-600 text-[1.1875rem] leading-[1.7] max-w-[600px] font-light">
             Our founding team combines deep expertise in metagenomics, CRISPR biology, computational drug design, and biotech commercialisation.
           </p>
         </div>
 
         {/* Master Level Staggered Cinematic Grid */}
-        <div id="team-grid" style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', 
-          columnGap: '64px', 
-          rowGap: '120px', 
-          marginBottom: '160px' 
-        }}>
+        <div id="team-grid" className="grid grid-cols-2 gap-x-[64px] gap-y-[120px] mb-[160px]">
           {teamMembers.map((member, i) => (
             <div 
               key={i} 
-              className="reveal" 
+              className="reveal relative group" 
               style={{ 
-                position: 'relative',
                 marginTop: i % 2 === 1 ? '160px' : '0',
                 transitionDelay: `${(i % 2) * 0.2}s`
               }}
             >
               {/* Massive Offset Photo */}
-              <div className="team-photo-wrapper" style={{
-                position: 'absolute',
-                top: '-50px',
+              <div className="team-photo-wrapper absolute -top-[50px] z-20 w-[160px] h-[160px]" style={{
                 [i % 2 === 0 ? 'right' : 'left']: '-30px',
-                width: '160px',
-                height: '160px',
-                zIndex: 20
               }}>
-                <div style={{
-                  width: '100%', height: '100%', borderRadius: '24px',
-                  background: `linear-gradient(135deg, ${member.accentFrom}, ${member.accentTo})`,
-                  padding: '1px',
-                  transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-                  boxShadow: '0 24px 48px rgba(0,0,0,0.5)'
+                <div className="w-full h-full rounded-[24px] p-px transition-all duration-[0.6s] ease-out-expo shadow-md group-hover:scale-105 group-hover:shadow-[0_32px_64px_rgba(0,0,0,0.15)]" style={{
+                  background: `linear-gradient(135deg, ${member.accentFrom}, ${member.accentTo})`
                 }}>
-                  <div style={{ width: '100%', height: '100%', borderRadius: '24px', overflow: 'hidden', background: '#0c1a24' }}>
+                  <div className="w-full h-full rounded-[24px] overflow-hidden bg-white">
                     <img
                       src={member.photo}
                       alt={member.name}
-                      style={{
-                        width: '100%', height: '100%', objectFit: 'cover',
-                        filter: 'grayscale(15%) contrast(1.1) brightness(0.95)',
-                        transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-                      }}
-                      className="team-img-hover"
+                      className="w-full h-full object-cover grayscale-[15%] contrast-110 brightness-95 transition-all duration-[0.6s] ease-out-expo group-hover:grayscale-0 group-hover:brightness-100"
                     />
                   </div>
                 </div>
@@ -142,29 +124,23 @@ export default function Team() {
 
               {/* Glass Details Card */}
               <div 
-                className="glass-card team-card-body" 
+                className="team-card-body relative z-10 flex flex-col justify-center min-h-[280px] p-[48px] pt-[60px] bg-white/70 backdrop-blur-[24px] border border-slate-200 rounded-[20px] shadow-sm transition-all duration-500 group-hover:border-slate-300 group-hover:shadow-lg group-hover:-translate-y-1" 
                 style={{ 
-                  padding: '48px',
-                  paddingTop: '60px',
                   paddingRight: i % 2 === 0 ? '140px' : '48px',
                   paddingLeft: i % 2 === 1 ? '140px' : '48px',
-                  display: 'flex', flexDirection: 'column', justifyContent: 'center',
-                  minHeight: '280px',
-                  position: 'relative',
-                  zIndex: 10
                 }}
               >
-                <div style={{ position: 'absolute', top: '24px', [i % 2 === 0 ? 'left' : 'right']: '24px', opacity: 0.1 }}>
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke={member.accentFrom} strokeWidth="1"><path d="M12 2L2 22h20L12 2z"/></svg>
+                <div className="absolute top-[24px] opacity-10" style={{ [i % 2 === 0 ? 'left' : 'right']: '24px' }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke={member.accentFrom} strokeWidth="2"><path d="M12 2L2 22h20L12 2z"/></svg>
                 </div>
                 
-                <p style={{ color: member.accentFrom, fontSize: '0.8125rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '8px' }}>
+                <p className="text-[0.8125rem] font-bold tracking-[0.1em] uppercase mb-[8px]" style={{ color: member.accentFrom }}>
                   {member.role}
                 </p>
-                <h3 style={{ color: '#ffffff', fontSize: '2rem', fontWeight: 700, letterSpacing: '-0.02em', marginBottom: '24px' }}>
+                <h3 className="text-slate-900 text-[2rem] font-extrabold tracking-[-0.02em] mb-[24px]">
                   {member.name}
                 </h3>
-                <p style={{ color: '#7e99a8', fontSize: '1rem', lineHeight: 1.8 }}>
+                <p className="text-slate-600 text-[1rem] leading-[1.8] font-light">
                   {member.bio}
                 </p>
               </div>
@@ -173,17 +149,14 @@ export default function Team() {
         </div>
 
         {/* Partners Strip */}
-        <div className="reveal glass-card" style={{ padding: '64px 48px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(212,107,26,0.05), transparent 50%, rgba(45, 212, 191, 0.05))' }} />
-          <h4 style={{ position: 'relative', color: '#ffffff', fontSize: '1.25rem', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '40px' }}>
-            Trusted by world-leading <span style={{ color: '#2dd4bf' }}>research institutions</span>
+        <div className="reveal relative overflow-hidden bg-white/60 backdrop-blur-[24px] border border-slate-200 rounded-[20px] p-[64px_48px] text-center shadow-sm">
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-transparent to-teal-500/5 pointer-events-none" />
+          <h4 className="relative text-slate-900 text-[1.25rem] font-bold tracking-[-0.01em] mb-[40px]">
+            Trusted by world-leading <span className="text-[#0d9488]">research institutions</span>
           </h4>
-          <div style={{ position: 'relative', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '32px 64px' }}>
+          <div className="relative flex flex-wrap justify-center items-center gap-x-[64px] gap-y-[32px]">
             {partners.map((partner, i) => (
-              <span key={i} style={{ 
-                color: '#7e99a8', fontSize: '1.125rem', fontWeight: 500, letterSpacing: '0.02em',
-                transition: 'color 0.4s', cursor: 'default'
-              }} onMouseEnter={e => e.target.style.color = '#fff'} onMouseLeave={e => e.target.style.color = '#7e99a8'}>
+              <span key={i} className="text-slate-500 text-[1.125rem] font-medium tracking-[0.02em] transition-colors duration-400 hover:text-slate-900 cursor-default">
                 {partner}
               </span>
             ))}
@@ -195,10 +168,10 @@ export default function Team() {
         @media (max-width: 1024px) {
           #team-grid {
             grid-template-columns: 1fr !important;
-            rowGap: 80px !important;
+            row-gap: 80px !important;
           }
           #team-grid > div {
-            marginTop: 0 !important;
+            margin-top: 0 !important;
           }
           .team-photo-wrapper {
             position: relative !important;
@@ -215,25 +188,7 @@ export default function Team() {
             padding-top: 60px !important;
           }
         }
-        .team-card-body:hover {
-          border-color: rgba(255,255,255,0.15) !important;
-        }
-        .team-card-body:hover ~ .team-photo-wrapper > div {
-          transform: scale(1.04) !important;
-          box-shadow: 0 32px 64px rgba(0,0,0,0.6) !important;
-        }
-        .team-card-body:hover ~ .team-photo-wrapper img {
-          filter: grayscale(0%) contrast(1.1) brightness(1) !important;
-        }
-        /* Handle direct hover on photo too */
-        .team-photo-wrapper:hover > div {
-          transform: scale(1.04) !important;
-        }
-        .team-photo-wrapper:hover img {
-          filter: grayscale(0%) contrast(1.1) brightness(1) !important;
-        }
       `}</style>
     </section>
   )
 }
-

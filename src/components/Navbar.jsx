@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { pathname } = useLocation()
+
+  // Home opens on a light hero; other routes sit on dark shells — nav must match for contrast
+  const isLightNavSurface = pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -11,41 +15,66 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const logoFilter = isLightNavSurface
+    ? 'brightness(0) opacity(0.85)'
+    : 'brightness(0) invert(1) opacity(0.95)'
+
+  const logoWrapClass = isLightNavSurface
+    ? scrolled
+      ? 'bg-white/80 backdrop-blur-[24px] px-[24px] py-[12px] border border-slate-200 shadow-[0_8px_32px_rgba(0,0,0,0.05)]'
+      : 'bg-transparent px-0 border border-transparent'
+    : scrolled
+      ? 'bg-[rgba(12,26,36,0.75)] backdrop-blur-[24px] px-[24px] py-[12px] border border-[rgba(255,255,255,0.08)] shadow-[0_8px_32px_rgba(0,0,0,0.2)]'
+      : 'bg-transparent px-0 border border-transparent'
+
+  const pillClass = isLightNavSurface
+    ? scrolled
+      ? 'bg-white/90 border border-slate-200 shadow-[0_12px_40px_rgba(0,0,0,0.05)]'
+      : 'bg-white/50 border border-white/20 shadow-[0_4px_16px_rgba(0,0,0,0.05)]'
+    : scrolled
+      ? 'bg-[rgba(12,26,36,0.75)] border border-[rgba(255,255,255,0.08)] shadow-[0_12px_40px_rgba(0,0,0,0.3)]'
+      : 'bg-[rgba(12,26,36,0.3)] border border-[rgba(255,255,255,0.08)] shadow-[0_4px_16px_rgba(0,0,0,0.15)]'
+
+  const linkClass = isLightNavSurface
+    ? 'text-slate-500 hover:text-slate-900'
+    : 'text-[#7e99a8] hover:text-white'
+
+  const mobileBtnClass = isLightNavSurface
+    ? 'bg-white/90 border border-slate-200 text-slate-800'
+    : 'bg-[rgba(12,26,36,0.8)] border border-[rgba(255,255,255,0.1)] text-white'
+
+  const mobileSheetClass = isLightNavSurface
+    ? 'bg-white/95 border-b border-slate-200'
+    : 'bg-[rgba(12,26,36,0.98)] border-b border-[rgba(255,255,255,0.05)]'
+
+  const mobileLinkClass = isLightNavSurface
+    ? 'text-slate-600 hover:text-slate-900'
+    : 'text-[#7e99a8] hover:text-white'
+
   return (
     <nav
       id="navbar"
-      style={{
-        position: 'fixed', top: '24px', left: 0, right: 0, zIndex: 100,
-        pointerEvents: 'none',
-      }}
+      className="fixed top-[24px] left-0 right-0 z-[100] pointer-events-none"
     >
-      <div className="section-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '64px', pointerEvents: 'auto' }}>
-        
+      <div className="section-container flex items-center justify-between h-[64px] pointer-events-auto">
+
         {/* Left: Logo */}
-        <Link to="/" className="hoverable" style={{ 
-          display: 'flex', alignItems: 'center', textDecoration: 'none', 
-          background: scrolled ? 'rgba(12, 26, 36, 0.75)' : 'transparent', 
-          backdropFilter: scrolled ? 'blur(24px)' : 'none', 
-          padding: scrolled ? '12px 24px' : '0', 
-          borderRadius: '32px', 
-          border: scrolled ? '1px solid rgba(255,255,255,0.08)' : '1px solid transparent', 
-          boxShadow: scrolled ? '0 8px 32px rgba(0,0,0,0.2)' : 'none',
-          transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)' 
-        }}>
-          <img src="/PLA_logos-03.svg" alt="Platypus Bio" style={{ height: '32px', objectFit: 'contain', filter: 'brightness(0) invert(1) opacity(0.95)' }} />
+        <Link
+          to="/"
+          className={`hoverable flex items-center no-underline transition-all duration-400 ease-out-expo rounded-full ${logoWrapClass}`}
+        >
+          <img
+            src="/PLA_logos-03.svg"
+            alt="Platypus Bio"
+            className="h-[32px] object-contain"
+            style={{ filter: logoFilter }}
+          />
         </Link>
 
         {/* Center: Frosted Glass Pill Links */}
-        <div className="hidden md:flex" style={{ 
-          alignItems: 'center', gap: '40px',
-          background: scrolled ? 'rgba(12, 26, 36, 0.75)' : 'rgba(12, 26, 36, 0.3)',
-          backdropFilter: 'blur(24px)',
-          border: '1px solid rgba(255,255,255,0.08)',
-          borderRadius: '9999px',
-          padding: '12px 36px',
-          boxShadow: scrolled ? '0 12px 40px rgba(0,0,0,0.3)' : '0 4px 16px rgba(0,0,0,0.1)',
-          transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-        }}>
+        <div
+          className={`hidden md:flex items-center gap-[40px] rounded-full px-[36px] py-[12px] transition-all duration-400 ease-out-expo backdrop-blur-[24px] ${pillClass}`}
+        >
           {[
             { to: '/#narrative', label: 'The Edge' },
             { to: '/#pipeline', label: 'Pipeline' },
@@ -54,14 +83,7 @@ export default function Navbar() {
             <Link
               key={link.to}
               to={link.to}
-              className="hoverable"
-              style={{
-                color: '#7e99a8', fontSize: '0.8125rem', fontWeight: 600,
-                letterSpacing: '0.04em', textDecoration: 'none',
-                transition: 'color 0.3s', textTransform: 'uppercase',
-              }}
-              onMouseEnter={(e) => e.target.style.color = '#fff'}
-              onMouseLeave={(e) => e.target.style.color = '#7e99a8'}
+              className={`hoverable text-[0.8125rem] font-semibold tracking-[0.04em] no-underline uppercase transition-colors ${linkClass}`}
             >
               {link.label}
             </Link>
@@ -70,16 +92,21 @@ export default function Navbar() {
 
         {/* Right: CTA Button */}
         <div className="hidden md:block">
-          <Link to="/contact" className="cta-button hoverable" style={{ padding: '12px 28px', fontSize: '0.8125rem', borderRadius: '9999px', boxShadow: scrolled ? '0 16px 32px rgba(212,107,26,0.15)' : 'none' }}>
+          <Link
+            to="/contact"
+            className={`cta-button hoverable px-[28px] py-[12px] text-[0.8125rem] rounded-full transition-all duration-400 ${scrolled ? 'shadow-[0_16px_32px_rgba(212,107,26,0.15)]' : 'shadow-none'}`}
+          >
             <span>Join the Frontier</span>
           </Link>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden hoverable"
+          type="button"
+          className={`md:hidden hoverable p-[12px] rounded-full cursor-pointer pointer-events-auto backdrop-blur-[24px] shadow-sm ${mobileBtnClass}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{ color: '#ffffff', background: 'rgba(12, 26, 36, 0.8)', backdropFilter: 'blur(24px)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '50%', cursor: 'pointer', padding: '12px', pointerEvents: 'auto' }}
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             {menuOpen ? <path d="M18 6L6 18M6 6l12 12" /> : <path d="M4 12h16M4 6h16M4 18h16" />}
@@ -89,26 +116,25 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden" style={{
-          background: 'rgba(12, 26, 36, 0.98)',
-          backdropFilter: 'blur(24px)',
-          borderBottom: '1px solid rgba(255,255,255,0.05)',
-          padding: '24px 32px 40px',
-          position: 'absolute', top: '-24px', left: 0, right: 0, zIndex: -1,
-          pointerEvents: 'auto',
-          paddingTop: '104px' 
-        }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', textAlign: 'center' }}>
+        <div
+          className={`md:hidden absolute top-[-24px] left-0 right-0 pt-[104px] pb-[40px] px-[32px] backdrop-blur-[24px] z-[-1] pointer-events-auto shadow-xl ${mobileSheetClass}`}
+        >
+          <div className="flex flex-col gap-[24px] text-center">
             {[
               { to: '/#narrative', label: 'The Edge' },
               { to: '/#pipeline', label: 'Pipeline' },
               { to: '/#team', label: 'Team' },
             ].map((link) => (
-              <Link key={link.to} to={link.to} onClick={() => setMenuOpen(false)} style={{ color: '#7e99a8', fontSize: '1.25rem', fontWeight: 500, padding: '8px 0', textDecoration: 'none', letterSpacing: '0.02em', textTransform: 'uppercase' }}>
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setMenuOpen(false)}
+                className={`text-[1.25rem] font-medium py-[8px] no-underline tracking-[0.02em] uppercase ${mobileLinkClass}`}
+              >
                 {link.label}
               </Link>
             ))}
-            <Link to="/contact" onClick={() => setMenuOpen(false)} className="cta-button" style={{ display: 'inline-flex', alignSelf: 'center', marginTop: '16px', borderRadius: '9999px' }}>
+            <Link to="/contact" onClick={() => setMenuOpen(false)} className="cta-button self-center mt-[16px] rounded-full">
               <span>Join the Frontier</span>
             </Link>
           </div>
