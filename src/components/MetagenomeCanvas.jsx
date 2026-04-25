@@ -55,7 +55,6 @@ export default function MetagenomeCanvas({ cursorPos }) {
       ctx.clearRect(0, 0, width, height)
 
       ctx.globalCompositeOperation = 'screen'
-      ctx.filter = 'blur(90px)' // Heavy blur for fluid feel
 
       const mx = mouseRef.current.x
       const my = mouseRef.current.y
@@ -97,7 +96,7 @@ export default function MetagenomeCanvas({ cursorPos }) {
         ctx.fill()
       }
 
-      ctx.filter = 'none' // Reset filter for grid
+      ctx.globalCompositeOperation = 'source-over' // Reset for grid
 
       // Draw subtle hex grid or cellular pattern for biological theme
       drawCellularGrid(ctx, width, height, time)
@@ -117,7 +116,7 @@ export default function MetagenomeCanvas({ cursorPos }) {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 z-0"
-      style={{ width: '100%', height: '100%', opacity: 0.8 }}
+      style={{ width: '100%', height: '100%', opacity: 0.8, filter: 'blur(90px)' }}
     />
   )
 }

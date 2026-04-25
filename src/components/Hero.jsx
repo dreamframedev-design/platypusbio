@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import MetagenomeCanvas from './MetagenomeCanvas'
 
 export default function Hero({ cursorPos }) {
@@ -35,43 +34,34 @@ export default function Hero({ cursorPos }) {
           </div>
         </div>
 
-        {/* Badge */}
-        <div className="animate-fade-in-up delay-200 inline-flex items-center gap-[10px] mb-[32px] px-[24px] py-[8px] rounded-full border border-[rgba(212,107,26,0.15)] bg-white/70 backdrop-blur-[16px] shadow-sm">
-          <span className="w-[7px] h-[7px] rounded-full bg-[#d46b1a] shadow-[0_0_12px_rgba(212,107,26,0.6)]" />
-          <span className="text-slate-600 text-[0.6875rem] font-semibold tracking-[0.2em] uppercase">
-            Australian Deep-Tech Bioplatform
-          </span>
-        </div>
-
-        {/* Headline */}
+        {/* Headline — verbatim from sitemap */}
         <h1 className="animate-fade-in-up delay-300 text-[clamp(2.5rem,5.5vw,4.5rem)] font-extrabold text-slate-900 leading-[1.05] tracking-[-0.04em] mb-[28px]">
-          Unlocking the Potential of{' '}
-          <span className="gradient-text-warm">Australian Metagenomes</span>{' '}
-          for Precision Medicine
+          Transforming medicine with{' '}
+          <span className="gradient-text-warm">precision cell killing</span>
         </h1>
 
-        {/* Sub */}
-        <p className="animate-fade-in-up delay-400 text-[clamp(1rem,1.5vw,1.2rem)] text-slate-600 max-w-[600px] mx-auto mb-[48px] leading-[1.8] font-light tracking-[0.01em]">
-          We decode the molecular intelligence hidden within Australia's unique ecosystems — transforming metagenomic data into next-generation RNA therapeutics and diagnostics.
+        {/* Sub — TRICK positioning */}
+        <p className="animate-fade-in-up delay-400 text-[clamp(1rem,1.5vw,1.2rem)] text-slate-600 max-w-[640px] mx-auto mb-[48px] leading-[1.8] font-light tracking-[0.01em]">
+          TRICK (Trigger RNA-Induced Cell Killing) is a first-in-class programmable CRISPR platform that targets any RNA inside a cancer cell — unlocking the full transcriptome as a therapeutic target space.
         </p>
 
-        {/* CTAs */}
+        {/* CTA */}
         <div className="animate-fade-in-up delay-500 flex flex-wrap items-center justify-center gap-[16px]">
-          <Link to="/contact" className="cta-button hoverable shadow-lg shadow-orange-500/20">
-            <span>Join the Frontier</span>
+          <a href="#contact" className="cta-button hoverable shadow-lg shadow-orange-500/20">
+            <span>Get in Touch</span>
             <svg className="w-[16px] h-[16px] relative z-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </Link>
-          <Link
-            to="/#narrative"
+          </a>
+          <a
+            href="#science"
             className="hoverable inline-flex items-center gap-[8px] px-[28px] py-[14px] text-slate-600 border border-slate-200 rounded-xl text-[0.875rem] font-medium no-underline transition-all duration-400 backdrop-blur-[8px] bg-white/50 hover:bg-white hover:text-slate-900 hover:border-orange-500/30 hover:shadow-md"
           >
             Explore the Science
             <svg className="w-[16px] h-[16px]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M19 14l-7 7m0 0l-7-7m7 7V3" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </Link>
+          </a>
         </div>
 
         {/* Scroll Indicator */}
@@ -81,6 +71,9 @@ export default function Hero({ cursorPos }) {
           </div>
         </div>
       </div>
+
+      {/* Hero Art Placeholder — for when custom art is made */}
+      {/* The MetagenomeCanvas above provides the animated background */}
     </section>
   )
 }

@@ -1,19 +1,31 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+
+const navLinks = [
+  { to: '#science', label: 'The Science' },
+  { to: '#pipeline', label: 'Pipeline' },
+  { to: '#team', label: 'Team' },
+  { to: '#partners', label: 'Partners' },
+  { to: '#news', label: 'News' },
+  { to: '#contact', label: 'Contact' },
+]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const { pathname } = useLocation()
-
-  // Home opens on a light hero; other routes sit on dark shells — nav must match for contrast
-  const isLightNavSurface = pathname === '/'
+  const [pastHero, setPastHero] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+      // Detect when we've scrolled past the light hero section into dark
+      setPastHero(window.scrollY > window.innerHeight * 0.85)
+    }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Light nav when on hero, dark nav when past hero
+  const isLightNavSurface = !pastHero
 
   const logoFilter = isLightNavSurface
     ? 'brightness(0) opacity(0.85)'
@@ -51,6 +63,16 @@ export default function Navbar() {
     ? 'text-slate-600 hover:text-slate-900'
     : 'text-[#7e99a8] hover:text-white'
 
+  const handleNavClick = (e, hash) => {
+    e.preventDefault()
+    setMenuOpen(false)
+    const id = hash.replace('#', '')
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <nav
       id="navbar"
@@ -59,8 +81,9 @@ export default function Navbar() {
       <div className="section-container flex items-center justify-between h-[64px] pointer-events-auto">
 
         {/* Left: Logo */}
-        <Link
-          to="/"
+        <a
+          href="#hero"
+          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
           className={`hoverable flex items-center no-underline transition-all duration-400 ease-out-expo rounded-full ${logoWrapClass}`}
         >
           <img
@@ -69,41 +92,39 @@ export default function Navbar() {
             className="h-[32px] object-contain"
             style={{ filter: logoFilter }}
           />
-        </Link>
+        </a>
 
         {/* Center: Frosted Glass Pill Links */}
         <div
-          className={`hidden md:flex items-center gap-[40px] rounded-full px-[36px] py-[12px] transition-all duration-400 ease-out-expo backdrop-blur-[24px] ${pillClass}`}
+          className={`hidden lg:flex items-center gap-[28px] rounded-full px-[28px] py-[12px] transition-all duration-400 ease-out-expo backdrop-blur-[24px] ${pillClass}`}
         >
-          {[
-            { to: '/#narrative', label: 'The Edge' },
-            { to: '/#pipeline', label: 'Pipeline' },
-            { to: '/#team', label: 'Team' },
-          ].map((link) => (
-            <Link
+          {navLinks.map((link) => (
+            <a
               key={link.to}
-              to={link.to}
-              className={`hoverable text-[0.8125rem] font-semibold tracking-[0.04em] no-underline uppercase transition-colors ${linkClass}`}
+              href={link.to}
+              onClick={(e) => handleNavClick(e, link.to)}
+              className={`hoverable text-[0.75rem] font-semibold tracking-[0.04em] no-underline uppercase transition-colors ${linkClass}`}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </div>
 
         {/* Right: CTA Button */}
-        <div className="hidden md:block">
-          <Link
-            to="/contact"
+        <div className="hidden lg:block">
+          <a
+            href="#contact"
+            onClick={(e) => handleNavClick(e, '#contact')}
             className={`cta-button hoverable px-[28px] py-[12px] text-[0.8125rem] rounded-full transition-all duration-400 ${scrolled ? 'shadow-[0_16px_32px_rgba(212,107,26,0.15)]' : 'shadow-none'}`}
           >
-            <span>Join the Frontier</span>
-          </Link>
+            <span>Get in Touch</span>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
         <button
           type="button"
-          className={`md:hidden hoverable p-[12px] rounded-full cursor-pointer pointer-events-auto backdrop-blur-[24px] shadow-sm ${mobileBtnClass}`}
+          className={`lg:hidden hoverable p-[12px] rounded-full cursor-pointer pointer-events-auto backdrop-blur-[24px] shadow-sm ${mobileBtnClass}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -117,26 +138,22 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div
-          className={`md:hidden absolute top-[-24px] left-0 right-0 pt-[104px] pb-[40px] px-[32px] backdrop-blur-[24px] z-[-1] pointer-events-auto shadow-xl ${mobileSheetClass}`}
+          className={`lg:hidden absolute top-[-24px] left-0 right-0 pt-[104px] pb-[40px] px-[32px] backdrop-blur-[24px] z-[-1] pointer-events-auto shadow-xl ${mobileSheetClass}`}
         >
           <div className="flex flex-col gap-[24px] text-center">
-            {[
-              { to: '/#narrative', label: 'The Edge' },
-              { to: '/#pipeline', label: 'Pipeline' },
-              { to: '/#team', label: 'Team' },
-            ].map((link) => (
-              <Link
+            {navLinks.map((link) => (
+              <a
                 key={link.to}
-                to={link.to}
-                onClick={() => setMenuOpen(false)}
+                href={link.to}
+                onClick={(e) => handleNavClick(e, link.to)}
                 className={`text-[1.25rem] font-medium py-[8px] no-underline tracking-[0.02em] uppercase ${mobileLinkClass}`}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
-            <Link to="/contact" onClick={() => setMenuOpen(false)} className="cta-button self-center mt-[16px] rounded-full">
-              <span>Join the Frontier</span>
-            </Link>
+            <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="cta-button self-center mt-[16px] rounded-full">
+              <span>Get in Touch</span>
+            </a>
           </div>
         </div>
       )}

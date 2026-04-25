@@ -4,7 +4,7 @@ const teamMembers = [
   {
     name: 'Chris Alma',
     role: 'Co-Founder & CEO',
-    bio: 'Serial entrepreneur with deep expertise in biotech commercialisation and venture creation.',
+    bio: 'Serial biotech entrepreneur with deep expertise in commercialisation, venture creation, and capital formation. Committed to taking TRICK from discovery to the clinic.',
     photo: '/Chris Alma Headshot.jpg',
     accentFrom: '#d46b1a',
     accentTo: '#e88430',
@@ -12,7 +12,7 @@ const teamMembers = [
   {
     name: 'Prof. Peter Fineran',
     role: 'Co-Founder & CSO',
-    bio: 'World-leading CRISPR and phage biology researcher. Professor at the University of Otago with 150+ publications.',
+    bio: 'World-leading CRISPR and phage biology researcher. Professor at the University of Otago with 150+ publications. The scientific foundation of the TRICK platform was built in his laboratory.',
     photo: '/Peter Fineran Headshot.png',
     accentFrom: '#0d9488',
     accentTo: '#0891b2',
@@ -20,7 +20,7 @@ const teamMembers = [
   {
     name: 'Rob Fagerlund',
     role: 'Co-Founder & CTO',
-    bio: 'Expert in metagenomic sequencing and computational biology. Pioneer in environmental RNA discovery platforms.',
+    bio: "Pioneer in RNA discovery platforms and metagenomic biology. The computational intelligence behind TRICK's target identification and platform design.",
     photo: '/Rob Fagerlund Headshot.jpg',
     accentFrom: '#d97706',
     accentTo: '#d46b1a',
@@ -33,15 +33,6 @@ const teamMembers = [
     accentFrom: '#059669',
     accentTo: '#0d9488',
   },
-]
-
-const partners = [
-  'Bioplatforms Australia',
-  'CSIRO',
-  'NSW Health',
-  'University of Sydney',
-  'Garvan Institute',
-  'WEHI',
 ]
 
 export default function Team() {
@@ -89,13 +80,13 @@ export default function Team() {
             Built by Scientists,<br/>
             <span className="bg-gradient-to-br from-[#d46b1a] to-[#f0a040] bg-clip-text text-transparent">Driven by&nbsp;Discovery.</span>
           </h2>
-          <p className="text-slate-600 text-[1.1875rem] leading-[1.7] max-w-[600px] font-light">
-            Our founding team combines deep expertise in metagenomics, CRISPR biology, computational drug design, and biotech commercialisation.
+          <p className="text-slate-600 text-[1.1875rem] leading-[1.7] max-w-[640px] font-light">
+            The Platypus Bio founding team brings together the rarest combination in deep-tech biotech — world-leading academic science, CRISPR biology expertise, computational drug design, and the operational experience to take a platform technology into the clinic.
           </p>
         </div>
 
-        {/* Master Level Staggered Cinematic Grid */}
-        <div id="team-grid" className="grid grid-cols-2 gap-x-[64px] gap-y-[120px] mb-[160px]">
+        {/* Staggered Cinematic Grid */}
+        <div id="team-grid" className="grid grid-cols-2 gap-x-[64px] gap-y-[120px]">
           {teamMembers.map((member, i) => (
             <div 
               key={i} 
@@ -146,21 +137,6 @@ export default function Team() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Partners Strip */}
-        <div className="reveal relative overflow-hidden bg-white/60 backdrop-blur-[24px] border border-slate-200 rounded-[20px] p-[64px_48px] text-center shadow-sm">
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-transparent to-teal-500/5 pointer-events-none" />
-          <h4 className="relative text-slate-900 text-[1.25rem] font-bold tracking-[-0.01em] mb-[40px]">
-            Trusted by world-leading <span className="text-[#0d9488]">research institutions</span>
-          </h4>
-          <div className="relative flex flex-wrap justify-center items-center gap-x-[64px] gap-y-[32px]">
-            {partners.map((partner, i) => (
-              <span key={i} className="text-slate-500 text-[1.125rem] font-medium tracking-[0.02em] transition-colors duration-400 hover:text-slate-900 cursor-default">
-                {partner}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
 
