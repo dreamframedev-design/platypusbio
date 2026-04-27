@@ -63,8 +63,12 @@ export default function Team() {
 
       <div className="absolute top-[40%] right-[10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(13,148,136,0.06)_0%,transparent_70%)] blur-[100px] pointer-events-none z-0" />
 
-      {/* Gradient overlay blending from previous dark section */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[var(--color-midnight)] to-transparent opacity-80 pointer-events-none z-1" />
+      {/* Subtle Swoop Transition from previous dark section */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="block w-full h-[40px] md:h-[70px]">
+          <path d="M0,0 C480,100 960,100 1440,0 L1440,0 L0,0 Z" fill="var(--color-midnight)"></path>
+        </svg>
+      </div>
 
       <div className="section-container relative z-10">
         {/* Divider */}

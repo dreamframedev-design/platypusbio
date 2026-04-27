@@ -10,7 +10,7 @@ export default function Hero({ cursorPos }) {
   }, [])
 
   return (
-    <section id="hero" className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-[#fbfbf9]">
+    <section id="hero" className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-[#fbfbf9] bg-grid-light">
       <MetagenomeCanvas cursorPos={cursorPos} />
 
       {/* Massive ambient background logo */}
@@ -35,30 +35,30 @@ export default function Hero({ cursorPos }) {
         </div>
 
         {/* Headline — verbatim from sitemap */}
-        <h1 className="animate-fade-in-up delay-300 text-[clamp(2.5rem,5.5vw,4.5rem)] font-extrabold text-slate-900 leading-[1.05] tracking-[-0.04em] mb-[28px]">
+        <h1 className="animate-fade-in-up delay-300 text-[clamp(2.8rem,6vw,5.5rem)] font-black text-slate-900 leading-[1.02] tracking-[-0.04em] mb-[32px] drop-shadow-sm">
           Transforming medicine with{' '}
-          <span className="gradient-text-warm">precision cell killing</span>
+          <span className="bg-gradient-to-br from-[#d46b1a] to-[#f0a040] bg-clip-text text-transparent drop-shadow-md">precision cell killing</span>
         </h1>
 
         {/* Sub — TRICK positioning */}
-        <p className="animate-fade-in-up delay-400 text-[clamp(1rem,1.5vw,1.2rem)] text-slate-600 max-w-[640px] mx-auto mb-[48px] leading-[1.8] font-light tracking-[0.01em]">
+        <p className="animate-fade-in-up delay-400 text-[clamp(1.1rem,1.5vw,1.25rem)] text-slate-600 max-w-[680px] mx-auto mb-[56px] leading-[1.8] font-light tracking-[0.01em]">
           TRICK (Trigger RNA-Induced Cell Killing) is a first-in-class programmable CRISPR platform that targets any RNA inside a cancer cell — unlocking the full transcriptome as a therapeutic target space.
         </p>
 
         {/* CTA */}
-        <div className="animate-fade-in-up delay-500 flex flex-wrap items-center justify-center gap-[16px]">
-          <a href="#contact" className="cta-button hoverable shadow-lg shadow-orange-500/20">
+        <div className="animate-fade-in-up delay-500 flex flex-wrap items-center justify-center gap-[20px]">
+          <a href="#contact" className="cta-button hoverable shadow-[0_8px_32px_rgba(212,107,26,0.25)] hover:shadow-[0_16px_48px_rgba(212,107,26,0.35)] transition-shadow duration-500 text-[1.0625rem] px-[36px] py-[16px] rounded-full ring-2 ring-transparent hover:ring-[#f0a040]/50 ring-offset-2">
             <span>Get in Touch</span>
-            <svg className="w-[16px] h-[16px] relative z-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg className="w-[18px] h-[18px] relative z-1" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
           <a
             href="#science"
-            className="hoverable inline-flex items-center gap-[8px] px-[28px] py-[14px] text-slate-600 border border-slate-200 rounded-xl text-[0.875rem] font-medium no-underline transition-all duration-400 backdrop-blur-[8px] bg-white/50 hover:bg-white hover:text-slate-900 hover:border-orange-500/30 hover:shadow-md"
+            className="hoverable inline-flex items-center gap-[10px] px-[36px] py-[16px] text-slate-600 border border-slate-200/80 rounded-full text-[1.0625rem] font-semibold tracking-wide no-underline transition-all duration-500 backdrop-blur-[12px] bg-white/70 hover:bg-white hover:text-slate-900 hover:border-slate-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]"
           >
             Explore the Science
-            <svg className="w-[16px] h-[16px]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path d="M19 14l-7 7m0 0l-7-7m7 7V3" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>

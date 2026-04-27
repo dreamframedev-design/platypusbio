@@ -90,7 +90,7 @@ export default function TheScience() {
           ═══════════════════════════════════════════ */}
       <div style={{ position: 'relative', paddingTop: '128px', paddingBottom: '128px' }}>
         {/* Background glow */}
-        <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '800px', height: '800px', background: 'rgba(212,107,26,0.025)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
+        <div className="ambient-glow" style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '800px', height: '800px', background: 'rgba(212,107,26,0.025)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
         {/* Parallax abstract background */}
         <div style={{
           position: 'absolute', inset: 0, zIndex: 0,
@@ -139,7 +139,7 @@ export default function TheScience() {
       <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '128px' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.06, pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 20%, transparent 80%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', top: '30%', right: '0', width: '600px', height: '600px', background: 'rgba(45,212,191,0.02)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
+        <div className="ambient-glow" style={{ position: 'absolute', top: '30%', right: '0', width: '600px', height: '600px', background: 'rgba(45,212,191,0.02)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
 
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto 80px', textAlign: 'center' }}>
@@ -232,8 +232,8 @@ export default function TheScience() {
             </div>
 
             {/* Diagram 1 */}
-            <div style={{ marginTop: '48px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
-              <img src="/diagram1.png" alt="The Challenge Diagram" style={{ maxWidth: '100%', height: 'auto', maxHeight: '360px', objectFit: 'contain', borderRadius: '8px', boxShadow: '0 8px 24px rgba(0,0,0,0.25)' }} />
+            <div style={{ marginTop: '48px', textAlign: 'center' }}>
+              <img src="/diagram1.png" alt="The Challenge Diagram" style={{ maxWidth: '100%', height: 'auto', maxHeight: '400px', objectFit: 'contain', borderRadius: '12px', boxShadow: '0 12px 32px rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.06)' }} />
             </div>
           </div>
         </div>
@@ -263,8 +263,8 @@ export default function TheScience() {
             </div>
             
             {/* Diagram 2 */}
-            <div style={{ marginTop: '48px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
-              <img src="/diagram2.png" alt="Action Mechanism Diagram" style={{ maxWidth: '100%', height: 'auto', maxHeight: '360px', objectFit: 'contain', borderRadius: '8px', boxShadow: '0 8px 24px rgba(0,0,0,0.25)' }} />
+            <div style={{ marginTop: '48px', textAlign: 'center' }}>
+              <img src="/diagram2.png" alt="Action Mechanism Diagram" style={{ maxWidth: '100%', height: 'auto', maxHeight: '400px', objectFit: 'contain', borderRadius: '12px', boxShadow: '0 12px 32px rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.06)' }} />
             </div>
           </div>
         </div>

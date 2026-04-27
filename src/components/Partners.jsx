@@ -19,11 +19,15 @@ export default function Partners() {
 
   return (
     <section id="partners" ref={sectionRef} style={{ position: 'relative', paddingTop: '128px', paddingBottom: '128px', overflow: 'hidden' }}>
-      {/* Gradient transition from light team section back to dark */}
-      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '160px', background: 'linear-gradient(to bottom, #fbfbf9, var(--color-midnight))', pointerEvents: 'none', zIndex: 1 }} />
+      {/* Subtle Swoop boundary line from light Team section */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="block w-full h-[40px] md:h-[70px]">
+          <path d="M0,0 C480,100 960,100 1440,0 L1440,0 L0,0 Z" fill="#fbfbf9"></path>
+        </svg>
+      </div>
 
       {/* Background glow */}
-      <div style={{ position: 'absolute', top: '30%', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '400px', background: 'rgba(45,212,191,0.02)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
+      <div className="ambient-glow" style={{ position: 'absolute', top: '30%', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '400px', background: 'rgba(45,212,191,0.02)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
 
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         <div className="section-divider" style={{ marginBottom: '80px' }} />

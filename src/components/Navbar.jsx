@@ -24,32 +24,20 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Light nav when on hero, dark nav when past hero
+  // Logo and link colors based on surface and scroll
   const isLightNavSurface = !pastHero
 
   const logoFilter = isLightNavSurface
     ? 'brightness(0) opacity(0.85)'
     : 'brightness(0) invert(1) opacity(0.95)'
 
-  const logoWrapClass = isLightNavSurface
-    ? scrolled
-      ? 'bg-white/80 backdrop-blur-[24px] px-[24px] py-[12px] border border-slate-200 shadow-[0_8px_32px_rgba(0,0,0,0.05)]'
-      : 'bg-transparent px-0 border border-transparent'
-    : scrolled
-      ? 'bg-[rgba(12,26,36,0.75)] backdrop-blur-[24px] px-[24px] py-[12px] border border-[rgba(255,255,255,0.08)] shadow-[0_8px_32px_rgba(0,0,0,0.2)]'
-      : 'bg-transparent px-0 border border-transparent'
-
-  const pillClass = isLightNavSurface
-    ? scrolled
-      ? 'bg-white/90 border border-slate-200 shadow-[0_12px_40px_rgba(0,0,0,0.05)]'
-      : 'bg-white/50 border border-white/20 shadow-[0_4px_16px_rgba(0,0,0,0.05)]'
-    : scrolled
-      ? 'bg-[rgba(12,26,36,0.75)] border border-[rgba(255,255,255,0.08)] shadow-[0_12px_40px_rgba(0,0,0,0.3)]'
-      : 'bg-[rgba(12,26,36,0.3)] border border-[rgba(255,255,255,0.08)] shadow-[0_4px_16px_rgba(0,0,0,0.15)]'
-
   const linkClass = isLightNavSurface
     ? 'text-slate-500 hover:text-slate-900'
-    : 'text-[#7e99a8] hover:text-white'
+    : 'text-[#8daabf] hover:text-white'
+
+  const activePillBg = isLightNavSurface
+    ? 'bg-white/70 backdrop-blur-[32px] border border-slate-200/60 shadow-[0_12px_32px_rgba(0,0,0,0.06)]'
+    : 'bg-[rgba(12,26,36,0.5)] backdrop-blur-[32px] border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.3)]'
 
   const mobileBtnClass = isLightNavSurface
     ? 'bg-white/90 border border-slate-200 text-slate-800'
@@ -76,34 +64,36 @@ export default function Navbar() {
   return (
     <nav
       id="navbar"
-      className="fixed top-[24px] left-0 right-0 z-[100] pointer-events-none"
+      className="fixed top-[24px] left-1/2 -translate-x-1/2 w-[90%] max-w-[900px] z-[100] pointer-events-none flex justify-between lg:justify-center items-center"
     >
-      <div className="section-container flex items-center justify-between h-[64px] pointer-events-auto">
-
+      {/* Universal Floating Pill Container */}
+      <div 
+        className={`pointer-events-auto flex items-center justify-between lg:justify-center w-full lg:w-auto transition-all duration-700 ease-out-expo rounded-full ${
+          scrolled ? `${activePillBg} px-[16px] lg:px-[24px] py-[12px] lg:gap-[40px]` : 'bg-transparent px-0 py-0 gap-[32px]'
+        }`}
+      >
         {/* Left: Logo */}
         <a
           href="#hero"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-          className={`hoverable flex items-center no-underline transition-all duration-400 ease-out-expo rounded-full ${logoWrapClass}`}
+          className="hoverable flex items-center no-underline transition-all duration-500 ease-out-expo rounded-full shrink-0"
         >
           <img
             src="/PLA_logos-03.svg"
             alt="Platypus Bio"
-            className="h-[32px] object-contain"
+            className="h-[30px] lg:h-[34px] object-contain transition-all duration-500"
             style={{ filter: logoFilter }}
           />
         </a>
 
-        {/* Center: Frosted Glass Pill Links */}
-        <div
-          className={`hidden lg:flex items-center gap-[28px] rounded-full px-[28px] py-[12px] transition-all duration-400 ease-out-expo backdrop-blur-[24px] ${pillClass}`}
-        >
+        {/* Center: Links */}
+        <div className="hidden lg:flex items-center gap-[32px]">
           {navLinks.map((link) => (
             <a
               key={link.to}
               href={link.to}
               onClick={(e) => handleNavClick(e, link.to)}
-              className={`hoverable text-[0.75rem] font-semibold tracking-[0.04em] no-underline uppercase transition-colors ${linkClass}`}
+              className={`hoverable text-[0.8125rem] font-semibold tracking-[0.05em] no-underline uppercase transition-colors duration-300 ${linkClass}`}
             >
               {link.label}
             </a>
@@ -111,11 +101,11 @@ export default function Navbar() {
         </div>
 
         {/* Right: CTA Button */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:block shrink-0">
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, '#contact')}
-            className={`cta-button hoverable px-[28px] py-[12px] text-[0.8125rem] rounded-full transition-all duration-400 ${scrolled ? 'shadow-[0_16px_32px_rgba(212,107,26,0.15)]' : 'shadow-none'}`}
+            className={`cta-button hoverable px-[24px] py-[12px] text-[0.8125rem] rounded-full transition-all duration-500 ${scrolled && isLightNavSurface ? 'shadow-md ring-2 ring-slate-100 ring-offset-1' : 'shadow-none'}`}
           >
             <span>Get in Touch</span>
           </a>
@@ -124,7 +114,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           type="button"
-          className={`lg:hidden hoverable p-[12px] rounded-full cursor-pointer pointer-events-auto backdrop-blur-[24px] shadow-sm ${mobileBtnClass}`}
+          className={`lg:hidden hoverable p-[10px] rounded-full cursor-pointer pointer-events-auto backdrop-blur-[24px] shadow-sm transition-all duration-300 shrink-0 ${mobileBtnClass}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -135,23 +125,23 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Dropdown */}
       {menuOpen && (
         <div
-          className={`lg:hidden absolute top-[-24px] left-0 right-0 pt-[104px] pb-[40px] px-[32px] backdrop-blur-[24px] z-[-1] pointer-events-auto shadow-xl ${mobileSheetClass}`}
+          className={`lg:hidden absolute top-[-24px] left-1/2 -translate-x-1/2 w-[100vw] pt-[120px] pb-[40px] px-[32px] backdrop-blur-[32px] z-[-1] pointer-events-auto shadow-2xl transition-all duration-500 ${mobileSheetClass}`}
         >
-          <div className="flex flex-col gap-[24px] text-center">
+          <div className="flex flex-col gap-[28px] text-center max-w-[400px] mx-auto">
             {navLinks.map((link) => (
               <a
                 key={link.to}
                 href={link.to}
                 onClick={(e) => handleNavClick(e, link.to)}
-                className={`text-[1.25rem] font-medium py-[8px] no-underline tracking-[0.02em] uppercase ${mobileLinkClass}`}
+                className={`text-[1.35rem] font-bold py-[8px] no-underline tracking-[0.03em] uppercase transition-colors ${mobileLinkClass}`}
               >
                 {link.label}
               </a>
             ))}
-            <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="cta-button self-center mt-[16px] rounded-full">
+            <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="cta-button self-center mt-[24px] px-[32px] py-[16px] text-[1.1rem] rounded-full shadow-lg">
               <span>Get in Touch</span>
             </a>
           </div>
