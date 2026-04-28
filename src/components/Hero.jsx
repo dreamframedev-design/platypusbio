@@ -35,9 +35,9 @@ export default function Hero({ cursorPos }) {
         </div>
 
         {/* Headline — verbatim from sitemap */}
-        <h1 className="animate-fade-in-up delay-300 text-[clamp(2.8rem,6vw,5.5rem)] font-black text-slate-900 leading-[1.02] tracking-[-0.04em] mb-[32px] drop-shadow-sm">
-          Transforming medicine with{' '}
-          <span className="bg-gradient-to-br from-[#d46b1a] to-[#f0a040] bg-clip-text text-transparent drop-shadow-md">precision cell killing</span>
+        <h1 className="animate-fade-in-up delay-300 text-[clamp(2.5rem,5vw,4.8rem)] font-black text-slate-900 leading-[1.05] tracking-[-0.04em] mb-[32px] drop-shadow-sm">
+          Transforming medicine <br className="hidden md:block" />
+          with <span className="bg-gradient-to-br from-[#d46b1a] to-[#f0a040] bg-clip-text text-transparent drop-shadow-md whitespace-nowrap">precision cell killing</span>
         </h1>
 
         {/* Sub — TRICK positioning */}

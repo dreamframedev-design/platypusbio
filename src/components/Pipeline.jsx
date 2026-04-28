@@ -48,13 +48,14 @@ export default function Pipeline() {
         backgroundImage: 'url(/abstract%20background.webp)',
         backgroundSize: 'cover', backgroundPosition: 'center bottom',
         backgroundAttachment: 'fixed',
-        opacity: 0.05,
-        filter: 'invert(1)',
+        opacity: 0.15,
+        filter: 'invert(1) contrast(1.2)',
+        mixBlendMode: 'multiply',
         pointerEvents: 'none',
       }} />
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 25%, transparent 75%, #fbfbf9 100%)',
+        background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.4) 25%, rgba(251,251,249,0.4) 75%, #fbfbf9 100%)',
         pointerEvents: 'none',
       }} />
       <div style={{ position: 'absolute', top: '25%', right: 0, width: '500px', height: '500px', background: 'rgba(45,212,191,0.03)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 1 }} />

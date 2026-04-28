@@ -81,7 +81,7 @@ export default function News() {
                 position: 'relative',
                 overflow: 'hidden',
               }}>
-                <div style={{ position: 'absolute', inset: 0, background: `url(/abtract2.webp) center/cover`, filter: 'invert(1)', opacity: 0.04, pointerEvents: 'none' }} />
+                <div style={{ position: 'absolute', inset: 0, background: `url(/abtract2.webp) center/cover`, filter: 'invert(1) contrast(1.2)', mixBlendMode: 'multiply', opacity: 0.15, pointerEvents: 'none' }} />
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style={{ opacity: 0.2, position: 'relative', zIndex: 1 }}>
                   <rect x="4" y="8" width="40" height="32" rx="4" stroke="#475569" strokeWidth="1.5"/>
                   <path d="M4 32l12-10 8 6 12-10 8 6" stroke="#475569" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

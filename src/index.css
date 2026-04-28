@@ -43,6 +43,12 @@
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* ── Typography Enhancements ──────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.03em;
+}
+
 /* ── Base ──────────────────────────────────── */
 
 html {
@@ -308,6 +314,13 @@ body {
 
 .gradient-text-warm {
   background: linear-gradient(135deg, var(--color-platypus-orange), var(--color-platypus-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-cool {
+  background: linear-gradient(135deg, var(--color-bio-teal), var(--color-bio-cyan));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

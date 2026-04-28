@@ -119,7 +119,7 @@ export default function Team() {
 
               {/* Glass Details Card */}
               <div 
-                className="team-card-body relative z-10 flex flex-col justify-center min-h-[280px] p-[48px] pt-[60px] bg-white/70 backdrop-blur-[24px] border border-slate-200 rounded-[20px] shadow-sm transition-all duration-500 group-hover:border-slate-300 group-hover:shadow-lg group-hover:-translate-y-1" 
+                className="team-card-body relative z-10 flex flex-col justify-center min-h-[280px] p-[48px] pt-[60px] bg-white/70 backdrop-blur-[24px] border border-slate-200/80 rounded-[24px] shadow-[0_8px_32px_rgba(0,0,0,0.03)] transition-all duration-700 ease-out-expo group-hover:border-slate-300/80 group-hover:shadow-[0_24px_64px_rgba(0,0,0,0.08)] group-hover:-translate-y-2" 
                 style={{ 
                   paddingRight: i % 2 === 0 ? '140px' : '48px',
                   paddingLeft: i % 2 === 1 ? '140px' : '48px',

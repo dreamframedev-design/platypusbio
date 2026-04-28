@@ -97,13 +97,14 @@ export default function TheScience() {
           backgroundImage: 'url(/abtract2.webp)',
           backgroundSize: 'cover', backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
-          opacity: 0.05,
-          filter: 'invert(1)',
+          opacity: 0.15,
+          filter: 'invert(1) contrast(1.2)',
+          mixBlendMode: 'multiply',
           pointerEvents: 'none',
         }} />
         <div style={{
           position: 'absolute', inset: 0, zIndex: 1,
-          background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 20%, transparent 80%, #fbfbf9 100%)',
+          background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.6) 20%, rgba(251,251,249,0.6) 80%, #fbfbf9 100%)',
           pointerEvents: 'none',
         }} />
 
@@ -115,7 +116,7 @@ export default function TheScience() {
               The Science
             </p>
             <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.5rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '40px' }}>
-              <span className="gradient-text">A Fresh Approach</span> to{' '}
+              <span className="gradient-text-cool">A FRESH APPROACH</span> to{' '}
               CRISPR
             </h2>
           </div>
@@ -145,14 +146,14 @@ export default function TheScience() {
           </svg>
         </div>
         
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.06, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 20%, transparent 80%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.15, mixBlendMode: 'screen', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, rgba(12, 26, 36, 0.5) 20%, rgba(12, 26, 36, 0.5) 80%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
         <div className="ambient-glow" style={{ position: 'absolute', top: '30%', right: '0', width: '600px', height: '600px', background: 'rgba(45,212,191,0.02)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
 
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto 80px', textAlign: 'center' }}>
             <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '16px' }}>
-              Why <span className="gradient-text">TRICK</span> Is a Game-Changer
+              Why <span className="gradient-text-cool">TRICK</span> Is a Game-Changer
             </h2>
           </div>
 
@@ -202,8 +203,8 @@ export default function TheScience() {
           </svg>
         </div>
         
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.04, filter: 'invert(1)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 25%, transparent 75%, #fbfbf9 100%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.15, filter: 'invert(1) contrast(1.2)', mixBlendMode: 'multiply', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.4) 25%, rgba(251,251,249,0.4) 75%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
           <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
@@ -223,8 +224,8 @@ export default function TheScience() {
           SECTION 5: THE CHALLENGE
           ═══════════════════════════════════════════ */}
       <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '32px', backgroundColor: '#fbfbf9' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center bottom', backgroundAttachment: 'fixed', opacity: 0.04, filter: 'invert(1)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 20%, transparent 80%, #fbfbf9 100%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center bottom', backgroundAttachment: 'fixed', opacity: 0.15, filter: 'invert(1) contrast(1.2)', mixBlendMode: 'multiply', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.4) 20%, rgba(251,251,249,0.4) 80%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
           <div className="reveal glass-card-light" style={{ maxWidth: '900px', margin: '0 auto', padding: '64px 56px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(240,160,64,0.6)' }}>
             <p style={{ color: '#d46b1a', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '24px' }}>
@@ -256,31 +257,120 @@ export default function TheScience() {
       {/* ═══════════════════════════════════════════
           SECTION 6: TRICK TURNS MOLECULAR RECOGNITION INTO ACTION
           ═══════════════════════════════════════════ */}
-      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '32px', backgroundColor: '#fbfbf9' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center top', backgroundAttachment: 'fixed', opacity: 0.04, filter: 'invert(1)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 20%, transparent 80%, #fbfbf9 100%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'relative', paddingTop: '100px', paddingBottom: '100px', backgroundColor: '#fbfbf9', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center top', backgroundAttachment: 'fixed', opacity: 0.15, filter: 'invert(1) contrast(1.2)', mixBlendMode: 'multiply', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.4) 20%, rgba(251,251,249,0.4) 80%, #fbfbf9 100%)', pointerEvents: 'none' }} />
+        <div className="ambient-glow" style={{ position: 'absolute', top: '10%', right: '-10%', width: '800px', height: '800px', background: 'rgba(45,212,191,0.04)', borderRadius: '50%', filter: 'blur(100px)', pointerEvents: 'none', zIndex: 0 }} />
+
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
-          <div className="reveal glass-card-light" style={{ maxWidth: '900px', margin: '0 auto', padding: '64px 56px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(45,212,191,0.6)' }}>
-            <p style={{ color: '#0d9488', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '24px' }}>
-              Action Mechanism
-            </p>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '32px' }}>
-              TRICK turns molecular recognition into action
-            </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
-                The system begins by using a programmable CRISPR complex to identify a specific RNA sequence that marks a diseased cell. Once that signal is detected, TRICK amplifies the response internally, generating a surge of activating molecules that ensures the system engages even when the target signal is faint.
-              </p>
-              <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
-                That amplified signal switches on a cytotoxic nuclease, which introduces widespread genomic DNA damage that the cell cannot recover from, resulting in controlled cell death. Because the components are modular, the platform can be adapted to different biological contexts and therapeutic strategies. The result is a mechanism that combines precision sensing with reliable execution, enabling targeted elimination of cells defined by their RNA signatures.
-              </p>
+          <div className="reveal" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            
+            {/* Full Width Header */}
+            <div style={{ textAlign: 'center', marginBottom: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '24px', padding: '8px 24px', borderRadius: '99px', border: '1px solid rgba(45,212,191,0.2)', backgroundColor: 'rgba(45,212,191,0.05)' }}>
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#0d9488', boxShadow: '0 0 12px rgba(13,148,136,0.6)' }} />
+                <span style={{ color: '#0d9488', fontSize: '0.8125rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+                  Action Mechanism
+                </span>
+              </div>
+              
+              <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.05, letterSpacing: '-0.04em', maxWidth: '1000px' }}>
+                TRICK turns molecular <span className="gradient-text-cool">recognition into action</span>
+              </h2>
             </div>
             
-            {/* Diagram 2 */}
-            <div style={{ marginTop: '48px', textAlign: 'center' }}>
-              <img src="/diagram2.png" alt="Action Mechanism Diagram" style={{ maxWidth: '100%', height: 'auto', maxHeight: '400px', objectFit: 'contain', borderRadius: '12px', boxShadow: '0 12px 32px rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.06)' }} />
+            <div className="action-grid" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '80px', alignItems: 'start' }}>
+              {/* Text Side */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', position: 'relative' }}>
+                {/* Connecting Line */}
+                <div style={{ position: 'absolute', top: '24px', bottom: '24px', left: '19px', width: '2px', background: 'linear-gradient(to bottom, rgba(15,23,42,0.1), rgba(212,107,26,0.2))', zIndex: 0 }} />
+
+                <div className="glass-card-light" style={{ display: 'flex', gap: '24px', position: 'relative', zIndex: 1, padding: '32px', borderRadius: '24px', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.8)', boxShadow: '0 8px 32px rgba(0,0,0,0.03)' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
+                    <div style={{ width: '40px', height: '40px', borderRadius: '12px', backgroundColor: '#0f172a', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 8px 16px rgba(15,23,42,0.2)', transform: 'rotate(-5deg)' }}>1</div>
+                  </div>
+                  <div>
+                    <h4 style={{ color: '#0f172a', fontSize: '1.25rem', fontWeight: 800, marginBottom: '12px', letterSpacing: '-0.01em' }}>Target Identification</h4>
+                    <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.7, fontWeight: 400 }}>
+                      The system begins by using a programmable CRISPR complex to identify a specific RNA sequence that marks a diseased cell.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="glass-card-light" style={{ display: 'flex', gap: '24px', position: 'relative', zIndex: 1, padding: '32px', borderRadius: '24px', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.8)', boxShadow: '0 8px 32px rgba(0,0,0,0.03)' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
+                    <div style={{ width: '40px', height: '40px', borderRadius: '12px', backgroundColor: '#0f172a', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 8px 16px rgba(15,23,42,0.2)', transform: 'rotate(5deg)' }}>2</div>
+                  </div>
+                  <div>
+                    <h4 style={{ color: '#0f172a', fontSize: '1.25rem', fontWeight: 800, marginBottom: '12px', letterSpacing: '-0.01em' }}>Signal Amplification</h4>
+                    <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.7, fontWeight: 400 }}>
+                      Once that signal is detected, TRICK amplifies the response internally, generating a surge of activating molecules that ensures the system engages even when the target signal is faint.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="glass-card-light" style={{ display: 'flex', gap: '24px', position: 'relative', zIndex: 1, padding: '32px', borderRadius: '24px', background: 'rgba(255,255,255,0.8)', border: '1px solid rgba(212,107,26,0.3)', boxShadow: '0 16px 48px rgba(212,107,26,0.08)' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
+                    <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'linear-gradient(135deg, #d46b1a, #f0a040)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 12px 24px rgba(212,107,26,0.3)', transform: 'rotate(-5deg)' }}>3</div>
+                  </div>
+                  <div>
+                    <h4 style={{ color: '#d46b1a', fontSize: '1.25rem', fontWeight: 800, marginBottom: '12px', letterSpacing: '-0.01em' }}>Controlled Cell Death</h4>
+                    <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.7, fontWeight: 400 }}>
+                      That amplified signal switches on a cytotoxic nuclease, which introduces widespread genomic DNA damage that the cell cannot recover from, resulting in controlled cell death. Because the components are modular, the platform can be adapted to different biological contexts and therapeutic strategies. The result is a mechanism that combines precision sensing with reliable execution, enabling targeted elimination of cells defined by their RNA signatures.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            
+            {/* Image Side - Now Sticky so it stays visible while reading steps */}
+            <div className="reveal-scale" style={{ position: 'sticky', top: '120px' }}>
+              {/* Decorative framing elements */}
+              <div style={{ position: 'absolute', top: '-30px', left: '-30px', width: '120px', height: '120px', borderTop: '2px solid rgba(45,212,191,0.4)', borderLeft: '2px solid rgba(45,212,191,0.4)', borderRadius: '24px 0 0 0', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', bottom: '-30px', right: '-30px', width: '120px', height: '120px', borderBottom: '2px solid rgba(212,107,26,0.4)', borderRight: '2px solid rgba(212,107,26,0.4)', borderRadius: '0 0 24px 0', pointerEvents: 'none' }} />
+              
+              {/* Diffused Glow behind image */}
+              <div style={{ position: 'absolute', inset: '-20px', background: 'radial-gradient(circle, rgba(13,148,136,0.1) 0%, transparent 70%)', filter: 'blur(40px)', zIndex: 0 }} />
+
+              <div style={{ 
+                borderRadius: '32px', 
+                overflow: 'hidden', 
+                boxShadow: '0 32px 100px rgba(12, 26, 36, 0.2)', 
+                border: '1px solid rgba(255,255,255,0.8)',
+                background: '#fff',
+                position: 'relative',
+                zIndex: 2,
+                transform: 'perspective(1200px) rotateY(-4deg) rotateX(2deg) scale(1.02)',
+                transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                transformOrigin: 'center right'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1.05) translateY(-10px)';
+                e.currentTarget.style.boxShadow = '0 40px 120px rgba(12, 26, 36, 0.25)';
+                e.currentTarget.style.border = '1px solid rgba(212,107,26,0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'perspective(1200px) rotateY(-4deg) rotateX(2deg) scale(1.02)';
+                e.currentTarget.style.boxShadow = '0 32px 100px rgba(12, 26, 36, 0.2)';
+                e.currentTarget.style.border = '1px solid rgba(255,255,255,0.8)';
+              }}
+              >
+                <img src="/diagram2.png" alt="Action Mechanism Diagram" style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }} />
+              </div>
             </div>
           </div>
+          </div>
+          
+          <style>{`
+            @media (max-width: 1024px) {
+              .action-grid {
+                grid-template-columns: 1fr !important;
+                gap: 64px !important;
+              }
+              .reveal-scale > div:nth-child(3) {
+                transform: none !important;
+              }
+            }
+          `}</style>
         </div>
       </div>
 
@@ -288,8 +378,8 @@ export default function TheScience() {
           SECTION 7: WHERE PRECISION MEETS EXECUTION
           ═══════════════════════════════════════════ */}
       <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '32px', backgroundColor: '#fbfbf9' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.03, filter: 'invert(1)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 25%, transparent 75%, #fbfbf9 100%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.15, filter: 'invert(1) contrast(1.2)', mixBlendMode: 'multiply', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.4) 25%, rgba(251,251,249,0.4) 75%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
           <div className="reveal glass-card-light" style={{ maxWidth: '900px', margin: '0 auto', padding: '64px 56px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(212,107,26,0.6)' }}>
             <p style={{ color: '#d46b1a', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '24px' }}>
@@ -314,8 +404,8 @@ export default function TheScience() {
           INTRO: PRECISION ONCOLOGY HAS A TARGETING PROBLEM
           ═══════════════════════════════════════════ */}
       <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '64px', backgroundColor: '#fbfbf9' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center bottom', backgroundAttachment: 'fixed', opacity: 0.05, filter: 'invert(1)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 15%, transparent 85%, #fbfbf9 100%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center bottom', backgroundAttachment: 'fixed', opacity: 0.15, filter: 'invert(1) contrast(1.2)', mixBlendMode: 'multiply', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.4) 15%, rgba(251,251,249,0.4) 85%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
           <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
@@ -335,8 +425,8 @@ export default function TheScience() {
           TRICK IS THE NEXT EVOLUTION OF CRISPR PLATFORMS
           ═══════════════════════════════════════════ */}
       <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '128px', backgroundColor: '#fbfbf9' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.04, filter: 'invert(1)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 15%, transparent 85%, #fbfbf9 100%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.15, filter: 'invert(1) contrast(1.2)', mixBlendMode: 'multiply', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.4) 15%, rgba(251,251,249,0.4) 85%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
           <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
