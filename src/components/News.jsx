@@ -35,18 +35,18 @@ export default function News() {
   }, [])
 
   return (
-    <section id="news" ref={sectionRef} style={{ position: 'relative', paddingTop: '128px', paddingBottom: '128px', overflow: 'hidden' }}>
+    <section id="news" ref={sectionRef} style={{ position: 'relative', paddingTop: '128px', paddingBottom: '128px', overflow: 'hidden', backgroundColor: '#fbfbf9' }}>
       {/* Background glow */}
-      <div style={{ position: 'absolute', top: '20%', right: '0', width: '600px', height: '600px', background: 'rgba(240,160,64,0.02)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
+      <div style={{ position: 'absolute', top: '20%', right: '0', width: '600px', height: '600px', background: 'rgba(240,160,64,0.03)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
 
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
-        <div className="section-divider" style={{ marginBottom: '80px' }} />
+        <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
         <div className="reveal" style={{ maxWidth: '800px', margin: '0 auto 80px' }}>
-          <p style={{ color: '#f0a040', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
+          <p style={{ color: '#d46b1a', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
             News
           </p>
-          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.5rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em' }}>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.5rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em' }}>
             Latest from{' '}
             <span className="gradient-text-warm">Platypus Bio.</span>
           </h2>
@@ -60,7 +60,7 @@ export default function News() {
               href={item.link}
               target={item.link.startsWith('http') ? '_blank' : undefined}
               rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className="reveal glass-card hoverable"
+              className="reveal glass-card-light hoverable"
               style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -77,15 +77,15 @@ export default function News() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                borderBottom: '1px solid rgba(255,255,255,0.05)',
+                borderBottom: '1px solid rgba(0,0,0,0.05)',
                 position: 'relative',
                 overflow: 'hidden',
               }}>
-                <div style={{ position: 'absolute', inset: 0, background: `url(/abtract2.webp) center/cover`, opacity: 0.06, pointerEvents: 'none' }} />
+                <div style={{ position: 'absolute', inset: 0, background: `url(/abtract2.webp) center/cover`, filter: 'invert(1)', opacity: 0.04, pointerEvents: 'none' }} />
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style={{ opacity: 0.2, position: 'relative', zIndex: 1 }}>
-                  <rect x="4" y="8" width="40" height="32" rx="4" stroke="#7e99a8" strokeWidth="1.5"/>
-                  <path d="M4 32l12-10 8 6 12-10 8 6" stroke="#7e99a8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <circle cx="16" cy="18" r="4" stroke="#7e99a8" strokeWidth="1.5"/>
+                  <rect x="4" y="8" width="40" height="32" rx="4" stroke="#475569" strokeWidth="1.5"/>
+                  <path d="M4 32l12-10 8 6 12-10 8 6" stroke="#475569" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="16" cy="18" r="4" stroke="#475569" strokeWidth="1.5"/>
                 </svg>
               </div>
 
@@ -96,12 +96,12 @@ export default function News() {
                 </span>
 
                 {/* Headline */}
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#ffffff', lineHeight: 1.35, letterSpacing: '-0.01em', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', lineHeight: 1.35, letterSpacing: '-0.01em', marginBottom: '12px' }}>
                   {item.headline}
                 </h3>
 
                 {/* Description */}
-                <p style={{ color: '#7e99a8', fontSize: '0.9375rem', lineHeight: 1.65, marginBottom: '24px', flex: 1 }}>
+                <p style={{ color: '#475569', fontSize: '0.9375rem', lineHeight: 1.65, marginBottom: '24px', flex: 1, fontWeight: 300 }}>
                   {item.description}
                 </p>
 

@@ -88,45 +88,46 @@ export default function TheScience() {
       {/* ═══════════════════════════════════════════
           SECTION 2: A FRESH APPROACH TO CRISPR
           ═══════════════════════════════════════════ */}
-      <div style={{ position: 'relative', paddingTop: '128px', paddingBottom: '128px' }}>
+      <div style={{ position: 'relative', paddingTop: '128px', paddingBottom: '128px', backgroundColor: '#fbfbf9' }}>
         {/* Background glow */}
-        <div className="ambient-glow" style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '800px', height: '800px', background: 'rgba(212,107,26,0.025)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
+        <div className="ambient-glow" style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '800px', height: '800px', background: 'rgba(212,107,26,0.04)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
         {/* Parallax abstract background */}
         <div style={{
           position: 'absolute', inset: 0, zIndex: 0,
           backgroundImage: 'url(/abtract2.webp)',
           backgroundSize: 'cover', backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
-          opacity: 0.1,
+          opacity: 0.05,
+          filter: 'invert(1)',
           pointerEvents: 'none',
         }} />
         <div style={{
           position: 'absolute', inset: 0, zIndex: 1,
-          background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 20%, transparent 80%, var(--color-midnight) 100%)',
+          background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 20%, transparent 80%, #fbfbf9 100%)',
           pointerEvents: 'none',
         }} />
 
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
-          <div className="section-divider" style={{ marginBottom: '80px' }} />
+          <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
             <p style={{ color: '#d46b1a', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
               The Science
             </p>
-            <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.5rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '40px' }}>
-              A Fresh Approach to{' '}
-              <span className="gradient-text-warm">CRISPR</span>
+            <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.5rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '40px' }}>
+              <span className="gradient-text">A Fresh Approach</span> to{' '}
+              CRISPR
             </h2>
           </div>
 
           <div className="reveal" style={{ maxWidth: '780px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '28px' }}>
-            <p style={{ color: '#b8cdd6', fontSize: '1.0625rem', lineHeight: 1.85 }}>
+            <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
               At Platypus Bio, we're building TRICK (Trigger RNA Induced Cell Killing), a programmable RNA-targeted CRISPR platform designed to find the molecular signals that define diseased cells and trigger irreversible genomic DNA damage and ultimately cell death, only where it's needed.
             </p>
-            <p style={{ color: '#7e99a8', fontSize: '1.0625rem', lineHeight: 1.85 }}>
+            <p style={{ color: '#64748b', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
               Instead of relying on proteins on the cell surface, TRICK looks directly inside the cell, reading RNA to identify diseased cells, all while leaving healthy cells unharmed. This shift in targeting opens access to the full transcriptome, including intracellular, low-abundance, and non-coding transcripts that have traditionally been out of reach for targeted therapies.
             </p>
-            <p style={{ color: '#7e99a8', fontSize: '1.0625rem', lineHeight: 1.85 }}>
+            <p style={{ color: '#64748b', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
               TRICK turns RNA signatures into precise instructions for eliminating disease-driving cells, unlocking a fundamentally new way to target and treat complex diseases at scale.
             </p>
           </div>
@@ -136,7 +137,14 @@ export default function TheScience() {
       {/* ═══════════════════════════════════════════
           SECTION 3: WHY TRICK IS A GAME-CHANGER
           ═══════════════════════════════════════════ */}
-      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '128px' }}>
+      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '128px', backgroundColor: 'var(--color-midnight)' }}>
+        {/* Solid Swoop Edge from Light to Dark */}
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none -translate-y-[99%]">
+          <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="block w-full h-[60px] md:h-[120px]">
+            <path d="M0,100 C480,0 960,0 1440,100 Z" fill="var(--color-midnight)" />
+          </svg>
+        </div>
+        
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.06, pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 20%, transparent 80%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
         <div className="ambient-glow" style={{ position: 'absolute', top: '30%', right: '0', width: '600px', height: '600px', background: 'rgba(45,212,191,0.02)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
@@ -144,8 +152,7 @@ export default function TheScience() {
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto 80px', textAlign: 'center' }}>
             <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '16px' }}>
-              Why TRICK Is a{' '}
-              <span className="gradient-text">Game-Changer</span>
+              Why <span className="gradient-text">TRICK</span> Is a Game-Changer
             </h2>
           </div>
 
@@ -187,18 +194,25 @@ export default function TheScience() {
       {/* ═══════════════════════════════════════════
           SECTION 4: BROAD BY DESIGN, FOCUSED BY STRATEGY
           ═══════════════════════════════════════════ */}
-      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '128px' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.07, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 25%, transparent 75%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '128px', backgroundColor: '#fbfbf9' }}>
+        {/* Solid Swoop Edge from Dark to Light */}
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none -translate-y-[99%]">
+          <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="block w-full h-[60px] md:h-[120px]">
+            <path d="M0,100 C480,0 960,0 1440,100 Z" fill="#fbfbf9" />
+          </svg>
+        </div>
+        
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.04, filter: 'invert(1)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 25%, transparent 75%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
-          <div className="section-divider" style={{ marginBottom: '80px' }} />
+          <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
-            <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '40px' }}>
+            <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '40px' }}>
               Broad by Design,{' '}
               <span className="gradient-text-warm">Focused by Strategy</span>
             </h2>
-            <p style={{ color: '#7e99a8', fontSize: '1.125rem', lineHeight: 1.85, maxWidth: '780px', margin: '0 auto' }}>
+            <p style={{ color: '#475569', fontSize: '1.125rem', lineHeight: 1.85, maxWidth: '780px', margin: '0 auto', fontWeight: 300 }}>
               From ultra-deep biodiscovery and proprietary sequence data to programmable genetic tools and precision diagnostics, Platypus Bio has assembled the core capabilities needed to innovate across modern biotechnology. Yet our mission is centered on therapeutics—using this integrated engine to develop targeted medicines that can address complex disease with precision. The result is a platform that scales across applications, but ultimately converges on what matters most: delivering new treatments to patients.
             </p>
           </div>
@@ -208,25 +222,25 @@ export default function TheScience() {
       {/* ═══════════════════════════════════════════
           SECTION 5: THE CHALLENGE
           ═══════════════════════════════════════════ */}
-      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '32px' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center bottom', backgroundAttachment: 'fixed', opacity: 0.06, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 20%, transparent 80%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '32px', backgroundColor: '#fbfbf9' }}>
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center bottom', backgroundAttachment: 'fixed', opacity: 0.04, filter: 'invert(1)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 20%, transparent 80%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
-          <div className="reveal glass-card" style={{ maxWidth: '900px', margin: '0 auto', padding: '64px 56px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(240,160,64,0.3)' }}>
-            <p style={{ color: '#f0a040', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '24px' }}>
+          <div className="reveal glass-card-light" style={{ maxWidth: '900px', margin: '0 auto', padding: '64px 56px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(240,160,64,0.6)' }}>
+            <p style={{ color: '#d46b1a', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '24px' }}>
               The Challenge
             </p>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '32px' }}>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '32px' }}>
               The Challenge Faced by Current Precision Cancer Therapies
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <p style={{ color: '#7e99a8', fontSize: '1.0625rem', lineHeight: 1.85 }}>
-                The current generation of precision oncology therapies has proven that targeted cell killing works—but it has also revealed the limits of protein-based targeting. Most approved modalities depend on identifying cell surface antigens that are highly expressed in tumors and minimally present in normal tissue, <span style={{ color: '#b8cdd6', padding: '2px 6px', borderRadius: '4px', backgroundColor: 'rgba(45,212,191,0.1)', borderBottom: '1px solid rgba(45,212,191,0.5)' }}>a combination that is surprisingly rare</span>.
+              <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
+                The current generation of precision oncology therapies has proven that targeted cell killing works—but it has also revealed the limits of protein-based targeting. Most approved modalities depend on identifying cell surface antigens that are highly expressed in tumors and minimally present in normal tissue, <span style={{ color: '#0f172a', padding: '2px 6px', borderRadius: '4px', backgroundColor: 'rgba(45,212,191,0.2)', borderBottom: '1px solid rgba(45,212,191,0.8)' }}>a combination that is surprisingly rare</span>.
               </p>
-              <p style={{ color: '#7e99a8', fontSize: '1.0625rem', lineHeight: 1.85 }}>
+              <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
                 This constraint restricts pipeline expansion, complicates safety, and leaves tumors room to escape through antigen loss or biological variability. The result is a therapeutic landscape where innovation is often bounded by target availability rather than scientific ambition.
               </p>
-              <p style={{ color: '#7e99a8', fontSize: '1.0625rem', lineHeight: 1.85 }}>
+              <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
                 Platypus Bio is building a new targeting paradigm designed to break that constraint, using RNA signatures to enable precise, programmable elimination of disease-driving cells across a much broader range of indications.
               </p>
             </div>
@@ -242,22 +256,22 @@ export default function TheScience() {
       {/* ═══════════════════════════════════════════
           SECTION 6: TRICK TURNS MOLECULAR RECOGNITION INTO ACTION
           ═══════════════════════════════════════════ */}
-      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '32px' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center top', backgroundAttachment: 'fixed', opacity: 0.07, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 20%, transparent 80%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '32px', backgroundColor: '#fbfbf9' }}>
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center top', backgroundAttachment: 'fixed', opacity: 0.04, filter: 'invert(1)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 20%, transparent 80%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
-          <div className="reveal glass-card" style={{ maxWidth: '900px', margin: '0 auto', padding: '64px 56px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(45,212,191,0.3)' }}>
-            <p style={{ color: '#2dd4bf', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '24px' }}>
+          <div className="reveal glass-card-light" style={{ maxWidth: '900px', margin: '0 auto', padding: '64px 56px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(45,212,191,0.6)' }}>
+            <p style={{ color: '#0d9488', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '24px' }}>
               Action Mechanism
             </p>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '32px' }}>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '32px' }}>
               TRICK turns molecular recognition into action
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <p style={{ color: '#7e99a8', fontSize: '1.0625rem', lineHeight: 1.85 }}>
+              <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
                 The system begins by using a programmable CRISPR complex to identify a specific RNA sequence that marks a diseased cell. Once that signal is detected, TRICK amplifies the response internally, generating a surge of activating molecules that ensures the system engages even when the target signal is faint.
               </p>
-              <p style={{ color: '#7e99a8', fontSize: '1.0625rem', lineHeight: 1.85 }}>
+              <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
                 That amplified signal switches on a cytotoxic nuclease, which introduces widespread genomic DNA damage that the cell cannot recover from, resulting in controlled cell death. Because the components are modular, the platform can be adapted to different biological contexts and therapeutic strategies. The result is a mechanism that combines precision sensing with reliable execution, enabling targeted elimination of cells defined by their RNA signatures.
               </p>
             </div>
@@ -273,22 +287,22 @@ export default function TheScience() {
       {/* ═══════════════════════════════════════════
           SECTION 7: WHERE PRECISION MEETS EXECUTION
           ═══════════════════════════════════════════ */}
-      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '32px' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.05, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 25%, transparent 75%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '32px', backgroundColor: '#fbfbf9' }}>
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.03, filter: 'invert(1)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 25%, transparent 75%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
-          <div className="reveal glass-card" style={{ maxWidth: '900px', margin: '0 auto', padding: '64px 56px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(212,107,26,0.3)' }}>
+          <div className="reveal glass-card-light" style={{ maxWidth: '900px', margin: '0 auto', padding: '64px 56px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(212,107,26,0.6)' }}>
             <p style={{ color: '#d46b1a', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '24px' }}>
               Pipeline Scope
             </p>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '32px' }}>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '32px' }}>
               Where precision meets execution
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <p style={{ color: '#7e99a8', fontSize: '1.0625rem', lineHeight: 1.85 }}>
+              <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
                 The TRICK pipeline is designed to showcase the breadth and repeatability of our platform across multiple cancer types. By anchoring each program to disease-defining RNA signatures, we can address targets that are inaccessible to conventional therapies while maintaining a consistent development framework. Our lead indications, AML and HCC, represent clinically validated settings where precision cell elimination can deliver meaningful impact, but they also serve a broader purpose: demonstrating that a single programmable technology can scale across heterogeneous diseases.
               </p>
-              <p style={{ color: '#b8cdd6', fontSize: '1.0625rem', lineHeight: 1.85 }}>
+              <p style={{ color: '#334155', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 400 }}>
                 As our target discovery engine expands, the pipeline is designed to grow in parallel, enabling efficient entry into new indications without reinventing the underlying therapeutic architecture.
               </p>
             </div>
@@ -299,18 +313,18 @@ export default function TheScience() {
       {/* ═══════════════════════════════════════════
           INTRO: PRECISION ONCOLOGY HAS A TARGETING PROBLEM
           ═══════════════════════════════════════════ */}
-      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '64px' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center bottom', backgroundAttachment: 'fixed', opacity: 0.08, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 15%, transparent 85%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '64px', backgroundColor: '#fbfbf9' }}>
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center bottom', backgroundAttachment: 'fixed', opacity: 0.05, filter: 'invert(1)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 15%, transparent 85%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
-          <div className="section-divider" style={{ marginBottom: '80px' }} />
+          <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
-            <p style={{ color: '#b8cdd6', fontSize: 'clamp(1.125rem, 2vw, 1.375rem)', lineHeight: 1.85, fontWeight: 400, maxWidth: '780px', margin: '0 auto' }}>
+            <p style={{ color: '#334155', fontSize: 'clamp(1.125rem, 2vw, 1.375rem)', lineHeight: 1.85, fontWeight: 400, maxWidth: '780px', margin: '0 auto' }}>
               Precision oncology has a targeting problem. Every approved therapy — ADCs, CAR-T, BiTEs, monoclonal antibodies — is chasing the same thing: proteins on the surface of cancer cells. When that target disappears, the cancer wins.
             </p>
             <div style={{ height: '48px' }} />
-            <p style={{ color: '#7e99a8', fontSize: '1.0625rem', lineHeight: 1.85, maxWidth: '780px', margin: '0 auto' }}>
+            <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300, maxWidth: '780px', margin: '0 auto' }}>
               TRICK (Trigger RNA-Induced Cell Killing) is a fresh approach to CRISPR — and the first fully programmable platform capable of targeting any RNA inside a cancer cell. Coding or non-coding. Low-expression or intracellular. TRICK converts that RNA signal into irreparable genomic DNA damage and selective cell death. Programmable, precise, and applicable to all RNA therapeutics. We have unlocked the full transcriptome as a therapeutic target space.
             </p>
           </div>
@@ -320,17 +334,17 @@ export default function TheScience() {
       {/* ═══════════════════════════════════════════
           TRICK IS THE NEXT EVOLUTION OF CRISPR PLATFORMS
           ═══════════════════════════════════════════ */}
-      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '128px' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.07, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 15%, transparent 85%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '128px', backgroundColor: '#fbfbf9' }}>
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.04, filter: 'invert(1)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 15%, transparent 85%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
-          <div className="section-divider" style={{ marginBottom: '80px' }} />
+          <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
             <p style={{ color: '#d46b1a', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
               The Science
             </p>
-            <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '48px' }}>
+            <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '48px' }}>
               TRICK is the Next Evolution of{' '}
               <span className="gradient-text-warm">CRISPR Platforms</span>
             </h2>
@@ -340,10 +354,10 @@ export default function TheScience() {
           <div className="reveal crispr-comparison-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '28px', maxWidth: '1000px', margin: '0 auto 64px' }}>
 
             {/* ─── CRISPR Cas9 ─── */}
-            <div className="glass-card" style={{ padding: '36px 24px 32px', textAlign: 'center', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(126,153,168,0.3)' }}>
+            <div className="glass-card-light" style={{ padding: '36px 24px 32px', textAlign: 'center', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(126,153,168,0.6)' }}>
               <div style={{ position: 'absolute', top: '-20%', left: '50%', transform: 'translateX(-50%)', width: '200px', height: '150px', background: 'radial-gradient(circle, rgba(126,153,168,0.06) 0%, transparent 70%)', filter: 'blur(30px)', pointerEvents: 'none' }} />
-              <h4 style={{ color: '#ffffff', fontSize: '1.125rem', fontWeight: 700, letterSpacing: '0.02em', marginBottom: '6px', position: 'relative', zIndex: 1 }}>CRISPR Cas9</h4>
-              <p style={{ color: '#2dd4bf', fontSize: '0.8125rem', fontWeight: 500, marginBottom: '28px', position: 'relative', zIndex: 1 }}>Targets DNA with single cleavage</p>
+              <h4 style={{ color: '#0f172a', fontSize: '1.125rem', fontWeight: 700, letterSpacing: '0.02em', marginBottom: '6px', position: 'relative', zIndex: 1 }}>CRISPR Cas9</h4>
+              <p style={{ color: '#0d9488', fontSize: '0.8125rem', fontWeight: 500, marginBottom: '28px', position: 'relative', zIndex: 1 }}>Targets DNA with single cleavage</p>
 
               <div style={{ position: 'relative', zIndex: 1, display: 'flex', justifyContent: 'center' }}>
                 <svg width="100%" height="auto" viewBox="0 0 280 200" fill="none" style={{ maxWidth: '280px' }}>
@@ -417,10 +431,10 @@ export default function TheScience() {
             </div>
 
             {/* ─── CRISPR Cas3 ─── */}
-            <div className="glass-card" style={{ padding: '36px 24px 32px', textAlign: 'center', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(240,160,64,0.3)' }}>
+            <div className="glass-card-light" style={{ padding: '36px 24px 32px', textAlign: 'center', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(240,160,64,0.6)' }}>
               <div style={{ position: 'absolute', top: '-20%', left: '50%', transform: 'translateX(-50%)', width: '200px', height: '150px', background: 'radial-gradient(circle, rgba(240,160,64,0.06) 0%, transparent 70%)', filter: 'blur(30px)', pointerEvents: 'none' }} />
-              <h4 style={{ color: '#ffffff', fontSize: '1.125rem', fontWeight: 700, letterSpacing: '0.02em', marginBottom: '6px', position: 'relative', zIndex: 1 }}>CRISPR Cas3</h4>
-              <p style={{ color: '#2dd4bf', fontSize: '0.8125rem', fontWeight: 500, marginBottom: '28px', position: 'relative', zIndex: 1 }}>Targets DNA with processive cleavage of DNA</p>
+              <h4 style={{ color: '#0f172a', fontSize: '1.125rem', fontWeight: 700, letterSpacing: '0.02em', marginBottom: '6px', position: 'relative', zIndex: 1 }}>CRISPR Cas3</h4>
+              <p style={{ color: '#0d9488', fontSize: '0.8125rem', fontWeight: 500, marginBottom: '28px', position: 'relative', zIndex: 1 }}>Targets DNA with processive cleavage of DNA</p>
 
               <div style={{ position: 'relative', zIndex: 1, display: 'flex', justifyContent: 'center' }}>
                 <svg width="240" height="160" viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -486,10 +500,10 @@ export default function TheScience() {
             </div>
 
             {/* ─── CRISPR Cas13 ─── */}
-            <div className="glass-card" style={{ padding: '36px 24px 32px', textAlign: 'center', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(45,212,191,0.3)' }}>
+            <div className="glass-card-light" style={{ padding: '36px 24px 32px', textAlign: 'center', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(45,212,191,0.6)' }}>
               <div style={{ position: 'absolute', top: '-20%', left: '50%', transform: 'translateX(-50%)', width: '200px', height: '150px', background: 'radial-gradient(circle, rgba(45,212,191,0.06) 0%, transparent 70%)', filter: 'blur(30px)', pointerEvents: 'none' }} />
-              <h4 style={{ color: '#ffffff', fontSize: '1.125rem', fontWeight: 700, letterSpacing: '0.02em', marginBottom: '6px', position: 'relative', zIndex: 1 }}>CRISPR Cas13</h4>
-              <p style={{ color: '#2dd4bf', fontSize: '0.8125rem', fontWeight: 500, marginBottom: '28px', position: 'relative', zIndex: 1 }}>Targets RNA with collateral cleavage of RNA</p>
+              <h4 style={{ color: '#0f172a', fontSize: '1.125rem', fontWeight: 700, letterSpacing: '0.02em', marginBottom: '6px', position: 'relative', zIndex: 1 }}>CRISPR Cas13</h4>
+              <p style={{ color: '#0d9488', fontSize: '0.8125rem', fontWeight: 500, marginBottom: '28px', position: 'relative', zIndex: 1 }}>Targets RNA with collateral cleavage of RNA</p>
 
               <div style={{ position: 'relative', zIndex: 1, display: 'flex', justifyContent: 'center' }}>
                 <svg width="240" height="160" viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -561,24 +575,25 @@ export default function TheScience() {
 
           {/* Body text */}
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
-            <p style={{ color: '#7e99a8', fontSize: '1.0625rem', lineHeight: 1.85, maxWidth: '780px', margin: '0 auto 48px' }}>
+            <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, maxWidth: '780px', margin: '0 auto 48px', fontWeight: 300 }}>
               TRICK accesses the full transcriptome — including non-coding RNAs, low-expression targets, and intracellular sequences. A target space that remains completely inaccessible to every approved precision therapy today. This is not an incremental improvement on existing CRISPR technologies. It is a new class of medicine.
             </p>
           </div>
 
           {/* How TRICK Works — Diagram Placeholder */}
           <div className="reveal" style={{ maxWidth: '900px', margin: '0 auto' }}>
-            <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#ffffff', textAlign: 'center', marginBottom: '32px', letterSpacing: '-0.02em' }}>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', textAlign: 'center', marginBottom: '32px', letterSpacing: '-0.02em' }}>
               How TRICK Works
             </h3>
             <div style={{
-              background: 'rgba(12, 26, 36, 0.5)',
-              border: '1px solid rgba(255,255,255,0.07)',
+              background: 'rgba(255, 255, 255, 0.7)',
+              border: '1px solid rgba(0,0,0,0.08)',
               borderRadius: '20px',
               padding: '80px 48px',
               textAlign: 'center',
               position: 'relative',
               overflow: 'hidden',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.04)',
             }}>
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(212,107,26,0.03) 0%, transparent 100%)', pointerEvents: 'none' }} />
               <div style={{ position: 'relative', zIndex: 1 }}>
@@ -588,7 +603,7 @@ export default function TheScience() {
                   <circle cx="40" cy="40" r="12" stroke="#f0a040" strokeWidth="1"/>
                   <circle cx="40" cy="40" r="4" fill="#d46b1a" opacity="0.6"/>
                 </svg>
-                <p style={{ color: '#3a5a6c', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500 }}>
+                <p style={{ color: '#64748b', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500 }}>
                   Detailed diagram — illustration in development
                 </p>
               </div>

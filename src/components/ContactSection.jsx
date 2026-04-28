@@ -38,10 +38,10 @@ export default function ContactSection() {
     width: '100%',
     boxSizing: 'border-box',
     padding: '16px 18px',
-    background: 'rgba(18, 34, 48, 0.5)',
-    border: '1px solid rgba(255,255,255,0.06)',
+    background: 'rgba(0, 0, 0, 0.02)',
+    border: '1px solid rgba(0,0,0,0.1)',
     borderRadius: '12px',
-    color: '#ffffff',
+    color: '#0f172a',
     fontSize: '0.9375rem',
     outline: 'none',
     transition: 'all 0.3s',
@@ -50,17 +50,17 @@ export default function ContactSection() {
 
   const handleFocus = (e) => {
     e.target.style.borderColor = 'rgba(212,107,26,0.4)'
-    e.target.style.background = 'rgba(18, 34, 48, 0.8)'
+    e.target.style.background = 'rgba(212,107,26,0.03)'
     e.target.style.boxShadow = '0 0 20px rgba(212,107,26,0.06)'
   }
   const handleBlur = (e) => {
-    e.target.style.borderColor = 'rgba(255,255,255,0.06)'
-    e.target.style.background = 'rgba(18, 34, 48, 0.5)'
+    e.target.style.borderColor = 'rgba(0,0,0,0.1)'
+    e.target.style.background = 'rgba(0, 0, 0, 0.02)'
     e.target.style.boxShadow = 'none'
   }
 
   return (
-    <section id="contact" ref={sectionRef} style={{ position: 'relative', paddingTop: '128px', paddingBottom: '160px', overflow: 'hidden' }}>
+    <section id="contact" ref={sectionRef} style={{ position: 'relative', paddingTop: '128px', paddingBottom: '160px', overflow: 'hidden', backgroundColor: '#fbfbf9' }}>
       {/* Background glow */}
       <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '900px', height: '500px', background: 'rgba(212,107,26,0.025)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }} />
 
@@ -74,16 +74,16 @@ export default function ContactSection() {
             <p style={{ color: '#d46b1a', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '24px' }}>
               Join the Frontier
             </p>
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '32px' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '32px' }}>
               Get in{' '}
               <span className="gradient-text-warm">Touch</span>
             </h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '48px' }}>
-              <p style={{ color: '#7e99a8', fontSize: '1.0625rem', lineHeight: 1.8 }}>
+              <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.8, fontWeight: 300 }}>
                 We are a pre-clinical biotechnology company developing TRICK, a first-in-class programmable CRISPR platform technology that kills cells based upon their transcriptome. The TRICK platform forms the intersection of precision and programmability.
               </p>
-              <p style={{ color: '#7e99a8', fontSize: '1.0625rem', lineHeight: 1.8 }}>
+              <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.8, fontWeight: 300 }}>
                 If you are a potential investor, pharma partner, or scientific collaborator, we want to hear from you.
               </p>
             </div>
@@ -91,44 +91,44 @@ export default function ContactSection() {
             {/* Contact details */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <div>
-                <h4 style={{ color: '#ffffff', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>Email</h4>
-                <a href="mailto:info@platypusbio.com" className="hoverable" style={{ color: '#2dd4bf', textDecoration: 'none', fontSize: '1rem', transition: 'color 0.3s' }}
-                  onMouseEnter={e => e.target.style.color = '#fff'}
-                  onMouseLeave={e => e.target.style.color = '#2dd4bf'}
+                <h4 style={{ color: '#0f172a', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>Email</h4>
+                <a href="mailto:info@platypusbio.com" className="hoverable" style={{ color: '#d46b1a', textDecoration: 'none', fontSize: '1rem', transition: 'color 0.3s' }}
+                  onMouseEnter={e => e.target.style.color = '#f0a040'}
+                  onMouseLeave={e => e.target.style.color = '#d46b1a'}
                 >
                   info@platypusbio.com
                 </a>
               </div>
               <div>
-                <h4 style={{ color: '#ffffff', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>Location</h4>
-                <p style={{ color: '#7e99a8', fontSize: '1rem' }}>Sydney, Australia</p>
+                <h4 style={{ color: '#0f172a', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>Location</h4>
+                <p style={{ color: '#475569', fontSize: '1rem', fontWeight: 300 }}>Sydney, Australia</p>
               </div>
             </div>
           </div>
 
           {/* Right: Form */}
-          <div className="reveal glass-card" style={{ padding: '48px', transitionDelay: '0.15s' }}>
+          <div className="reveal glass-card-light" style={{ padding: '48px', transitionDelay: '0.15s' }}>
             {submitted ? (
               <div style={{ textAlign: 'center', padding: '64px 0' }}>
                 <div style={{
                   width: '64px', height: '64px', borderRadius: '50%',
-                  background: 'rgba(45, 212, 191, 0.1)',
-                  border: '1px solid rgba(45, 212, 191, 0.3)',
+                  background: 'rgba(212, 107, 26, 0.1)',
+                  border: '1px solid rgba(212, 107, 26, 0.3)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   margin: '0 auto 24px',
                 }}>
-                  <svg style={{ width: '32px', height: '32px', color: '#2dd4bf' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <svg style={{ width: '32px', height: '32px', color: '#d46b1a' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h3 style={{ color: '#ffffff', fontSize: '1.5rem', fontWeight: 600, marginBottom: '16px' }}>Message Received</h3>
-                <p style={{ color: '#7e99a8', fontSize: '1rem' }}>Thank you for reaching out. We'll be in touch shortly.</p>
+                <h3 style={{ color: '#0f172a', fontSize: '1.5rem', fontWeight: 600, marginBottom: '16px' }}>Message Received</h3>
+                <p style={{ color: '#475569', fontSize: '1rem' }}>Thank you for reaching out. We'll be in touch shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 {/* Name */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <label htmlFor="contact-name" style={{ color: '#7e99a8', fontSize: '0.8125rem', fontWeight: 500 }}>Name *</label>
+                  <label htmlFor="contact-name" style={{ color: '#475569', fontSize: '0.8125rem', fontWeight: 600 }}>Name *</label>
                   <input
                     id="contact-name" type="text" required
                     value={name} onChange={e => setName(e.target.value)}
@@ -139,7 +139,7 @@ export default function ContactSection() {
 
                 {/* Organization */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <label htmlFor="contact-org" style={{ color: '#7e99a8', fontSize: '0.8125rem', fontWeight: 500 }}>Organization</label>
+                  <label htmlFor="contact-org" style={{ color: '#475569', fontSize: '0.8125rem', fontWeight: 600 }}>Organization</label>
                   <input
                     id="contact-org" type="text"
                     value={organization} onChange={e => setOrganization(e.target.value)}
@@ -150,7 +150,7 @@ export default function ContactSection() {
 
                 {/* Email */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <label htmlFor="contact-email" style={{ color: '#7e99a8', fontSize: '0.8125rem', fontWeight: 500 }}>Email *</label>
+                  <label htmlFor="contact-email" style={{ color: '#475569', fontSize: '0.8125rem', fontWeight: 600 }}>Email *</label>
                   <input
                     id="contact-email" type="email" required
                     value={email} onChange={e => setEmail(e.target.value)}
@@ -161,7 +161,7 @@ export default function ContactSection() {
 
                 {/* Message */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <label htmlFor="contact-message" style={{ color: '#7e99a8', fontSize: '0.8125rem', fontWeight: 500 }}>Message</label>
+                  <label htmlFor="contact-message" style={{ color: '#475569', fontSize: '0.8125rem', fontWeight: 600 }}>Message</label>
                   <textarea
                     id="contact-message" rows="5"
                     value={message} onChange={e => setMessage(e.target.value)}

@@ -24,32 +24,22 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Logo and link colors based on surface and scroll
-  const isLightNavSurface = !pastHero
+  // Use light theme for the navbar everywhere since the site is mostly light
+  const isLightNavSurface = true
 
   const logoFilter = isLightNavSurface
     ? 'brightness(0) opacity(0.85)'
     : 'brightness(0) invert(1) opacity(0.95)'
 
-  const linkClass = isLightNavSurface
-    ? 'text-slate-500 hover:text-slate-900'
-    : 'text-[#8daabf] hover:text-white'
+  const linkClass = 'text-slate-500 hover:text-slate-900'
 
-  const activePillBg = isLightNavSurface
-    ? 'bg-white/70 backdrop-blur-[32px] border border-slate-200/60 shadow-[0_12px_32px_rgba(0,0,0,0.06)]'
-    : 'bg-[rgba(12,26,36,0.5)] backdrop-blur-[32px] border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.3)]'
+  const activePillBg = 'bg-white/70 backdrop-blur-[32px] border border-slate-200/60 shadow-[0_12px_32px_rgba(0,0,0,0.06)]'
 
-  const mobileBtnClass = isLightNavSurface
-    ? 'bg-white/90 border border-slate-200 text-slate-800'
-    : 'bg-[rgba(12,26,36,0.8)] border border-[rgba(255,255,255,0.1)] text-white'
+  const mobileBtnClass = 'bg-white/90 border border-slate-200 text-slate-800'
 
-  const mobileSheetClass = isLightNavSurface
-    ? 'bg-white/95 border-b border-slate-200'
-    : 'bg-[rgba(12,26,36,0.98)] border-b border-[rgba(255,255,255,0.05)]'
+  const mobileSheetClass = 'bg-white/95 border-b border-slate-200'
 
-  const mobileLinkClass = isLightNavSurface
-    ? 'text-slate-600 hover:text-slate-900'
-    : 'text-[#7e99a8] hover:text-white'
+  const mobileLinkClass = 'text-slate-600 hover:text-slate-900'
 
   const handleNavClick = (e, hash) => {
     e.preventDefault()
@@ -64,12 +54,12 @@ export default function Navbar() {
   return (
     <nav
       id="navbar"
-      className="fixed top-[24px] left-1/2 -translate-x-1/2 w-[90%] max-w-[900px] z-[100] pointer-events-none flex justify-between lg:justify-center items-center"
+      className="fixed top-[24px] left-1/2 -translate-x-1/2 w-[94%] max-w-[1100px] z-[100] pointer-events-none flex justify-between lg:justify-center items-center"
     >
       {/* Universal Floating Pill Container */}
       <div 
         className={`pointer-events-auto flex items-center justify-between lg:justify-center w-full lg:w-auto transition-all duration-700 ease-out-expo rounded-full ${
-          scrolled ? `${activePillBg} px-[16px] lg:px-[24px] py-[12px] lg:gap-[40px]` : 'bg-transparent px-0 py-0 gap-[32px]'
+          scrolled ? `${activePillBg} px-[24px] lg:px-[40px] py-[12px] lg:gap-[32px]` : 'bg-transparent px-0 py-0 gap-[24px] lg:gap-[40px]'
         }`}
       >
         {/* Left: Logo */}
@@ -93,7 +83,7 @@ export default function Navbar() {
               key={link.to}
               href={link.to}
               onClick={(e) => handleNavClick(e, link.to)}
-              className={`hoverable text-[0.8125rem] font-semibold tracking-[0.05em] no-underline uppercase transition-colors duration-300 ${linkClass}`}
+              className={`hoverable text-[0.8125rem] font-semibold tracking-[0.05em] no-underline uppercase transition-colors duration-300 whitespace-nowrap ${linkClass}`}
             >
               {link.label}
             </a>

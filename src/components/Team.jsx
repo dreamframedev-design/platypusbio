@@ -63,10 +63,10 @@ export default function Team() {
 
       <div className="absolute top-[40%] right-[10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(13,148,136,0.06)_0%,transparent_70%)] blur-[100px] pointer-events-none z-0" />
 
-      {/* Subtle Swoop Transition from previous dark section */}
+      {/* Swooping Solid Divider Line */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="block w-full h-[40px] md:h-[70px]">
-          <path d="M0,0 C480,100 960,100 1440,0 L1440,0 L0,0 Z" fill="var(--color-midnight)"></path>
+          <path d="M0,0 C480,100 960,100 1440,0" fill="none" stroke="rgba(212,107,26,0.3)" strokeWidth="2"></path>
         </svg>
       </div>
 

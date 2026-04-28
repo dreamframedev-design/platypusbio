@@ -41,37 +41,38 @@ export default function Pipeline() {
   }, [])
 
   return (
-    <section id="pipeline" ref={sectionRef} style={{ position: 'relative', paddingTop: '128px', paddingBottom: '160px', overflow: 'hidden' }}>
+    <section id="pipeline" ref={sectionRef} style={{ position: 'relative', paddingTop: '128px', paddingBottom: '160px', overflow: 'hidden', backgroundColor: '#fbfbf9' }}>
       {/* Background */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 0,
         backgroundImage: 'url(/abstract%20background.webp)',
         backgroundSize: 'cover', backgroundPosition: 'center bottom',
         backgroundAttachment: 'fixed',
-        opacity: 0.08,
+        opacity: 0.05,
+        filter: 'invert(1)',
         pointerEvents: 'none',
       }} />
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 25%, transparent 75%, var(--color-midnight) 100%)',
+        background: 'linear-gradient(to bottom, #fbfbf9 0%, transparent 25%, transparent 75%, #fbfbf9 100%)',
         pointerEvents: 'none',
       }} />
-      <div style={{ position: 'absolute', top: '25%', right: 0, width: '500px', height: '500px', background: 'rgba(45,212,191,0.02)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 1 }} />
-      <div style={{ position: 'absolute', bottom: '15%', left: 0, width: '600px', height: '600px', background: 'rgba(212,107,26,0.02)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 1 }} />
+      <div style={{ position: 'absolute', top: '25%', right: 0, width: '500px', height: '500px', background: 'rgba(45,212,191,0.03)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 1 }} />
+      <div style={{ position: 'absolute', bottom: '15%', left: 0, width: '600px', height: '600px', background: 'rgba(212,107,26,0.03)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 1 }} />
 
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
-        <div className="section-divider" style={{ marginBottom: '80px' }} />
+        <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
         {/* Header */}
         <div className="reveal" style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 48px' }}>
-          <p style={{ color: '#2dd4bf', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
+          <p style={{ color: '#0d9488', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
             Pipeline
           </p>
         </div>
 
         {/* Intro callout */}
         <div className="reveal" style={{ maxWidth: '780px', margin: '0 auto 80px', textAlign: 'center' }}>
-          <p style={{ color: '#b8cdd6', fontSize: '1.0625rem', lineHeight: 1.85 }}>
+          <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
             TRICK's first clinical applications target two cancers with defined RNA signatures, high unmet need, and established delivery pathways — proving the platform where it can make the fastest difference for patients and the clearest case for partners and investors.
           </p>
         </div>
@@ -81,12 +82,12 @@ export default function Pipeline() {
           {programs.map((program, i) => (
             <div
               key={i}
-              className="reveal glass-card"
+              className="reveal glass-card-light"
               style={{
                 padding: '56px 48px',
                 position: 'relative',
                 overflow: 'hidden',
-                borderTop: `1px solid ${program.borderColor}`,
+                borderTop: `2px solid ${program.borderColor}`,
                 transitionDelay: `${i * 0.15}s`,
               }}
             >
@@ -99,7 +100,7 @@ export default function Pipeline() {
                 fontWeight: 900,
                 lineHeight: 1,
                 color: program.accent,
-                opacity: 0.03,
+                opacity: 0.05,
                 pointerEvents: 'none',
                 userSelect: 'none',
                 letterSpacing: '-0.05em',
@@ -126,7 +127,7 @@ export default function Pipeline() {
                   </div>
                 </div>
 
-                <h3 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#ffffff', marginBottom: '32px', letterSpacing: '-0.02em' }}>
+                <h3 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#0f172a', marginBottom: '32px', letterSpacing: '-0.02em' }}>
                   {program.name}
                 </h3>
 
@@ -142,7 +143,7 @@ export default function Pipeline() {
                           height: '4px',
                           background: isActive
                             ? `linear-gradient(90deg, ${program.accent}, ${program.accent}80)`
-                            : 'rgba(255,255,255,0.06)',
+                            : 'rgba(0,0,0,0.08)',
                           borderRadius: j === 0 ? '2px 0 0 2px' : j === phases.length - 1 ? '0 2px 2px 0' : '0',
                           position: 'relative',
                         }}>
@@ -157,12 +158,12 @@ export default function Pipeline() {
                               borderRadius: '50%',
                               background: program.accent,
                               boxShadow: `0 0 16px ${program.accent}80`,
-                              border: '2px solid var(--color-midnight)',
+                              border: '2px solid #ffffff',
                             }} />
                           )}
                         </div>
                         <p style={{
-                          color: isActive ? '#b8cdd6' : '#3a5a6c',
+                          color: isActive ? '#334155' : '#94a3b8',
                           fontSize: '0.6875rem',
                           fontWeight: isActive ? 600 : 500,
                           marginTop: '12px',
