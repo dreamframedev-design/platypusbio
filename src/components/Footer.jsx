@@ -187,9 +187,9 @@ export default function Footer() {
           <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top, rgba(255,255,255,0.05) 0%, transparent 70%)', pointerEvents: 'none' }} />
           
           <div style={{ position: 'relative', zIndex: 1 }}>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-0.04em', maxWidth: '1000px', margin: '0 auto 32px', textShadow: '0 4px 24px rgba(0,0,0,0.4)' }}>
-              Transforming medicine with <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-[#d46b1a] to-[#e88430] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(212,107,26,0.3)]">precision cell killing.</span>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-0.04em', maxWidth: '1000px', margin: '0 auto 32px' }}>
+              <span style={{ textShadow: '0 4px 24px rgba(0,0,0,0.4)' }}>Transforming medicine with</span> <br className="hidden md:block" />
+              <span className="bg-gradient-to-r from-[#d46b1a] to-[#e88430] bg-clip-text text-transparent" style={{ filter: 'drop-shadow(0 2px 12px rgba(212,107,26,0.5))' }}>precision cell killing.</span>
             </h2>
             
             <p style={{ fontSize: 'clamp(1.1rem, 1.5vw, 1.5rem)', fontWeight: 300, color: '#b8cdd6', maxWidth: '700px', margin: '0 auto 56px', lineHeight: 1.6, textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
@@ -208,7 +208,10 @@ export default function Footer() {
           
           {/* Left Col - About */}
           <div style={{ gridColumn: 'span 5', paddingRight: '48px' }}>
-            <img src="/PLA_logos-03.svg" alt="platypusbio" style={{ height: '32px', objectFit: 'contain', filter: 'brightness(0) invert(1)', marginBottom: '32px' }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+              <img src="/PLA_logo.svg" alt="Platypus Mark" style={{ height: '42px', objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.9 }} />
+              <img src="/PLA_logos-03.svg" alt="platypusbio" style={{ height: '28px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+            </div>
             <p style={{ color: '#b8cdd6', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
               We are a pre-clinical biotechnology company developing TRICK, a first-in-class programmable CRISPR platform technology that kills cells based upon their transcriptome.
             </p>

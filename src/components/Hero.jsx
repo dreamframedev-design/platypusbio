@@ -28,21 +28,21 @@ const BokehParticles = () => {
         
         // Varying sizes for depth of field effect
         const sizeCategory = Math.random()
-        if (sizeCategory > 0.8) {
-          this.size = Math.random() * 35 + 20 // Large, heavily out of focus
-          this.blur = Math.random() * 20 + 15
-          this.speedX = (Math.random() - 0.5) * 0.15
-          this.speedY = (Math.random() - 0.5) * 0.15
-        } else if (sizeCategory > 0.4) {
-          this.size = Math.random() * 15 + 8 // Medium, blurry
-          this.blur = Math.random() * 10 + 5
-          this.speedX = (Math.random() - 0.5) * 0.25
-          this.speedY = (Math.random() - 0.5) * 0.25
+        if (sizeCategory > 0.85) {
+          this.size = Math.random() * 15 + 10 // Smaller large particles
+          this.blur = Math.random() * 10 + 8
+          this.speedX = (Math.random() - 0.5) * 0.1
+          this.speedY = (Math.random() - 0.5) * 0.1
+        } else if (sizeCategory > 0.5) {
+          this.size = Math.random() * 6 + 4 // Medium, slightly blurry
+          this.blur = Math.random() * 4 + 2
+          this.speedX = (Math.random() - 0.5) * 0.2
+          this.speedY = (Math.random() - 0.5) * 0.2
         } else {
-          this.size = Math.random() * 5 + 2 // Small, sharp
-          this.blur = Math.random() * 2 + 0
-          this.speedX = (Math.random() - 0.5) * 0.4
-          this.speedY = (Math.random() - 0.5) * 0.4
+          this.size = Math.random() * 2.5 + 1 // Small, sharp, defined orbs
+          this.blur = Math.random() * 1 + 0
+          this.speedX = (Math.random() - 0.5) * 0.3
+          this.speedY = (Math.random() - 0.5) * 0.3
         }
         
         this.baseOpacity = Math.random() * 0.5 + 0.5 // Significantly higher opacity
@@ -105,7 +105,7 @@ const BokehParticles = () => {
     }
 
     // Create particles
-    const particles = Array.from({ length: 45 }, () => new Particle())
+    const particles = Array.from({ length: 50 }, () => new Particle())
 
     // Animation loop
     const animate = () => {
