@@ -154,12 +154,40 @@ export default function Footer() {
     }
   }
 
+  const parallaxRef = useRef(null)
+
+  useEffect(() => {
+    let ticking = false
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (parallaxRef.current) {
+            const rect = parallaxRef.current.parentElement.getBoundingClientRect()
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              const scrolled = window.innerHeight - rect.top
+              parallaxRef.current.style.transform = `translate3d(0, ${scrolled * 0.25}px, 0)`
+            }
+          }
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <footer style={{ position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-midnight)', color: '#ffffff', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
       
-      {/* Massive 3D background element */}
-      <div className="absolute inset-0 z-0 animate-ambient-drift" style={{ backgroundImage: 'url("/heros/rna-crisper-hero (6).webp")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.85, pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, rgba(12,26,36,0.3) 25%, rgba(12,26,36,0.8) 70%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
+      {/* Parallax Wrapper */}
+      <div ref={parallaxRef} className="absolute inset-0 z-0 will-change-transform" style={{ top: '-15%', height: '130%' }}>
+        {/* Massive 3D background element */}
+        <div className="absolute inset-0 z-0 animate-ambient-drift" style={{ backgroundImage: 'url("/heros/rna-crisper-hero (6).webp")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.85, pointerEvents: 'none' }} />
+      </div>
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, rgba(12,26,36,0.3) 25%, rgba(12,26,36,0.8) 70%, var(--color-midnight) 100%)', pointerEvents: 'none', zIndex: 1 }} />
       
       {/* Bokeh Particles */}
       <BokehParticles />
