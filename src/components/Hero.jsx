@@ -197,7 +197,7 @@ export default function Hero() {
             <h1 className="animate-fade-in-up delay-300 text-[clamp(2.5rem,3.8vw,4rem)] font-black text-slate-900 leading-[1.05] tracking-[-0.04em] mb-[24px] drop-shadow-sm">
               Transforming <br className="hidden md:block" />
               medicine with <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-[#d46b1a] to-[#e88430] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(212,107,26,0.3)] whitespace-nowrap">precision cell killing</span>
+              <span className="bg-gradient-to-r from-[#d46b1a] to-[#e88430] bg-clip-text text-transparent whitespace-nowrap">precision cell killing</span>
             </h1>
 
             {/* Sub */}
