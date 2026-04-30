@@ -192,10 +192,10 @@ export default function Footer() {
   return (
     <footer style={{ position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-midnight)', color: '#ffffff', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
       
-      {/* Background Elements - Only show on homepage to avoid clashing with other pages */}
-      {location.pathname === '/' && (
+      {/* Background Elements */}
+      {location.pathname === '/' ? (
         <>
-          {/* Parallax Wrapper */}
+          {/* Parallax Wrapper for Homepage */}
           <div ref={parallaxRef} className="absolute inset-0 z-0 will-change-transform" style={{ top: '-15%', height: '130%' }}>
             {/* Massive 3D background element */}
             <div className="absolute inset-0 z-0 animate-ambient-drift" style={{ backgroundImage: 'url("/heros/rna-crisper-hero (6).webp")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.85, pointerEvents: 'none' }} />
@@ -204,6 +204,24 @@ export default function Footer() {
           
           {/* Bokeh Particles */}
           <BokehParticles />
+        </>
+      ) : (
+        <>
+          {/* Static Textured Background for Subpages */}
+          <div className="absolute inset-0 z-0 pointer-events-none" style={{ 
+            backgroundImage: 'url("/heros/rna-crisper-hero (7).webp")', 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center right', 
+            opacity: 0.5 
+          }} />
+          {/* Heavy navy on left fading to semi-transparent on right */}
+          <div className="absolute inset-0 z-1 pointer-events-none" style={{ 
+            background: 'linear-gradient(to right, var(--color-midnight) 40%, rgba(12,26,36,0.9) 65%, rgba(12,26,36,0.4) 100%)' 
+          }} />
+          {/* Top/Bottom fade to blend with page */}
+          <div className="absolute inset-0 z-1 pointer-events-none" style={{ 
+            background: 'linear-gradient(to bottom, var(--color-midnight) 0%, transparent 15%, transparent 85%, var(--color-midnight) 100%)' 
+          }} />
         </>
       )}
 
