@@ -236,9 +236,9 @@ export default function Footer() {
           
           {/* Left Col - About */}
           <div style={{ gridColumn: 'span 5', paddingRight: '48px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
-              <img src="/PLA_logos-02.svg" alt="Platypus Mark" style={{ height: '36px', width: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.9 }} />
-              <img src="/PLA_logos-03.svg" alt="platypusbio" style={{ height: '24px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginBottom: '32px' }}>
+              <img src="/PLA_logos-02.svg" alt="Platypus Mark" style={{ height: '72px', width: '72px', objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.9 }} />
+              <img src="/PLA_logos-03.svg" alt="platypusbio" style={{ height: '48px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
             </div>
             <p style={{ color: '#b8cdd6', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
               We are a pre-clinical biotechnology company developing TRICK, a first-in-class programmable CRISPR platform technology that kills cells based upon their transcriptome.
