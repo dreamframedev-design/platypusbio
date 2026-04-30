@@ -204,42 +204,44 @@ export default function Footer() {
 
       <div className="section-container reveal" style={{ position: 'relative', zIndex: 10, maxWidth: '1440px', margin: '0 auto', padding: '160px 48px 0' }}>
         
-        {/* Giant CTA Area */}
-        <div style={{ 
-          textAlign: 'center', 
-          marginBottom: '160px', 
-          display: 'flex', 
-          flexDirection: 'column', 
-          alignItems: 'center',
-          padding: '80px 40px',
-          background: 'rgba(12, 26, 36, 0.4)',
-          backdropFilter: 'blur(24px)',
-          WebkitBackdropFilter: 'blur(24px)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-          borderRadius: '3rem',
-          boxShadow: '0 32px 64px rgba(0,0,0,0.4)',
-          position: 'relative',
-          overflow: 'hidden'
-        }}>
-          {/* Subtle inner glow */}
-          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top, rgba(255,255,255,0.05) 0%, transparent 70%)', pointerEvents: 'none' }} />
-          
-          <div style={{ position: 'relative', zIndex: 1 }}>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-0.04em', maxWidth: '1000px', margin: '0 auto 32px' }}>
-              <span style={{ textShadow: '0 2px 12px rgba(0,0,0,0.6)' }}>Transforming medicine with</span> <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-[#d46b1a] to-[#e88430] bg-clip-text text-transparent" style={{ filter: 'drop-shadow(0 2px 0px rgba(0,0,0,0.8))' }}>precision cell killing.</span>
-            </h2>
+        {/* Giant CTA Area - Only show on homepage */}
+        {location.pathname === '/' && (
+          <div style={{ 
+            textAlign: 'center', 
+            marginBottom: '160px', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center',
+            padding: '80px 40px',
+            background: 'rgba(12, 26, 36, 0.4)',
+            backdropFilter: 'blur(24px)',
+            WebkitBackdropFilter: 'blur(24px)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            borderRadius: '3rem',
+            boxShadow: '0 32px 64px rgba(0,0,0,0.4)',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            {/* Subtle inner glow */}
+            <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top, rgba(255,255,255,0.05) 0%, transparent 70%)', pointerEvents: 'none' }} />
             
-            <p style={{ fontSize: 'clamp(1.1rem, 1.5vw, 1.5rem)', fontWeight: 300, color: '#b8cdd6', maxWidth: '700px', margin: '0 auto 56px', lineHeight: 1.6, textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
-              A first-in-class programmable CRISPR platform technology.
-            </p>
-            
-            <a href={location.pathname === '/' ? '#contact' : '/#contact'} onClick={(e) => handleNavClick(e, '#contact')} className="hoverable inline-flex items-center justify-center gap-3 px-[40px] py-[18px] rounded-full bg-gradient-to-r from-[#d46b1a] to-[#f0a040] text-white font-bold text-[1.125rem] shadow-[0_8px_32px_rgba(212,107,26,0.3)] hover:shadow-[0_16px_48px_rgba(212,107,26,0.5)] hover:-translate-y-1 transition-all duration-300">
-              <span>Get in Touch</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </a>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-0.04em', maxWidth: '1000px', margin: '0 auto 32px' }}>
+                <span style={{ textShadow: '0 2px 12px rgba(0,0,0,0.6)' }}>Transforming medicine with</span> <br className="hidden md:block" />
+                <span className="bg-gradient-to-r from-[#d46b1a] to-[#e88430] bg-clip-text text-transparent" style={{ filter: 'drop-shadow(0 2px 0px rgba(0,0,0,0.8))' }}>precision cell killing.</span>
+              </h2>
+              
+              <p style={{ fontSize: 'clamp(1.1rem, 1.5vw, 1.5rem)', fontWeight: 300, color: '#b8cdd6', maxWidth: '700px', margin: '0 auto 56px', lineHeight: 1.6, textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
+                A first-in-class programmable CRISPR platform technology.
+              </p>
+              
+              <a href={location.pathname === '/' ? '#contact' : '/#contact'} onClick={(e) => handleNavClick(e, '#contact')} className="hoverable inline-flex items-center justify-center gap-3 px-[40px] py-[18px] rounded-full bg-gradient-to-r from-[#d46b1a] to-[#f0a040] text-white font-bold text-[1.125rem] shadow-[0_8px_32px_rgba(212,107,26,0.3)] hover:shadow-[0_16px_48px_rgba(212,107,26,0.5)] hover:-translate-y-1 transition-all duration-300">
+                <span>Get in Touch</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </a>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Structured Columns */}
         <div className="footer-grid-main" style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '48px', padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
