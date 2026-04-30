@@ -212,11 +212,11 @@ export default function Footer() {
             backgroundImage: 'url("/heros/rna-crisper-hero (7).webp")', 
             backgroundSize: 'cover', 
             backgroundPosition: 'center right', 
-            opacity: 0.5 
+            opacity: 0.8 
           }} />
-          {/* Heavy navy on left fading to semi-transparent on right */}
+          {/* Heavy navy on left fading to highly transparent on right */}
           <div className="absolute inset-0 z-1 pointer-events-none" style={{ 
-            background: 'linear-gradient(to right, var(--color-midnight) 40%, rgba(12,26,36,0.9) 65%, rgba(12,26,36,0.4) 100%)' 
+            background: 'linear-gradient(to right, var(--color-midnight) 45%, rgba(12,26,36,0.8) 65%, rgba(12,26,36,0.1) 100%)' 
           }} />
           {/* Top/Bottom fade to blend with page */}
           <div className="absolute inset-0 z-1 pointer-events-none" style={{ 
