@@ -6,14 +6,14 @@ export default function TermsOfService() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-[#0a1118] pt-[160px] pb-[120px] relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+    <main className="min-h-screen pt-[160px] pb-[120px] relative">
+      {/* Fixed Background Elements */}
+      <div className="fixed inset-0 z-0 pointer-events-none bg-[#0a1118]">
         <div 
-          className="absolute inset-0 opacity-40"
+          className="absolute inset-0 opacity-85"
           style={{ backgroundImage: 'url("/heros/rna-crisper-hero (2).webp")', backgroundSize: 'cover', backgroundPosition: 'center' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1118] via-[#0c1a24]/80 to-[#0a1118]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1118] via-[#0c1a24]/30 to-[#0a1118]/90" />
       </div>
 
       <div className="section-container relative z-10 max-w-[900px] mx-auto px-8">
