@@ -6,14 +6,14 @@ const newsItems = [
     description: 'Revolutionizing early cancer detection with at-home technology.',
     date: '2025',
     link: '#',
-    hasImage: false,
+    image: '/heros/rna-crisper-hero (5).webp',
   },
   {
     headline: 'NSW RNA Pipeline Grants 2025 — Platypus Bio Selected as Recipient',
     description: 'Platypus Bio receives support through the NSW RNA Pipeline Grants program to advance TRICK platform development.',
     date: '2025',
     link: 'https://www.nsw.gov.au/grants-and-funding/rna-pipeline-grants-2025/recipients',
-    hasImage: false,
+    image: '/heros/rna-crisper-hero (8).webp',
   },
 ]
 
@@ -72,8 +72,8 @@ export default function News() {
               {/* Image placeholder */}
               <div style={{
                 width: '100%',
-                height: '200px',
-                background: 'linear-gradient(135deg, rgba(212,107,26,0.08) 0%, rgba(45,212,191,0.05) 100%)',
+                height: '240px',
+                background: '#0c1a24',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -81,12 +81,14 @@ export default function News() {
                 position: 'relative',
                 overflow: 'hidden',
               }}>
-                <div style={{ position: 'absolute', inset: 0, background: `url(/abtract2.webp) center/cover`, filter: 'invert(1) contrast(1.2)', mixBlendMode: 'multiply', opacity: 0.15, pointerEvents: 'none' }} />
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style={{ opacity: 0.2, position: 'relative', zIndex: 1 }}>
-                  <rect x="4" y="8" width="40" height="32" rx="4" stroke="#475569" strokeWidth="1.5"/>
-                  <path d="M4 32l12-10 8 6 12-10 8 6" stroke="#475569" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <circle cx="16" cy="18" r="4" stroke="#475569" strokeWidth="1.5"/>
-                </svg>
+                <div style={{ 
+                  position: 'absolute', 
+                  inset: 0, 
+                  background: `url("${item.image}") center/cover no-repeat`, 
+                  transition: 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)'
+                }} 
+                className="news-image-bg"
+                />
               </div>
 
               <div style={{ padding: '32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
@@ -123,6 +125,9 @@ export default function News() {
           .news-grid {
             grid-template-columns: 1fr !important;
           }
+        }
+        .hoverable:hover .news-image-bg {
+          transform: scale(1.05);
         }
       `}</style>
     </section>

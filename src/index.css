@@ -192,6 +192,26 @@ body {
   50% { transform: scale(1.03) rotate(1deg); }
 }
 
+@keyframes ambientDrift {
+  0% { transform: scale(1.02) translate(0px, 0px); }
+  50% { transform: scale(1.08) translate(-15px, -8px); }
+  100% { transform: scale(1.02) translate(0px, 0px); }
+}
+
+.animate-ambient-drift {
+  animation: ambientDrift 20s ease-in-out infinite;
+}
+
+@keyframes watermarkFade {
+  from { opacity: 0; transform: rotate(-25deg) scale(0.8); }
+  to { opacity: 0.25; transform: rotate(-15deg) scale(1); }
+}
+
+.animate-watermark {
+  animation: watermarkFade 2.5s var(--ease-out-expo) 0.6s forwards;
+  opacity: 0;
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.9s var(--ease-out-expo) forwards;
   opacity: 0;

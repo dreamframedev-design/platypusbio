@@ -1,6 +1,11 @@
-Update UI components for Premium Design Polish
+Complete Hero and Footer Redesign with Premium Glassmorphism
 
-- Rebalanced 'Action Mechanism' grid and sticky side-by-side section layout
-- Refined footer with new structured grid, hover states, and 'Get in Touch' CTA
-- Prevented premature text wrapping on Hero title text
-- Improved gradient text implementations
+- Implemented new high-res RNA CRISPR hero images across the site
+- Built a custom, highly-optimized hardware-accelerated parallax scroll effect
+- Added a cinematic, slow-drifting ambient animation to the hero background
+- Created a custom HTML5 Canvas particle system for glowing, depth-of-field bokeh effects
+- Redesigned the Navbar into a sleek, frosted-glass floating pill
+- Overhauled the Hero text container into a premium Neoglassmorphic card
+- Redesigned the Footer CTA into a massive, cinematic finale with a dark glassmorphic overlay
+- Replaced placeholder news images with actual high-res assets and added hover zoom effects
+- Refined typography, gradients, and contrast across all new sections

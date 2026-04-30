@@ -24,18 +24,15 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Use light theme for the navbar everywhere since the site is mostly light
   const isLightNavSurface = true
 
-  const logoFilter = isLightNavSurface
-    ? 'brightness(0) opacity(0.85)'
-    : 'brightness(0) invert(1) opacity(0.95)'
+  const logoFilter = 'brightness(0) opacity(0.85)'
 
-  const linkClass = 'text-slate-500 hover:text-slate-900'
+  const linkClass = 'text-slate-600 hover:text-slate-900 font-medium'
 
-  const activePillBg = 'bg-white/70 backdrop-blur-[32px] border border-slate-200/60 shadow-[0_12px_32px_rgba(0,0,0,0.06)]'
+  const activePillBg = 'bg-white/60 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(0,0,0,0.04)]'
 
-  const mobileBtnClass = 'bg-white/90 border border-slate-200 text-slate-800'
+  const mobileBtnClass = 'bg-white/80 border border-slate-200 text-slate-800'
 
   const mobileSheetClass = 'bg-white/95 border-b border-slate-200'
 
@@ -58,9 +55,7 @@ export default function Navbar() {
     >
       {/* Universal Floating Pill Container */}
       <div 
-        className={`pointer-events-auto flex items-center justify-between lg:justify-center w-full lg:w-auto transition-all duration-700 ease-out-expo rounded-full ${
-          scrolled ? `${activePillBg} px-[24px] lg:px-[40px] py-[12px] lg:gap-[32px]` : 'bg-transparent px-0 py-0 gap-[24px] lg:gap-[40px]'
-        }`}
+        className={`pointer-events-auto flex items-center justify-between lg:justify-center w-full lg:w-auto transition-all duration-700 ease-out-expo rounded-full ${activePillBg} px-[20px] lg:px-[32px] py-[8px] lg:gap-[28px]`}
       >
         {/* Left: Logo */}
         <a
@@ -95,7 +90,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, '#contact')}
-            className={`cta-button hoverable px-[24px] py-[12px] text-[0.8125rem] rounded-full transition-all duration-500 ${scrolled && isLightNavSurface ? 'shadow-md ring-2 ring-slate-100 ring-offset-1' : 'shadow-none'}`}
+            className="hoverable inline-flex items-center justify-center px-[20px] py-[8px] text-[0.8125rem] font-bold tracking-wide rounded-full bg-slate-900 text-white shadow-md hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
           >
             <span>Get in Touch</span>
           </a>
