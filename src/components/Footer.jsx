@@ -26,23 +26,23 @@ const BokehParticles = () => {
         this.x = Math.random() * canvas.width
         this.y = Math.random() * canvas.height
         
-        // Varying sizes for depth of field effect
+        // Varying sizes for depth of field effect - tailored for footer (smaller, sharper)
         const sizeCategory = Math.random()
-        if (sizeCategory > 0.8) {
-          this.size = Math.random() * 35 + 20 // Large, heavily out of focus
-          this.blur = Math.random() * 20 + 15
+        if (sizeCategory > 0.9) {
+          this.size = Math.random() * 6 + 4 // Slightly larger, slightly out of focus
+          this.blur = Math.random() * 3 + 1
+          this.speedX = (Math.random() - 0.5) * 0.1
+          this.speedY = (Math.random() - 0.5) * 0.1
+        } else if (sizeCategory > 0.6) {
+          this.size = Math.random() * 3 + 1.5 // Medium, sharp
+          this.blur = Math.random() * 1 + 0
           this.speedX = (Math.random() - 0.5) * 0.15
           this.speedY = (Math.random() - 0.5) * 0.15
-        } else if (sizeCategory > 0.4) {
-          this.size = Math.random() * 15 + 8 // Medium, blurry
-          this.blur = Math.random() * 10 + 5
-          this.speedX = (Math.random() - 0.5) * 0.25
-          this.speedY = (Math.random() - 0.5) * 0.25
         } else {
-          this.size = Math.random() * 5 + 2 // Small, sharp
-          this.blur = Math.random() * 2 + 0
-          this.speedX = (Math.random() - 0.5) * 0.4
-          this.speedY = (Math.random() - 0.5) * 0.4
+          this.size = Math.random() * 1.5 + 0.5 // Tiny, very sharp
+          this.blur = 0
+          this.speedX = (Math.random() - 0.5) * 0.2
+          this.speedY = (Math.random() - 0.5) * 0.2
         }
         
         this.baseOpacity = Math.random() * 0.5 + 0.5 // Significantly higher opacity
@@ -105,7 +105,7 @@ const BokehParticles = () => {
     }
 
     // Create particles
-    const particles = Array.from({ length: 45 }, () => new Particle())
+    const particles = Array.from({ length: 120 }, () => new Particle())
 
     // Animation loop
     const animate = () => {
@@ -189,7 +189,7 @@ export default function Footer() {
           <div style={{ position: 'relative', zIndex: 1 }}>
             <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-0.04em', maxWidth: '1000px', margin: '0 auto 32px' }}>
               <span style={{ textShadow: '0 4px 24px rgba(0,0,0,0.4)' }}>Transforming medicine with</span> <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-[#d46b1a] to-[#e88430] bg-clip-text text-transparent" style={{ filter: 'drop-shadow(0 2px 12px rgba(212,107,26,0.5))' }}>precision cell killing.</span>
+              <span className="bg-gradient-to-r from-[#d46b1a] to-[#e88430] bg-clip-text text-transparent" style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.6))' }}>precision cell killing.</span>
             </h2>
             
             <p style={{ fontSize: 'clamp(1.1rem, 1.5vw, 1.5rem)', fontWeight: 300, color: '#b8cdd6', maxWidth: '700px', margin: '0 auto 56px', lineHeight: 1.6, textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
@@ -208,9 +208,9 @@ export default function Footer() {
           
           {/* Left Col - About */}
           <div style={{ gridColumn: 'span 5', paddingRight: '48px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
-              <img src="/PLA_logo.svg" alt="Platypus Mark" style={{ height: '42px', objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.9 }} />
-              <img src="/PLA_logos-03.svg" alt="platypusbio" style={{ height: '28px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px', marginBottom: '32px' }}>
+              <img src="/PLA_logo.svg" alt="Platypus Mark" style={{ height: '48px', objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.9 }} />
+              <img src="/PLA_logos-03.svg" alt="platypusbio" style={{ height: '24px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
             </div>
             <p style={{ color: '#b8cdd6', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
               We are a pre-clinical biotechnology company developing TRICK, a first-in-class programmable CRISPR platform technology that kills cells based upon their transcriptome.
