@@ -33,7 +33,7 @@ export default function Partners() {
         <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
           <div className="reveal" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto' }}>
-            <p style={{ color: '#0d9488', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '16px' }}>
+            <p style={{ color: '#0d9488', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '16px' }}>
               Partners
             </p>
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '32px' }}>

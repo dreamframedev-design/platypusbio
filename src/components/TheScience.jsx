@@ -112,7 +112,7 @@ export default function TheScience() {
           <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
-            <p style={{ color: '#d46b1a', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '16px' }}>
+            <p style={{ color: '#d46b1a', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '16px' }}>
               The Science
             </p>
             <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.5rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '40px' }}>
@@ -228,7 +228,7 @@ export default function TheScience() {
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.4) 20%, rgba(251,251,249,0.4) 80%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
           <div className="reveal glass-card-light" style={{ maxWidth: '900px', margin: '0 auto', padding: '64px 56px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(240,160,64,0.6)' }}>
-            <p style={{ color: '#d46b1a', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '24px' }}>
+            <p style={{ color: '#d46b1a', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '24px' }}>
               The Challenge
             </p>
             <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '32px' }}>
@@ -267,9 +267,9 @@ export default function TheScience() {
             
             {/* Full Width Header */}
             <div style={{ textAlign: 'center', marginBottom: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '24px', padding: '8px 24px', borderRadius: '99px', border: '1px solid rgba(45,212,191,0.2)', backgroundColor: 'rgba(45,212,191,0.05)' }}>
-                <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#0d9488', boxShadow: '0 0 12px rgba(13,148,136,0.6)' }} />
-                <span style={{ color: '#0d9488', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '24px', padding: '10px 28px', borderRadius: '99px', border: '1px solid rgba(45,212,191,0.2)', backgroundColor: 'rgba(45,212,191,0.05)' }}>
+                <span style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#0d9488', boxShadow: '0 0 12px rgba(13,148,136,0.6)' }} />
+                <span style={{ color: '#0d9488', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase' }}>
                   Action Mechanism
                 </span>
               </div>
@@ -382,7 +382,7 @@ export default function TheScience() {
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.4) 25%, rgba(251,251,249,0.4) 75%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
           <div className="reveal glass-card-light" style={{ maxWidth: '900px', margin: '0 auto', padding: '64px 56px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(212,107,26,0.6)' }}>
-            <p style={{ color: '#d46b1a', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '24px' }}>
+            <p style={{ color: '#d46b1a', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '24px' }}>
               Pipeline Scope
             </p>
             <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '32px' }}>
@@ -431,7 +431,7 @@ export default function TheScience() {
           <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
-            <p style={{ color: '#d46b1a', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '16px' }}>
+            <p style={{ color: '#d46b1a', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '16px' }}>
               The Science
             </p>
             <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '48px' }}>

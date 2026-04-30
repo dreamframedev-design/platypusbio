@@ -43,7 +43,7 @@ export default function News() {
         <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
         <div className="reveal" style={{ maxWidth: '800px', margin: '0 auto 80px', textAlign: 'center' }}>
-          <p style={{ color: '#d46b1a', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '16px' }}>
+          <p style={{ color: '#d46b1a', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '16px' }}>
             News
           </p>
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.5rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em' }}>

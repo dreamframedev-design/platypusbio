@@ -71,7 +71,7 @@ export default function ContactSection() {
 
           {/* Left: Section Info */}
           <div className="reveal">
-            <p style={{ color: '#d46b1a', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '24px' }}>
+            <p style={{ color: '#d46b1a', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '24px' }}>
               Join the Frontier
             </p>
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '32px' }}>

@@ -76,9 +76,9 @@ export default function Team() {
 
         {/* Header */}
         <div className="reveal max-w-[800px] mb-[100px]">
-          <div className="inline-flex items-center gap-[10px] mb-[24px] px-[24px] py-[8px] rounded-full border border-orange-500/15 bg-orange-500/5">
-            <span className="w-[7px] h-[7px] rounded-full bg-[#d46b1a] shadow-[0_0_12px_rgba(212,107,26,0.5)]" />
-            <span className="text-[#d46b1a] text-[0.875rem] font-bold tracking-[0.25em] uppercase">Our Team</span>
+          <div className="inline-flex items-center gap-[12px] mb-[24px] px-[28px] py-[10px] rounded-full border border-orange-500/15 bg-orange-500/5">
+            <span className="w-[10px] h-[10px] rounded-full bg-[#d46b1a] shadow-[0_0_12px_rgba(212,107,26,0.5)]" />
+            <span className="text-[#d46b1a] text-[1.125rem] font-extrabold tracking-[0.3em] uppercase">Our Team</span>
           </div>
           <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-slate-900 leading-[1.05] tracking-[-0.03em] mb-[32px]">
             Built by Scientists,<br/>
