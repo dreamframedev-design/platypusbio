@@ -194,10 +194,10 @@ export default function Hero() {
 
           <div className="relative z-10">
             {/* Headline */}
-            <h1 className="animate-fade-in-up delay-300 text-[clamp(2.5rem,3.8vw,4rem)] font-black text-slate-900 leading-[1.05] tracking-[-0.04em] mb-[24px] drop-shadow-sm">
-              Transforming <br className="hidden md:block" />
-              medicine with <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-[#d46b1a] to-[#e88430] bg-clip-text text-transparent whitespace-nowrap">precision cell killing</span>
+            <h1 className="animate-fade-in-up delay-300 text-[clamp(2.5rem,3.8vw,4rem)] font-black text-slate-900 leading-[1.05] tracking-[-0.04em] mb-[24px]">
+              <span className="drop-shadow-sm">Transforming <br className="hidden md:block" />
+              medicine with</span> <br className="hidden md:block" />
+              <span className="bg-gradient-to-r from-[#d46b1a] to-[#e88430] bg-clip-text text-transparent whitespace-nowrap" style={{ filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.15))' }}>precision cell killing</span>
             </h1>
 
             {/* Sub */}
