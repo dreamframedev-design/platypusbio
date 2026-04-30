@@ -670,32 +670,39 @@ export default function TheScience() {
             </p>
           </div>
 
-          {/* How TRICK Works — Diagram Placeholder */}
-          <div className="reveal" style={{ maxWidth: '900px', margin: '0 auto' }}>
+          {/* How TRICK Works — Diagram Area */}
+          <div className="reveal" style={{ maxWidth: '1000px', margin: '0 auto' }}>
             <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', textAlign: 'center', marginBottom: '32px', letterSpacing: '-0.02em' }}>
               How TRICK Works
             </h3>
             <div style={{
               background: 'rgba(255, 255, 255, 0.7)',
               border: '1px solid rgba(0,0,0,0.08)',
-              borderRadius: '20px',
-              padding: '80px 48px',
+              borderRadius: '24px',
+              padding: '12px',
               textAlign: 'center',
               position: 'relative',
               overflow: 'hidden',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.04)',
+              boxShadow: '0 16px 48px rgba(0,0,0,0.08)',
             }}>
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(212,107,26,0.03) 0%, transparent 100%)', pointerEvents: 'none' }} />
-              <div style={{ position: 'relative', zIndex: 1 }}>
-                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style={{ margin: '0 auto 24px', opacity: 0.4 }}>
-                  <circle cx="40" cy="40" r="38" stroke="#d46b1a" strokeWidth="1"/>
-                  <circle cx="40" cy="40" r="25" stroke="#2dd4bf" strokeWidth="1" opacity="0.5"/>
-                  <circle cx="40" cy="40" r="12" stroke="#f0a040" strokeWidth="1"/>
-                  <circle cx="40" cy="40" r="4" fill="#d46b1a" opacity="0.6"/>
-                </svg>
-                <p style={{ color: '#64748b', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500 }}>
-                  Detailed diagram — illustration in development
-                </p>
+              <div style={{ 
+                width: '100%', 
+                height: 'auto', 
+                borderRadius: '16px', 
+                overflow: 'hidden',
+                position: 'relative'
+              }}>
+                <img 
+                  src="/heros/rna-crisper-hero (4).webp" 
+                  alt="How TRICK Works" 
+                  style={{ 
+                    width: '100%', 
+                    height: 'auto', 
+                    maxHeight: '600px', 
+                    objectFit: 'cover', 
+                    display: 'block' 
+                  }} 
+                />
               </div>
             </div>
           </div>

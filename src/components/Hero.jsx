@@ -152,7 +152,7 @@ export default function Hero() {
         window.requestAnimationFrame(() => {
           if (parallaxRef.current) {
             // translate3d forces GPU acceleration, preventing lag
-            parallaxRef.current.style.transform = `translate3d(0, ${window.scrollY * 0.4}px, 0)`
+            parallaxRef.current.style.transform = `translate3d(0, ${window.scrollY * 0.15}px, 0)`
           }
           ticking = false
         })
@@ -171,7 +171,7 @@ export default function Hero() {
       <div ref={parallaxRef} className="absolute inset-0 z-0 will-change-transform">
         {/* Main Background Image */}
         <div 
-          className={`absolute inset-[-15%] w-[130%] h-[130%] bg-cover bg-center bg-no-repeat transition-opacity duration-[2s] ease-out ${loaded ? 'opacity-100 animate-ambient-drift' : 'opacity-0'}`}
+          className={`absolute inset-[-5%] w-[110%] h-[110%] bg-cover bg-center bg-no-repeat transition-opacity duration-[2s] ease-out ${loaded ? 'opacity-100 animate-ambient-drift' : 'opacity-0'}`}
           style={{ 
             backgroundImage: 'url(/heros/hero1.webp)',
           }}
