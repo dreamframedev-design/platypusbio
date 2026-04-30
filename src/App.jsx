@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfService from './pages/TermsOfService'
 import Footer from './components/Footer'
 import CustomCursor from './components/CustomCursor'
 
@@ -69,7 +72,11 @@ function App() {
       <div className="genomic-noise" />
       <CustomCursor x={cursorPos.x} y={cursorPos.y} isHovering={isHovering} />
       <Navbar />
-      <Home cursorPos={cursorPos} />
+      <Routes>
+        <Route path="/" element={<Home cursorPos={cursorPos} />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
+      </Routes>
       <Footer />
     </>
   )

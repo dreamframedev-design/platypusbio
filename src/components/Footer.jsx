@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const BokehParticles = () => {
   const canvasRef = useRef(null)
@@ -136,6 +137,9 @@ const BokehParticles = () => {
 }
 
 export default function Footer() {
+  const location = useLocation()
+  const navigate = useNavigate()
+
   const navLinks = [
     { to: '#science', label: 'The Science' },
     { to: '#pipeline', label: 'Pipeline' },
@@ -147,6 +151,12 @@ export default function Footer() {
 
   const handleNavClick = (e, hash) => {
     e.preventDefault()
+    
+    if (location.pathname !== '/') {
+      navigate(`/${hash}`)
+      return
+    }
+
     const id = hash.replace('#', '')
     const element = document.getElementById(id)
     if (element) {
@@ -224,7 +234,7 @@ export default function Footer() {
               A first-in-class programmable CRISPR platform technology.
             </p>
             
-            <a href="#contact" className="hoverable inline-flex items-center justify-center gap-3 px-[40px] py-[18px] rounded-full bg-gradient-to-r from-[#d46b1a] to-[#f0a040] text-white font-bold text-[1.125rem] shadow-[0_8px_32px_rgba(212,107,26,0.3)] hover:shadow-[0_16px_48px_rgba(212,107,26,0.5)] hover:-translate-y-1 transition-all duration-300">
+            <a href={location.pathname === '/' ? '#contact' : '/#contact'} onClick={(e) => handleNavClick(e, '#contact')} className="hoverable inline-flex items-center justify-center gap-3 px-[40px] py-[18px] rounded-full bg-gradient-to-r from-[#d46b1a] to-[#f0a040] text-white font-bold text-[1.125rem] shadow-[0_8px_32px_rgba(212,107,26,0.3)] hover:shadow-[0_16px_48px_rgba(212,107,26,0.5)] hover:-translate-y-1 transition-all duration-300">
               <span>Get in Touch</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </a>
@@ -252,7 +262,7 @@ export default function Footer() {
               {navLinks.map((link) => (
                 <a
                   key={link.to}
-                  href={link.to}
+                  href={location.pathname === '/' ? link.to : `/${link.to}`}
                   onClick={(e) => handleNavClick(e, link.to)}
                   style={{ color: '#b8cdd6', fontSize: '1.0625rem', textDecoration: 'none', transition: 'all 0.3s', display: 'flex', alignItems: 'center', gap: '12px' }}
                   onMouseEnter={(e) => { e.currentTarget.style.color = '#ffffff'; e.currentTarget.style.transform = 'translateX(4px)'; }}
@@ -287,15 +297,17 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div style={{ padding: '32px 0 64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '24px' }}>
           <p style={{ color: '#7e99a8', fontSize: '0.875rem', fontWeight: 400 }}>
-            © {new Date().getFullYear()} Platypus Bio Pty Ltd. All rights reserved.
+            &copy; {new Date().getFullYear()} Platypus Bio Pty Ltd. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '40px' }}>
-            {['Privacy Policy', 'Terms of Service'].map((text) => (
-              <a key={text} href="#" style={{ color: '#7e99a8', fontSize: '0.875rem', fontWeight: 400, textDecoration: 'none', transition: 'color 0.2s' }}
-                onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'}
-                onMouseLeave={(e) => e.currentTarget.style.color = '#7e99a8'}
-              >{text}</a>
-            ))}
+            <Link to="/privacy" style={{ color: '#7e99a8', fontSize: '0.875rem', fontWeight: 400, textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#7e99a8'}
+            >Privacy Policy</Link>
+            <Link to="/terms" style={{ color: '#7e99a8', fontSize: '0.875rem', fontWeight: 400, textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#7e99a8'}
+            >Terms of Service</Link>
           </div>
         </div>
       </div>

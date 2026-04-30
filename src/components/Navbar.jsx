@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const navLinks = [
   { to: '#science', label: 'The Science' },
@@ -13,6 +14,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [pastHero, setPastHero] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,6 +44,12 @@ export default function Navbar() {
   const handleNavClick = (e, hash) => {
     e.preventDefault()
     setMenuOpen(false)
+    
+    if (location.pathname !== '/') {
+      navigate(`/${hash}`)
+      return
+    }
+
     const id = hash.replace('#', '')
     const element = document.getElementById(id)
     if (element) {
@@ -58,9 +67,14 @@ export default function Navbar() {
         className={`pointer-events-auto flex items-center justify-between lg:justify-center w-full lg:w-auto transition-all duration-700 ease-out-expo rounded-full ${activePillBg} px-[20px] lg:px-[32px] py-[8px] lg:gap-[28px]`}
       >
         {/* Left: Logo */}
-        <a
-          href="#hero"
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+        <Link
+          to="/"
+          onClick={(e) => {
+            if (location.pathname === '/') {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+          }}
           className="hoverable flex items-center no-underline transition-all duration-500 ease-out-expo rounded-full shrink-0"
         >
           <img
@@ -69,14 +83,14 @@ export default function Navbar() {
             className="h-[30px] lg:h-[34px] object-contain transition-all duration-500"
             style={{ filter: logoFilter }}
           />
-        </a>
+        </Link>
 
         {/* Center: Links */}
         <div className="hidden lg:flex items-center gap-[32px]">
           {navLinks.map((link) => (
             <a
               key={link.to}
-              href={link.to}
+              href={location.pathname === '/' ? link.to : `/${link.to}`}
               onClick={(e) => handleNavClick(e, link.to)}
               className={`hoverable text-[0.8125rem] font-semibold tracking-[0.05em] no-underline uppercase transition-colors duration-300 whitespace-nowrap ${linkClass}`}
             >
@@ -88,7 +102,7 @@ export default function Navbar() {
         {/* Right: CTA Button */}
         <div className="hidden lg:block shrink-0">
           <a
-            href="#contact"
+            href={location.pathname === '/' ? '#contact' : '/#contact'}
             onClick={(e) => handleNavClick(e, '#contact')}
             className="hoverable inline-flex items-center justify-center px-[20px] py-[8px] text-[0.8125rem] font-bold tracking-wide rounded-full bg-slate-900 text-white shadow-md hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
           >
@@ -119,14 +133,14 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a
                 key={link.to}
-                href={link.to}
+                href={location.pathname === '/' ? link.to : `/${link.to}`}
                 onClick={(e) => handleNavClick(e, link.to)}
                 className={`text-[1.35rem] font-bold py-[8px] no-underline tracking-[0.03em] uppercase transition-colors ${mobileLinkClass}`}
               >
                 {link.label}
               </a>
             ))}
-            <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="cta-button self-center mt-[24px] px-[32px] py-[16px] text-[1.1rem] rounded-full shadow-lg">
+            <a href={location.pathname === '/' ? '#contact' : '/#contact'} onClick={(e) => handleNavClick(e, '#contact')} className="cta-button self-center mt-[24px] px-[32px] py-[16px] text-[1.1rem] rounded-full shadow-lg">
               <span>Get in Touch</span>
             </a>
           </div>
