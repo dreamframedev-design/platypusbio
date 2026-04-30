@@ -192,17 +192,22 @@ export default function Footer() {
   return (
     <footer style={{ position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-midnight)', color: '#ffffff', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
       
-      {/* Parallax Wrapper */}
-      <div ref={parallaxRef} className="absolute inset-0 z-0 will-change-transform" style={{ top: '-15%', height: '130%' }}>
-        {/* Massive 3D background element */}
-        <div className="absolute inset-0 z-0 animate-ambient-drift" style={{ backgroundImage: 'url("/heros/rna-crisper-hero (6).webp")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.85, pointerEvents: 'none' }} />
-      </div>
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, rgba(12,26,36,0.3) 25%, rgba(12,26,36,0.8) 70%, var(--color-midnight) 100%)', pointerEvents: 'none', zIndex: 1 }} />
-      
-      {/* Bokeh Particles */}
-      <BokehParticles />
+      {/* Background Elements - Only show on homepage to avoid clashing with other pages */}
+      {location.pathname === '/' && (
+        <>
+          {/* Parallax Wrapper */}
+          <div ref={parallaxRef} className="absolute inset-0 z-0 will-change-transform" style={{ top: '-15%', height: '130%' }}>
+            {/* Massive 3D background element */}
+            <div className="absolute inset-0 z-0 animate-ambient-drift" style={{ backgroundImage: 'url("/heros/rna-crisper-hero (6).webp")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.85, pointerEvents: 'none' }} />
+          </div>
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, rgba(12,26,36,0.3) 25%, rgba(12,26,36,0.8) 70%, var(--color-midnight) 100%)', pointerEvents: 'none', zIndex: 1 }} />
+          
+          {/* Bokeh Particles */}
+          <BokehParticles />
+        </>
+      )}
 
-      <div className="section-container reveal" style={{ position: 'relative', zIndex: 10, maxWidth: '1440px', margin: '0 auto', padding: '160px 48px 0' }}>
+      <div className="section-container reveal" style={{ position: 'relative', zIndex: 10, maxWidth: '1440px', margin: '0 auto', padding: location.pathname === '/' ? '160px 48px 0' : '80px 48px 0' }}>
         
         {/* Giant CTA Area - Only show on homepage */}
         {location.pathname === '/' && (
