@@ -66,7 +66,7 @@ export default function Pipeline() {
 
         {/* Header */}
         <div className="reveal" style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 48px' }}>
-          <p style={{ color: '#0d9488', fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
+          <p style={{ color: '#0d9488', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '16px' }}>
             Pipeline
           </p>
         </div>
