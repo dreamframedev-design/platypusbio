@@ -135,11 +135,11 @@ const BokehParticles = ({
 
 const AnimatedPlatypusLogo = () => {
   return (
-    <div className="group relative w-[72px] h-[72px] flex items-center justify-center cursor-pointer">
+    <div className="relative w-[72px] h-[72px] flex items-center justify-center shrink-0">
       {/* The SVG */}
       <svg 
         viewBox="0 0 358 349" 
-        className="w-full h-full relative z-10 transition-all duration-500 group-hover:scale-105 drop-shadow-none group-hover:drop-shadow-[0_0_8px_rgba(45,212,191,0.6)]"
+        className="w-full h-full relative z-10 transition-transform duration-500 group-hover:scale-110"
       >
         <defs>
           <linearGradient id="platypus-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -318,9 +318,9 @@ export default function Footer() {
           
           {/* Left Col - About */}
           <div style={{ gridColumn: 'span 5', paddingRight: '48px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginBottom: '32px' }}>
+            <div className="group flex items-center gap-[24px] mb-[32px] cursor-pointer w-fit">
               <AnimatedPlatypusLogo />
-              <img src="/PLA_logos-03.svg" alt="platypusbio" style={{ height: '48px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+              <img src="/PLA_logos-03.svg" alt="platypusbio" className="h-[48px] object-contain transition-transform duration-500 group-hover:scale-[1.02]" style={{ filter: 'brightness(0) invert(1)' }} />
             </div>
             <p style={{ color: '#b8cdd6', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
               We are a pre-clinical biotechnology company developing TRICK, a first-in-class programmable CRISPR platform technology that kills cells based upon their transcriptome.
