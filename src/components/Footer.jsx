@@ -1,3 +1,140 @@
+import { useState, useEffect, useRef } from 'react'
+
+const BokehParticles = () => {
+  const canvasRef = useRef(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    const ctx = canvas.getContext('2d')
+    let animationFrameId
+
+    // Set canvas size
+    const resize = () => {
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+    }
+    window.addEventListener('resize', resize)
+    resize()
+
+    // Particle class
+    class Particle {
+      constructor() {
+        this.reset()
+      }
+
+      reset() {
+        this.x = Math.random() * canvas.width
+        this.y = Math.random() * canvas.height
+        
+        // Varying sizes for depth of field effect
+        const sizeCategory = Math.random()
+        if (sizeCategory > 0.8) {
+          this.size = Math.random() * 35 + 20 // Large, heavily out of focus
+          this.blur = Math.random() * 20 + 15
+          this.speedX = (Math.random() - 0.5) * 0.15
+          this.speedY = (Math.random() - 0.5) * 0.15
+        } else if (sizeCategory > 0.4) {
+          this.size = Math.random() * 15 + 8 // Medium, blurry
+          this.blur = Math.random() * 10 + 5
+          this.speedX = (Math.random() - 0.5) * 0.25
+          this.speedY = (Math.random() - 0.5) * 0.25
+        } else {
+          this.size = Math.random() * 5 + 2 // Small, sharp
+          this.blur = Math.random() * 2 + 0
+          this.speedX = (Math.random() - 0.5) * 0.4
+          this.speedY = (Math.random() - 0.5) * 0.4
+        }
+        
+        this.baseOpacity = Math.random() * 0.5 + 0.5 // Significantly higher opacity
+        this.opacity = this.baseOpacity
+        this.pulseSpeed = Math.random() * 0.008 + 0.003 // Faster pulse
+        this.pulseDir = Math.random() > 0.5 ? 1 : -1
+        
+        // Orange/gold colors matching the image
+        const colors = [
+          '240, 160, 64',  // Gold/Orange
+          '212, 107, 26',  // Deep Orange
+          '255, 190, 100', // Light Gold
+        ]
+        this.color = colors[Math.floor(Math.random() * colors.length)]
+      }
+
+      update() {
+        this.x += this.speedX
+        this.y += this.speedY
+
+        // Wrap around
+        if (this.x < -50) this.x = canvas.width + 50
+        if (this.x > canvas.width + 50) this.x = -50
+        if (this.y < -50) this.y = canvas.height + 50
+        if (this.y > canvas.height + 50) this.y = -50
+
+        // Pulse opacity
+        this.opacity += this.pulseSpeed * this.pulseDir
+        if (this.opacity >= this.baseOpacity + 0.4) this.pulseDir = -1
+        if (this.opacity <= Math.max(0, this.baseOpacity - 0.3)) this.pulseDir = 1
+      }
+
+      draw() {
+        ctx.beginPath()
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+        
+        // Create radial gradient for softer edges on larger particles
+        if (this.blur > 0) {
+          const gradient = ctx.createRadialGradient(
+            this.x, this.y, 0,
+            this.x, this.y, this.size
+          )
+          gradient.addColorStop(0, `rgba(${this.color}, ${this.opacity})`)
+          gradient.addColorStop(1, `rgba(${this.color}, 0)`)
+          ctx.fillStyle = gradient
+        } else {
+          ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`
+        }
+        
+        ctx.fill()
+        
+        // Add a soft glow
+        if (this.blur === 0) {
+          ctx.shadowBlur = 8
+          ctx.shadowColor = `rgba(${this.color}, ${this.opacity * 1.5})`
+        } else {
+          ctx.shadowBlur = 0
+        }
+      }
+    }
+
+    // Create particles
+    const particles = Array.from({ length: 45 }, () => new Particle())
+
+    // Animation loop
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      
+      particles.forEach(particle => {
+        particle.update()
+        particle.draw()
+      })
+      
+      animationFrameId = requestAnimationFrame(animate)
+    }
+    
+    animate()
+
+    return () => {
+      window.removeEventListener('resize', resize)
+      cancelAnimationFrame(animationFrameId)
+    }
+  }, [])
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 z-10 pointer-events-none mix-blend-screen"
+    />
+  )
+}
+
 export default function Footer() {
   const navLinks = [
     { to: '#science', label: 'The Science' },
@@ -21,9 +158,12 @@ export default function Footer() {
     <footer style={{ position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-midnight)', color: '#ffffff', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
       
       {/* Massive 3D background element */}
-      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '100%', backgroundImage: 'url("/heros/rna-crisper-hero (6).webp")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.85, pointerEvents: 'none' }} />
+      <div className="absolute inset-0 z-0 animate-ambient-drift" style={{ backgroundImage: 'url("/heros/rna-crisper-hero (6).webp")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.85, pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, rgba(12,26,36,0.3) 25%, rgba(12,26,36,0.8) 70%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
       
+      {/* Bokeh Particles */}
+      <BokehParticles />
+
       <div className="section-container reveal" style={{ position: 'relative', zIndex: 10, maxWidth: '1440px', margin: '0 auto', padding: '160px 48px 0' }}>
         
         {/* Giant CTA Area */}
@@ -47,9 +187,9 @@ export default function Footer() {
           <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top, rgba(255,255,255,0.05) 0%, transparent 70%)', pointerEvents: 'none' }} />
           
           <div style={{ position: 'relative', zIndex: 1 }}>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-0.04em', maxWidth: '1000px', margin: '0 auto 32px', textShadow: '0 12px 32px rgba(0,0,0,0.5)' }}>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-0.04em', maxWidth: '1000px', margin: '0 auto 32px', textShadow: '0 4px 24px rgba(0,0,0,0.4)' }}>
               Transforming medicine with <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-[#d46b1a] to-[#e88430] bg-clip-text text-transparent drop-shadow-sm">precision cell killing.</span>
+              <span className="bg-gradient-to-r from-[#d46b1a] to-[#e88430] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(212,107,26,0.3)]">precision cell killing.</span>
             </h2>
             
             <p style={{ fontSize: 'clamp(1.1rem, 1.5vw, 1.5rem)', fontWeight: 300, color: '#b8cdd6', maxWidth: '700px', margin: '0 auto 56px', lineHeight: 1.6, textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
