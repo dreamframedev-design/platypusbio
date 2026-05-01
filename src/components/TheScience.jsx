@@ -468,8 +468,8 @@ export default function TheScience() {
               The Science
             </p>
             <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '48px' }}>
-              TRICK is the Next Evolution of{' '}
-              <span className="gradient-text-warm">CRISPR Platforms</span>
+              <span className="gradient-text-warm">TRICK is the Next Evolution</span>
+              {' '}of CRISPR Platforms
             </h2>
           </div>
 
