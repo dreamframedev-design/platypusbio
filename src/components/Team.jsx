@@ -85,7 +85,7 @@ export default function Team() {
             <span className="bg-gradient-to-br from-[#d46b1a] to-[#f0a040] bg-clip-text text-transparent">Driven by&nbsp;Discovery.</span>
           </h2>
           <p className="text-slate-600 text-[1.1875rem] leading-[1.7] max-w-[640px] font-light">
-            The Platypus Bio founding team brings together the rarest combination in deep-tech biotech — world-leading academic science, CRISPR biology expertise, computational drug design, and the operational experience to take a platform technology into the clinic.
+            The Platypus Bio founding team brings together the rarest combination in deep-tech biotech: world-leading academic science, CRISPR biology expertise, computational drug design, and the operational experience to take a platform technology into the clinic.
           </p>
         </div>
 

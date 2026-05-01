@@ -202,7 +202,7 @@ export default function Hero() {
 
             {/* Sub */}
             <p className="animate-fade-in-up delay-400 text-[clamp(1.05rem,1.15vw,1.15rem)] text-slate-800 mb-[48px] leading-[1.8] font-medium tracking-[0.01em] max-w-[600px] drop-shadow-sm">
-              TRICK (Trigger RNA-Induced Cell Killing) is a first-in-class programmable CRISPR platform that targets any RNA inside a cancer cell — unlocking the full transcriptome as a therapeutic target space.
+              TRICK (Trigger RNA-Induced Cell Killing) is a first-in-class programmable CRISPR platform that targets any RNA inside a cancer cell, unlocking the full transcriptome as a therapeutic target space.
             </p>
 
             {/* CTA */}

@@ -9,7 +9,7 @@ const newsItems = [
     image: '/heros/rna-crisper-hero (5).webp',
   },
   {
-    headline: 'NSW RNA Pipeline Grants 2025 — Platypus Bio Selected as Recipient',
+    headline: 'NSW RNA Pipeline Grants 2025: Platypus Bio Selected as Recipient',
     description: 'Platypus Bio receives support through the NSW RNA Pipeline Grants program to advance TRICK platform development.',
     date: '2025',
     link: 'https://www.nsw.gov.au/grants-and-funding/rna-pipeline-grants-2025/recipients',

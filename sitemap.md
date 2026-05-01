@@ -44,7 +44,7 @@ SECTION 4:
 HEADLINE: Broad by Design, Focused by Strategy 
 From ultra-deep biodiscovery and proprietary sequence data to programmable genetic tools and 
 precision diagnostics, Platypus Bio has assembled the core capabilities needed to innovate 
-across modern biotechnology. Yet our mission is centered on therapeutics—using this 
+across modern biotechnology. Yet our mission is centered on therapeutics, using this 
 integrated engine to develop targeted medicines that can address complex disease with 
 precision. The result is a platform that scales across applications, but ultimately converges on 
 what matters most: delivering new treatments to patients. 
@@ -52,7 +52,7 @@ what matters most: delivering new treatments to patients.
 SECTION 5: 
 HEADLINE: The Challenge Faced by Current Precision Cancer Therapies 
 The current generation of precision oncology therapies has proven that targeted cell killing 
-works—but it has also revealed the limits of protein-based targeting. Most approved modalities 
+works, but it has also revealed the limits of protein-based targeting. Most approved modalities 
 depend on identifying cell surface antigens that are highly expressed in tumors and minimally 
 present in normal tissue, a combination that is surprisingly rare. This constraint restricts pipeline 
 expansion, complicates safety, and leaves tumors room to escape through antigen loss or 

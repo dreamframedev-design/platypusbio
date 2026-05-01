@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ──────────────────────────────────────────────
-   PLATYPUS BIO — DESIGN SYSTEM v2
+   PLATYPUS BIO | DESIGN SYSTEM v2
    Refined from actual brand palette
    ────────────────────────────────────────────── */
 
@@ -15,14 +15,14 @@
   --color-pearl: #b8cdd6;
   --color-ivory: #e0eaf0;
 
-  /* Brand orange — sampled from actual logo #bf5700, evolved richer */
+  /* Brand orange: sampled from actual logo #bf5700, evolved richer */
   --color-platypus-orange: #d46b1a;
   --color-platypus-amber: #e88430;
   --color-platypus-gold: #f0a040;
   --color-platypus-deep: #a84d0e;
   --color-platypus-burnt: #bf5700;
 
-  /* Complementary accent — from brand teal #1e3745, evolved brighter */
+  /* Complementary accent: from brand teal #1e3745, evolved brighter */
   --color-bio-teal: #2dd4bf;
   --color-bio-cyan: #22d3ee;
   --color-bio-emerald: #34d399;

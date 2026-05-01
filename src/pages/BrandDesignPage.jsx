@@ -308,7 +308,7 @@ export default function BrandDesignPage() {
               <p style={{ color: '#7e99a8', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 16 }}>Eyebrow / label</p>
               <p style={{ color: '#d46b1a', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 32 }}>Alternate accent colour for labels</p>
               <h3 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', lineHeight: 1.05, marginBottom: 20 }}>
-                Display headline — clamp, weight 800
+                Display headline: clamp, weight 800
               </h3>
               <h4 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', marginBottom: 16 }}>
                 Section title
@@ -441,13 +441,13 @@ export default function BrandDesignPage() {
               </div>
               <div style={{ padding: 32, borderRadius: 20, background: 'var(--color-midnight-light)', border: '1px solid rgba(255,255,255,0.06)' }}>
                 <h4 style={{ color: '#fff', fontWeight: 700, marginBottom: 8 }}>Flat panel</h4>
-                <p style={{ color: '#7e99a8', fontSize: '0.875rem', lineHeight: 1.65 }}>Midnight light fill — used for form fields and dense UI.</p>
+                <p style={{ color: '#7e99a8', fontSize: '0.875rem', lineHeight: 1.65 }}>Midnight light fill: used for form fields and dense UI.</p>
               </div>
             </div>
             <p style={{ color: '#7e99a8', fontSize: '0.8125rem', marginTop: 28, marginBottom: 12 }}>.section-divider</p>
             <div className="section-divider" style={{ maxWidth: '100%' }} />
             <p style={{ color: '#7e99a8', fontSize: '0.8125rem', marginTop: 32, marginBottom: 12 }}>.genomic-noise (fixed, site-wide)</p>
-            <p style={{ color: '#3a5a6c', fontSize: '0.8125rem' }}>Applied in App root — subtle SVG fractal noise.</p>
+            <p style={{ color: '#3a5a6c', fontSize: '0.8125rem' }}>Applied in App root: subtle SVG fractal noise.</p>
           </section>
 
           <div className="section-divider" style={{ marginBottom: 64 }} />
@@ -501,16 +501,16 @@ export default function BrandDesignPage() {
             </SectionTitle>
             <ul style={{ color: '#b8cdd6', lineHeight: 2, paddingLeft: 20, fontSize: '0.9375rem' }}>
               <li>
-                <strong style={{ color: '#fff' }}>Home</strong> — Alternating contrasts: Light Hero, Dark Narrative, Dark Pipeline, Light Team. This creates a rhythm of airy "results" and deep "science".
+                <strong style={{ color: '#fff' }}>Home</strong>: Alternating contrasts: Light Hero, Dark Narrative, Dark Pipeline, Light Team. This creates a rhythm of airy "results" and deep "science".
               </li>
               <li>
-                <strong style={{ color: '#fff' }}>Contact</strong> — Dark gradient headline + glass form; teal accent on email and success state.
+                <strong style={{ color: '#fff' }}>Contact</strong>: Dark gradient headline + glass form; teal accent on email and success state.
               </li>
               <li>
-                <strong style={{ color: '#fff' }}>Navbar</strong> — Adapts from transparent to blurred light glass on scroll; mobile sheet; pill CTA.
+                <strong style={{ color: '#fff' }}>Navbar</strong>: Adapts from transparent to blurred light glass on scroll; mobile sheet; pill CTA.
               </li>
               <li>
-                <strong style={{ color: '#fff' }}>Footer</strong> — Deep dark backgrounds to anchor the bottom of the page.
+                <strong style={{ color: '#fff' }}>Footer</strong>: Deep dark backgrounds to anchor the bottom of the page.
               </li>
             </ul>
           </section>
@@ -525,10 +525,10 @@ export default function BrandDesignPage() {
             <div className="glass-card" style={{ padding: 28, borderRadius: 16 }}>
               <ul style={{ margin: 0, paddingLeft: 20, color: '#b8cdd6', lineHeight: 2, fontSize: '0.875rem' }}>
                 <li>
-                  <code style={{ color: '#2dd4bf' }}>/PLA_logos-01.svg</code> — ambient watermark (Hero)
+                  <code style={{ color: '#2dd4bf' }}>/PLA_logos-01.svg</code>: ambient watermark (Hero)
                 </li>
                 <li>
-                  <code style={{ color: '#2dd4bf' }}>/PLA_logos-02.svg</code> — mark + favicon
+                  <code style={{ color: '#2dd4bf' }}>/PLA_logos-02.svg</code>: mark + favicon
                 </li>
               </ul>
               <p style={{ color: '#3a5a6c', fontSize: '0.8125rem', marginTop: 20, lineHeight: 1.6 }}>

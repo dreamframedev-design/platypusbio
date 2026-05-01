@@ -74,7 +74,7 @@ export default function Pipeline() {
         {/* Intro callout */}
         <div className="reveal" style={{ maxWidth: '780px', margin: '0 auto 80px', textAlign: 'center' }}>
           <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
-            TRICK's first clinical applications target two cancers with defined RNA signatures, high unmet need, and established delivery pathways — proving the platform where it can make the fastest difference for patients and the clearest case for partners and investors.
+            TRICK's first clinical applications target two cancers with defined RNA signatures, high unmet need, and established delivery pathways, proving the platform where it can make the fastest difference for patients and the clearest case for partners and investors.
           </p>
         </div>
 

@@ -214,7 +214,7 @@ export default function TheScience() {
               <span className="gradient-text-warm">Focused by Strategy</span>
             </h2>
             <p style={{ color: '#475569', fontSize: '1.125rem', lineHeight: 1.85, maxWidth: '780px', margin: '0 auto', fontWeight: 300 }}>
-              From ultra-deep biodiscovery and proprietary sequence data to programmable genetic tools and precision diagnostics, Platypus Bio has assembled the core capabilities needed to innovate across modern biotechnology. Yet our mission is centered on therapeutics—using this integrated engine to develop targeted medicines that can address complex disease with precision. The result is a platform that scales across applications, but ultimately converges on what matters most: delivering new treatments to patients.
+              From ultra-deep biodiscovery and proprietary sequence data to programmable genetic tools and precision diagnostics, Platypus Bio has assembled the core capabilities needed to innovate across modern biotechnology. Yet our mission is centered on therapeutics, using this integrated engine to develop targeted medicines that can address complex disease with precision. The result is a platform that scales across applications, but ultimately converges on what matters most: delivering new treatments to patients.
             </p>
           </div>
         </div>
@@ -236,7 +236,7 @@ export default function TheScience() {
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
-                The current generation of precision oncology therapies has proven that targeted cell killing works—but it has also revealed the limits of protein-based targeting. Most approved modalities depend on identifying cell surface antigens that are highly expressed in tumors and minimally present in normal tissue, <span style={{ color: '#0f172a', padding: '2px 6px', borderRadius: '4px', backgroundColor: 'rgba(45,212,191,0.2)', borderBottom: '1px solid rgba(45,212,191,0.8)' }}>a combination that is surprisingly rare</span>.
+                The current generation of precision oncology therapies has proven that targeted cell killing works, but it has also revealed the limits of protein-based targeting. Most approved modalities depend on identifying cell surface antigens that are highly expressed in tumors and minimally present in normal tissue, <span style={{ color: '#0f172a', padding: '2px 6px', borderRadius: '4px', backgroundColor: 'rgba(45,212,191,0.2)', borderBottom: '1px solid rgba(45,212,191,0.8)' }}>a combination that is surprisingly rare</span>.
               </p>
               <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
                 This constraint restricts pipeline expansion, complicates safety, and leaves tumors room to escape through antigen loss or biological variability. The result is a therapeutic landscape where innovation is often bounded by target availability rather than scientific ambition.
@@ -411,11 +411,11 @@ export default function TheScience() {
 
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
             <p style={{ color: '#334155', fontSize: 'clamp(1.125rem, 2vw, 1.375rem)', lineHeight: 1.85, fontWeight: 400, maxWidth: '780px', margin: '0 auto' }}>
-              Precision oncology has a targeting problem. Every approved therapy — ADCs, CAR-T, BiTEs, monoclonal antibodies — is chasing the same thing: proteins on the surface of cancer cells. When that target disappears, the cancer wins.
+              Precision oncology has a targeting problem. Every approved therapy (ADCs, CAR-T, BiTEs, monoclonal antibodies) is chasing the same thing: proteins on the surface of cancer cells. When that target disappears, the cancer wins.
             </p>
             <div style={{ height: '48px' }} />
             <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300, maxWidth: '780px', margin: '0 auto' }}>
-              TRICK (Trigger RNA-Induced Cell Killing) is a fresh approach to CRISPR — and the first fully programmable platform capable of targeting any RNA inside a cancer cell. Coding or non-coding. Low-expression or intracellular. TRICK converts that RNA signal into irreparable genomic DNA damage and selective cell death. Programmable, precise, and applicable to all RNA therapeutics. We have unlocked the full transcriptome as a therapeutic target space.
+              TRICK (Trigger RNA-Induced Cell Killing) is a fresh approach to CRISPR, and the first fully programmable platform capable of targeting any RNA inside a cancer cell. Coding or non-coding. Low-expression or intracellular. TRICK converts that RNA signal into irreparable genomic DNA damage and selective cell death. Programmable, precise, and applicable to all RNA therapeutics. We have unlocked the full transcriptome as a therapeutic target space.
             </p>
           </div>
         </div>
@@ -440,7 +440,7 @@ export default function TheScience() {
             </h2>
           </div>
 
-          {/* ── CRISPR COMPARISON GRAPHIC — Cas9 vs Cas3 vs Cas13 ── */}
+          {/* CRISPR COMPARISON GRAPHIC: Cas9 vs Cas3 vs Cas13 */}
           <div className="reveal crispr-comparison-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '28px', maxWidth: '1000px', margin: '0 auto 64px' }}>
 
             {/* ─── CRISPR Cas9 ─── */}
@@ -546,11 +546,11 @@ export default function TheScience() {
                     </filter>
                   </defs>
 
-                  {/* DNA Double Helix — left portion (intact) */}
+                  {/* DNA Double Helix: left portion (intact) */}
                   <path d="M10 130 C25 115, 40 145, 55 130 S85 115, 100 130" stroke="#2dd4bf" strokeWidth="2.5" strokeLinecap="round" opacity="0.7"/>
                   <path d="M10 130 C25 145, 40 115, 55 130 S85 145, 100 130" stroke="#2dd4bf" strokeWidth="2.5" strokeLinecap="round" opacity="0.45"/>
 
-                  {/* Base-pair rungs — left portion */}
+                  {/* Base-pair rungs: left portion */}
                   <line x1="18" y1="125" x2="18" y2="135" stroke="#f0a040" strokeWidth="2" opacity="0.7" strokeLinecap="round"/>
                   <line x1="32" y1="133" x2="32" y2="127" stroke="#f0a040" strokeWidth="2" opacity="0.7" strokeLinecap="round"/>
                   <line x1="46" y1="138" x2="46" y2="122" stroke="#f0a040" strokeWidth="2" opacity="0.7" strokeLinecap="round"/>
@@ -567,7 +567,7 @@ export default function TheScience() {
                   {/* Guide RNA inside protein */}
                   <path d="M78 70 L85 65 L95 72 L105 62 L112 68" stroke="#2dd4bf" strokeWidth="1.5" opacity="0.5" strokeLinecap="round" fill="none"/>
 
-                  {/* Pac-Man mouth on right side of protein — helicase/nuclease domain */}
+                  {/* Pac-Man mouth on right side of protein: helicase/nuclease domain */}
                   <path d="M148 62 L168 72 L148 82" fill="url(#pacmanGrad)" stroke="rgba(255,255,255,0.15)" strokeWidth="1"/>
                   {/* "Teeth" */}
                   <circle cx="155" cy="68" r="1.5" fill="#ffffff" opacity="0.5"/>
@@ -611,11 +611,11 @@ export default function TheScience() {
                     </filter>
                   </defs>
 
-                  {/* DNA Double Helix — Bottom (stays intact, unaffected) */}
+                  {/* DNA Double Helix: Bottom (stays intact, unaffected) */}
                   <path d="M10 145 C25 135, 40 155, 55 145 S85 135, 100 145 S130 155, 145 145 S175 135, 190 145 S215 155, 230 145" stroke="#2dd4bf" strokeWidth="2" strokeLinecap="round" opacity="0.3"/>
                   <path d="M10 145 C25 155, 40 135, 55 145 S85 155, 100 145 S130 135, 145 145 S175 155, 190 145 S215 135, 230 145" stroke="#2dd4bf" strokeWidth="2" strokeLinecap="round" opacity="0.15"/>
 
-                  {/* Base-pair rungs — bottom DNA (faded) */}
+                  {/* Base-pair rungs: bottom DNA (faded) */}
                   <line x1="18" y1="142" x2="18" y2="148" stroke="#f0a040" strokeWidth="1.5" opacity="0.25" strokeLinecap="round"/>
                   <line x1="46" y1="148" x2="46" y2="142" stroke="#f0a040" strokeWidth="1.5" opacity="0.25" strokeLinecap="round"/>
                   <line x1="78" y1="142" x2="78" y2="148" stroke="#f0a040" strokeWidth="1.5" opacity="0.25" strokeLinecap="round"/>
@@ -633,7 +633,7 @@ export default function TheScience() {
                   {/* Guide RNA inside protein */}
                   <path d="M98 68 L105 63 L115 70 L125 60 L132 66" stroke="#2dd4bf" strokeWidth="1.5" opacity="0.5" strokeLinecap="round" fill="none"/>
 
-                  {/* Collateral RNA fragments — flying off in multiple directions */}
+                  {/* Collateral RNA fragments: flying off in multiple directions */}
                   {/* Top-right fragment */}
                   <g opacity="0.7">
                     <path d="M170 35 C175 30, 180 36, 188 28 C192 24, 198 30, 205 25" stroke="#2dd4bf" strokeWidth="2" strokeLinecap="round"/>
@@ -666,11 +666,11 @@ export default function TheScience() {
           {/* Body text */}
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
             <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, maxWidth: '780px', margin: '0 auto 48px', fontWeight: 300 }}>
-              TRICK accesses the full transcriptome — including non-coding RNAs, low-expression targets, and intracellular sequences. A target space that remains completely inaccessible to every approved precision therapy today. This is not an incremental improvement on existing CRISPR technologies. It is a new class of medicine.
+              TRICK accesses the full transcriptome, including non-coding RNAs, low-expression targets, and intracellular sequences. A target space that remains completely inaccessible to every approved precision therapy today. This is not an incremental improvement on existing CRISPR technologies. It is a new class of medicine.
             </p>
           </div>
 
-          {/* How TRICK Works — Diagram Area */}
+          {/* How TRICK Works: Diagram Area */}
           <div className="reveal" style={{ maxWidth: '1000px', margin: '0 auto' }}>
             <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', textAlign: 'center', marginBottom: '32px', letterSpacing: '-0.02em' }}>
               How TRICK Works
