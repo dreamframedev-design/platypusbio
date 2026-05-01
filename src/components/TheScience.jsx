@@ -409,25 +409,42 @@ export default function TheScience() {
           <div className="reveal glass-card-light" style={{ maxWidth: '1000px', margin: '0 auto', padding: '56px 64px', borderRadius: '32px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(45,212,191,0.6)' }}>
             <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(45,212,191,0.08) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
             
-            <div className="trick-solution-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '56px', alignItems: 'stretch' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-                <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '24px' }}>
-                  Precision oncology has a targeting problem.
+            <div className="trick-solution-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '64px', alignItems: 'stretch' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', position: 'relative' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+                  <div style={{ width: '40px', height: '2px', backgroundColor: '#d46b1a' }} />
+                  <span style={{ color: '#d46b1a', fontSize: '0.8125rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase' }}>The Challenge</span>
+                </div>
+                
+                <h3 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '24px' }}>
+                  Precision oncology has a <span style={{ position: 'relative', display: 'inline-block' }}>targeting<svg style={{ position: 'absolute', bottom: '-4px', left: 0, width: '100%', height: '8px', zIndex: -1 }} viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="rgba(212,107,26,0.3)" strokeWidth="4" fill="none" strokeLinecap="round"/></svg></span> problem.
                 </h3>
-                <p style={{ color: '#475569', fontSize: '1.125rem', lineHeight: 1.8, fontWeight: 400 }}>
+                
+                <p style={{ color: '#475569', fontSize: '1.125rem', lineHeight: 1.85, fontWeight: 400 }}>
                   Every approved therapy (ADCs, CAR-T, BiTEs, monoclonal antibodies) is chasing the same thing: proteins on the surface of cancer cells. When that target disappears, the cancer wins.
                 </p>
+
+                <div style={{ marginTop: 'auto', paddingTop: '48px', display: 'flex', alignItems: 'center', gap: '24px', opacity: 0.6 }}>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '50%', border: '1px dashed #7e99a8', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', flexShrink: 0 }}>
+                    <div style={{ width: '24px', height: '24px', borderRadius: '50%', border: '1px solid #7e99a8' }} />
+                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#d46b1a', position: 'absolute' }} />
+                    {/* Crosshairs */}
+                    <div style={{ position: 'absolute', top: '-6px', bottom: '-6px', left: '50%', width: '1px', backgroundColor: '#7e99a8', transform: 'translateX(-50%)', opacity: 0.5 }} />
+                    <div style={{ position: 'absolute', left: '-6px', right: '-6px', top: '50%', height: '1px', backgroundColor: '#7e99a8', transform: 'translateY(-50%)', opacity: 0.5 }} />
+                  </div>
+                  <div style={{ height: '1px', flex: 1, background: 'linear-gradient(to right, rgba(126,153,168,0.3), transparent)' }} />
+                </div>
               </div>
               
-              <div style={{ padding: '40px', backgroundColor: 'rgba(45,212,191,0.05)', borderRadius: '24px', border: '1px solid rgba(45,212,191,0.2)', position: 'relative' }}>
-                <div style={{ position: 'absolute', top: '0', left: '40px', transform: 'translateY(-50%)', backgroundColor: '#0d9488', color: '#fff', padding: '6px 16px', borderRadius: '99px', fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', boxShadow: '0 4px 12px rgba(13,148,136,0.3)' }}>
+              <div style={{ padding: '48px', backgroundColor: 'rgba(45,212,191,0.04)', borderRadius: '24px', border: '1px solid rgba(45,212,191,0.2)', position: 'relative', boxShadow: 'inset 0 0 40px rgba(255,255,255,0.5)' }}>
+                <div style={{ position: 'absolute', top: '0', left: '48px', transform: 'translateY(-50%)', backgroundColor: '#0d9488', color: '#fff', padding: '8px 24px', borderRadius: '99px', fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', boxShadow: '0 8px 16px rgba(13,148,136,0.25)' }}>
                   The TRICK Solution
                 </div>
-                <p style={{ color: '#334155', fontSize: '1.0625rem', lineHeight: 1.8, fontWeight: 400 }}>
+                <p style={{ color: '#334155', fontSize: '1.125rem', lineHeight: 1.85, fontWeight: 400 }}>
                   TRICK (Trigger RNA-Induced Cell Killing) is a fresh approach to CRISPR, and the first fully programmable platform capable of targeting any RNA inside a cancer cell. Coding or non-coding. Low-expression or intracellular. TRICK converts that RNA signal into irreparable genomic DNA damage and selective cell death.
                 </p>
-                <div style={{ marginTop: '24px', paddingTop: '24px', borderTop: '1px solid rgba(13,148,136,0.2)' }}>
-                  <p style={{ color: '#0f172a', fontSize: '1.0625rem', fontWeight: 700, lineHeight: 1.6 }}>
+                <div style={{ marginTop: '32px', paddingTop: '32px', borderTop: '1px solid rgba(13,148,136,0.2)' }}>
+                  <p style={{ color: '#0f172a', fontSize: '1.125rem', fontWeight: 700, lineHeight: 1.6 }}>
                     Programmable, precise, and applicable to all RNA therapeutics. We have unlocked the full transcriptome as a therapeutic target space.
                   </p>
                 </div>
