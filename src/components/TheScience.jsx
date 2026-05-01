@@ -382,9 +382,6 @@ export default function TheScience() {
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.4) 25%, rgba(251,251,249,0.4) 75%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
           <div className="reveal glass-card-light" style={{ maxWidth: '900px', margin: '0 auto', padding: '64px 56px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(212,107,26,0.6)' }}>
-            <p style={{ color: '#d46b1a', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '24px' }}>
-              Pipeline Scope
-            </p>
             <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '32px' }}>
               Where precision meets execution
             </h2>
@@ -413,7 +410,7 @@ export default function TheScience() {
             <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(45,212,191,0.08) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
             
             <div className="trick-solution-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '56px', alignItems: 'stretch' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
                 <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '24px' }}>
                   Precision oncology has a targeting problem.
                 </h3>

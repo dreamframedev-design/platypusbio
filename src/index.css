@@ -436,13 +436,3 @@ body {
   animation: shimmer 4s linear infinite;
 }
 
-/* ── Custom Cursor ──────────────────────────── */
-.custom-cursor {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  border-radius: 50%;
-  border: 1px solid var(--color-platypus-orange);
-  transform: translate(-50%, -50%);
-  transition: width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), background-color 0.3s, border-color 0.3s;
-}

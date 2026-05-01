@@ -8,7 +8,7 @@ import Partners from '../components/Partners'
 import News from '../components/News'
 import ContactSection from '../components/ContactSection'
 
-export default function Home({ cursorPos }) {
+export default function Home() {
   const location = useLocation()
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function Home({ cursorPos }) {
 
   return (
     <main>
-      <Hero cursorPos={cursorPos} />
+      <Hero />
       <TheScience />
       <Pipeline />
       <Team />

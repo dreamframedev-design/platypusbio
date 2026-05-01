@@ -1,42 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import Footer from './components/Footer'
-import CustomCursor from './components/CustomCursor'
 
 function App() {
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
-  const [isHovering, setIsHovering] = useState(false)
-
-  // Cursor tracking
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setCursorPos({ x: e.clientX, y: e.clientY })
-    }
-    const handleMouseOver = (e) => {
-      if (e.target.closest('a, button, .hoverable, input, textarea')) {
-        setIsHovering(true)
-      } else {
-        setIsHovering(false)
-      }
-    }
-
-    const handleMouseOut = () => setIsHovering(false)
-
-    window.addEventListener('mousemove', handleMouseMove)
-    window.addEventListener('mouseover', handleMouseOver)
-    window.addEventListener('mouseout', handleMouseOut)
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-      window.removeEventListener('mouseover', handleMouseOver)
-      window.removeEventListener('mouseout', handleMouseOut)
-    }
-  }, [])
-
   // Reveal Animations
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -70,10 +40,9 @@ function App() {
   return (
     <>
       <div className="genomic-noise" />
-      <CustomCursor x={cursorPos.x} y={cursorPos.y} isHovering={isHovering} />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home cursorPos={cursorPos} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfService />} />
       </Routes>
