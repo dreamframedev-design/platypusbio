@@ -409,14 +409,33 @@ export default function TheScience() {
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
           <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
-          <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
-            <p style={{ color: '#334155', fontSize: 'clamp(1.125rem, 2vw, 1.375rem)', lineHeight: 1.85, fontWeight: 400, maxWidth: '780px', margin: '0 auto' }}>
-              Precision oncology has a targeting problem. Every approved therapy (ADCs, CAR-T, BiTEs, monoclonal antibodies) is chasing the same thing: proteins on the surface of cancer cells. When that target disappears, the cancer wins.
-            </p>
-            <div style={{ height: '48px' }} />
-            <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300, maxWidth: '780px', margin: '0 auto' }}>
-              TRICK (Trigger RNA-Induced Cell Killing) is a fresh approach to CRISPR, and the first fully programmable platform capable of targeting any RNA inside a cancer cell. Coding or non-coding. Low-expression or intracellular. TRICK converts that RNA signal into irreparable genomic DNA damage and selective cell death. Programmable, precise, and applicable to all RNA therapeutics. We have unlocked the full transcriptome as a therapeutic target space.
-            </p>
+          <div className="reveal glass-card-light" style={{ maxWidth: '1000px', margin: '0 auto', padding: '56px 64px', borderRadius: '32px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(45,212,191,0.6)' }}>
+            <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(45,212,191,0.08) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
+            
+            <div className="trick-solution-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '56px', alignItems: 'stretch' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '24px' }}>
+                  Precision oncology has a targeting problem.
+                </h3>
+                <p style={{ color: '#475569', fontSize: '1.125rem', lineHeight: 1.8, fontWeight: 400 }}>
+                  Every approved therapy (ADCs, CAR-T, BiTEs, monoclonal antibodies) is chasing the same thing: proteins on the surface of cancer cells. When that target disappears, the cancer wins.
+                </p>
+              </div>
+              
+              <div style={{ padding: '40px', backgroundColor: 'rgba(45,212,191,0.05)', borderRadius: '24px', border: '1px solid rgba(45,212,191,0.2)', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '0', left: '40px', transform: 'translateY(-50%)', backgroundColor: '#0d9488', color: '#fff', padding: '6px 16px', borderRadius: '99px', fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', boxShadow: '0 4px 12px rgba(13,148,136,0.3)' }}>
+                  The TRICK Solution
+                </div>
+                <p style={{ color: '#334155', fontSize: '1.0625rem', lineHeight: 1.8, fontWeight: 400 }}>
+                  TRICK (Trigger RNA-Induced Cell Killing) is a fresh approach to CRISPR, and the first fully programmable platform capable of targeting any RNA inside a cancer cell. Coding or non-coding. Low-expression or intracellular. TRICK converts that RNA signal into irreparable genomic DNA damage and selective cell death.
+                </p>
+                <div style={{ marginTop: '24px', paddingTop: '24px', borderTop: '1px solid rgba(13,148,136,0.2)' }}>
+                  <p style={{ color: '#0f172a', fontSize: '1.0625rem', fontWeight: 700, lineHeight: 1.6 }}>
+                    Programmable, precise, and applicable to all RNA therapeutics. We have unlocked the full transcriptome as a therapeutic target space.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -718,6 +737,10 @@ export default function TheScience() {
           }
           .crispr-comparison-grid {
             grid-template-columns: 1fr !important;
+          }
+          .trick-solution-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
           }
         }
       `}</style>
