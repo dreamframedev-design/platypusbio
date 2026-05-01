@@ -409,15 +409,15 @@ export default function TheScience() {
           <div className="reveal glass-card-light" style={{ maxWidth: '1000px', margin: '0 auto', padding: '56px 64px', borderRadius: '32px', position: 'relative', overflow: 'hidden', borderTop: '2px solid rgba(45,212,191,0.6)' }}>
             <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(45,212,191,0.08) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
             
-            <div className="trick-solution-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '64px', alignItems: 'stretch' }}>
+            <div className="trick-solution-grid" style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '64px', alignItems: 'stretch' }}>
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', position: 'relative' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
                   <div style={{ width: '40px', height: '2px', backgroundColor: '#d46b1a' }} />
                   <span style={{ color: '#d46b1a', fontSize: '0.8125rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase' }}>The Challenge</span>
                 </div>
                 
-                <h3 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '24px' }}>
-                  Precision oncology has a <span style={{ position: 'relative', display: 'inline-block' }}>targeting<svg style={{ position: 'absolute', bottom: '-4px', left: 0, width: '100%', height: '8px', zIndex: -1 }} viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="rgba(212,107,26,0.3)" strokeWidth="4" fill="none" strokeLinecap="round"/></svg></span> problem.
+                <h3 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.15, letterSpacing: '-0.03em', marginBottom: '24px' }}>
+                  Precision oncology<br />has a targeting problem.
                 </h3>
                 
                 <p style={{ color: '#475569', fontSize: '1.125rem', lineHeight: 1.85, fontWeight: 400 }}>
