@@ -175,7 +175,6 @@ export default function Footer() {
     { to: '#science', label: 'The Science' },
     { to: '#pipeline', label: 'Pipeline' },
     { to: '#team', label: 'Team' },
-    { to: '#partners', label: 'Partners' },
     { to: '#news', label: 'News' },
     { to: '#contact', label: 'Contact' },
   ]
