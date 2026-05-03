@@ -88,7 +88,7 @@ export default function TheScience() {
       {/* ═══════════════════════════════════════════
           SECTION 2: A FRESH APPROACH TO CRISPR
           ═══════════════════════════════════════════ */}
-      <div style={{ position: 'relative', paddingTop: '128px', paddingBottom: '128px', backgroundColor: '#fbfbf9' }}>
+      <div style={{ position: 'relative', paddingTop: '56px', paddingBottom: '168px', backgroundColor: '#fbfbf9' }}>
         {/* Background glow */}
         <div className="ambient-glow" style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '800px', height: '800px', background: 'rgba(212,107,26,0.04)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
         {/* Parallax abstract background */}
@@ -109,7 +109,7 @@ export default function TheScience() {
         }} />
 
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
-          <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
+          <div className="section-divider" style={{ marginBottom: '36px', opacity: 0.5 }} />
 
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
             <p style={{ color: '#d46b1a', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '16px' }}>
@@ -141,8 +141,8 @@ export default function TheScience() {
       <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '128px', backgroundColor: 'var(--color-midnight)' }}>
         {/* Solid Swoop Edge from Light to Dark */}
         <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none -translate-y-[99%]">
-          <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="block w-full h-[60px] md:h-[120px]">
-            <path d="M0,100 C480,0 960,0 1440,100 Z" fill="var(--color-midnight)" />
+          <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="block w-full h-[51px] md:h-[102px]">
+            <path d="M0,100 C480,62 960,62 1440,100 Z" fill="var(--color-midnight)" />
           </svg>
         </div>
         
@@ -198,8 +198,8 @@ export default function TheScience() {
       <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '128px', backgroundColor: '#fbfbf9' }}>
         {/* Solid Swoop Edge from Dark to Light */}
         <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none -translate-y-[99%]">
-          <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="block w-full h-[60px] md:h-[120px]">
-            <path d="M0,100 C480,0 960,0 1440,100 Z" fill="#fbfbf9" />
+          <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="block w-full h-[51px] md:h-[102px]">
+            <path d="M0,100 C480,62 960,62 1440,100 Z" fill="#fbfbf9" />
           </svg>
         </div>
         
@@ -210,8 +210,9 @@ export default function TheScience() {
 
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
             <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '40px' }}>
-              Broad by Design,{' '}
-              <span className="gradient-text-warm">Focused by Strategy</span>
+              Broad by Design,
+              <br />
+              <span className="gradient-text-warm" style={{ whiteSpace: 'nowrap' }}>Focused by Strategy</span>
             </h2>
             <p style={{ color: '#475569', fontSize: '1.125rem', lineHeight: 1.85, maxWidth: '780px', margin: '0 auto', fontWeight: 300 }}>
               From ultra-deep biodiscovery and proprietary sequence data to programmable genetic tools and precision diagnostics, Platypus Bio has assembled the core capabilities needed to innovate across modern biotechnology. Yet our mission is centered on therapeutics, using this integrated engine to develop targeted medicines that can address complex disease with precision. The result is a platform that scales across applications, but ultimately converges on what matters most: delivering new treatments to patients.
@@ -267,7 +268,7 @@ export default function TheScience() {
             
             {/* Full Width Header */}
             <div style={{ textAlign: 'center', marginBottom: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '24px', padding: '10px 28px', borderRadius: '99px', border: '1px solid rgba(45,212,191,0.2)', backgroundColor: 'rgba(45,212,191,0.05)' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '24px', padding: '10px 28px', borderRadius: '10px', border: '1px solid rgba(45,212,191,0.2)', backgroundColor: 'rgba(45,212,191,0.05)' }}>
                 <span style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#0d9488', boxShadow: '0 0 12px rgba(13,148,136,0.6)' }} />
                 <span style={{ color: '#0d9488', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase' }}>
                   Mechanism of Action
@@ -275,7 +276,7 @@ export default function TheScience() {
               </div>
               
               <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.05, letterSpacing: '-0.04em', maxWidth: '1000px' }}>
-                TRICK turns molecular <span className="gradient-text-cool">recognition into action</span>
+                TRICK turns molecular recognition into action
               </h2>
             </div>
             
@@ -285,9 +286,9 @@ export default function TheScience() {
                 {/* Connecting Line */}
                 <div style={{ position: 'absolute', top: '24px', bottom: '24px', left: '19px', width: '2px', background: 'linear-gradient(to bottom, rgba(15,23,42,0.1), rgba(212,107,26,0.2))', zIndex: 0 }} />
 
-                <div className="glass-card-light" style={{ display: 'flex', gap: '24px', position: 'relative', zIndex: 1, padding: '32px', borderRadius: '24px', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.8)', boxShadow: '0 8px 32px rgba(0,0,0,0.03)' }}>
+                <div className="glass-card-light" style={{ display: 'flex', gap: '24px', position: 'relative', zIndex: 1, padding: '32px', borderRadius: '14px', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.8)', boxShadow: '0 8px 32px rgba(0,0,0,0.03)' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
-                    <div style={{ width: '40px', height: '40px', borderRadius: '12px', backgroundColor: '#0f172a', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 8px 16px rgba(15,23,42,0.2)' }}>1</div>
+                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', backgroundColor: '#0d9488', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 8px 16px rgba(13,148,136,0.25)' }}>1</div>
                   </div>
                   <div>
                     <h4 style={{ color: '#0f172a', fontSize: '1.25rem', fontWeight: 800, marginBottom: '12px', letterSpacing: '-0.01em' }}>Target Identification</h4>
@@ -297,9 +298,9 @@ export default function TheScience() {
                   </div>
                 </div>
 
-                <div className="glass-card-light" style={{ display: 'flex', gap: '24px', position: 'relative', zIndex: 1, padding: '32px', borderRadius: '24px', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.8)', boxShadow: '0 8px 32px rgba(0,0,0,0.03)' }}>
+                <div className="glass-card-light" style={{ display: 'flex', gap: '24px', position: 'relative', zIndex: 1, padding: '32px', borderRadius: '14px', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.8)', boxShadow: '0 8px 32px rgba(0,0,0,0.03)' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
-                    <div style={{ width: '40px', height: '40px', borderRadius: '12px', backgroundColor: '#0f172a', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 8px 16px rgba(15,23,42,0.2)' }}>2</div>
+                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', backgroundColor: '#d46b1a', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 8px 16px rgba(212,107,26,0.25)' }}>2</div>
                   </div>
                   <div>
                     <h4 style={{ color: '#0f172a', fontSize: '1.25rem', fontWeight: 800, marginBottom: '12px', letterSpacing: '-0.01em' }}>Signal Amplification</h4>
@@ -309,12 +310,12 @@ export default function TheScience() {
                   </div>
                 </div>
 
-                <div className="glass-card-light" style={{ display: 'flex', gap: '24px', position: 'relative', zIndex: 1, padding: '32px', borderRadius: '24px', background: 'rgba(255,255,255,0.8)', border: '1px solid rgba(212,107,26,0.3)', boxShadow: '0 16px 48px rgba(212,107,26,0.08)' }}>
+                <div className="glass-card-light" style={{ display: 'flex', gap: '24px', position: 'relative', zIndex: 1, padding: '32px', borderRadius: '14px', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.8)', boxShadow: '0 8px 32px rgba(0,0,0,0.03)' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
-                    <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'linear-gradient(135deg, #d46b1a, #f0a040)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 12px 24px rgba(212,107,26,0.3)' }}>3</div>
+                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', backgroundColor: '#22d3ee', color: '#0f172a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 8px 16px rgba(34,211,238,0.35)' }}>3</div>
                   </div>
                   <div>
-                    <h4 style={{ color: '#d46b1a', fontSize: '1.25rem', fontWeight: 800, marginBottom: '12px', letterSpacing: '-0.01em' }}>Controlled Cell Death</h4>
+                    <h4 style={{ color: '#0f172a', fontSize: '1.25rem', fontWeight: 800, marginBottom: '12px', letterSpacing: '-0.01em' }}>Controlled Cell Death</h4>
                     <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.7, fontWeight: 400 }}>
                       That amplified signal switches on a cytotoxic nuclease, which introduces widespread genomic DNA damage that the cell cannot recover from, resulting in controlled cell death. Because the components are modular, the platform can be adapted to different biological contexts and therapeutic strategies. The result is a mechanism that combines precision sensing with reliable execution, enabling targeted elimination of cells defined by their RNA signatures.
                     </p>
@@ -325,14 +326,14 @@ export default function TheScience() {
             {/* Image Side - Now Sticky so it stays visible while reading steps */}
             <div className="reveal-scale" style={{ position: 'sticky', top: '120px' }}>
               {/* Decorative framing elements */}
-              <div style={{ position: 'absolute', top: '-30px', left: '-30px', width: '120px', height: '120px', borderTop: '2px solid rgba(45,212,191,0.4)', borderLeft: '2px solid rgba(45,212,191,0.4)', borderRadius: '24px 0 0 0', pointerEvents: 'none' }} />
-              <div style={{ position: 'absolute', bottom: '-30px', right: '-30px', width: '120px', height: '120px', borderBottom: '2px solid rgba(212,107,26,0.4)', borderRight: '2px solid rgba(212,107,26,0.4)', borderRadius: '0 0 24px 0', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', top: '-30px', left: '-30px', width: '120px', height: '120px', borderTop: '2px solid rgba(45,212,191,0.4)', borderLeft: '2px solid rgba(45,212,191,0.4)', borderRadius: '12px 0 0 0', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', bottom: '-30px', right: '-30px', width: '120px', height: '120px', borderBottom: '2px solid rgba(212,107,26,0.4)', borderRight: '2px solid rgba(212,107,26,0.4)', borderRadius: '0 0 12px 0', pointerEvents: 'none' }} />
               
               {/* Diffused Glow behind image */}
               <div style={{ position: 'absolute', inset: '-20px', background: 'radial-gradient(circle, rgba(13,148,136,0.1) 0%, transparent 70%)', filter: 'blur(40px)', zIndex: 0 }} />
 
               <div style={{ 
-                borderRadius: '32px', 
+                borderRadius: '16px', 
                 overflow: 'hidden', 
                 boxShadow: '0 32px 100px rgba(12, 26, 36, 0.2)', 
                 border: '1px solid rgba(255,255,255,0.8)',

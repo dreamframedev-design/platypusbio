@@ -64,22 +64,34 @@ export default function Pipeline() {
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
-        {/* Header */}
-        <div className="reveal" style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 48px' }}>
-          <p style={{ color: '#0d9488', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '16px' }}>
-            Pipeline
-          </p>
-        </div>
+        <div
+          className="reveal"
+          style={{
+            maxWidth: '920px',
+            margin: '0 auto',
+            padding: '40px 36px 44px',
+            borderRadius: '16px',
+            border: '1px solid rgba(15, 23, 42, 0.08)',
+            background: 'rgba(255, 255, 255, 0.72)',
+            boxShadow: '0 12px 40px rgba(12, 26, 36, 0.06)',
+          }}
+        >
+          {/* Header */}
+          <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 28px' }}>
+            <p style={{ color: '#0d9488', fontSize: 'clamp(1.5rem, 3.2vw, 2rem)', fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: '0' }}>
+              Pipeline
+            </p>
+          </div>
 
-        {/* Intro callout */}
-        <div className="reveal" style={{ maxWidth: '780px', margin: '0 auto 80px', textAlign: 'center' }}>
-          <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
-            TRICK's first clinical applications target two cancers with defined RNA signatures, high unmet need, and established delivery pathways, proving the platform where it can make the fastest difference for patients and the clearest case for partners and investors.
-          </p>
-        </div>
+          {/* Intro callout */}
+          <div style={{ maxWidth: '780px', margin: '0 auto 36px', textAlign: 'center' }}>
+            <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
+              TRICK's first clinical applications target two cancers with defined RNA signatures, high unmet need, and established delivery pathways, proving the platform where it can make the fastest difference for patients and the clearest case for partners and investors.
+            </p>
+          </div>
 
-        {/* Program Cards */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '48px', maxWidth: '900px', margin: '0 auto' }}>
+          {/* Program Cards */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '900px', margin: '0 auto' }}>
           {programs.map((program, i) => (
             <div
               key={i}
@@ -180,6 +192,7 @@ export default function Pipeline() {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </div>
 

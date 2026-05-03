@@ -181,8 +181,8 @@ export default function Hero() {
       {/* Bokeh Particles */}
       <BokehParticles />
 
-      <div className="relative z-20 w-full max-w-[1440px] mx-auto px-8 lg:px-16 flex justify-end items-center h-full pt-20">
-        <div className="w-full max-w-[720px] text-left p-8 md:p-12 lg:p-14 rounded-[2.5rem] backdrop-blur-2xl bg-white/40 border border-white/60 shadow-[0_32px_64px_rgba(0,0,0,0.15)] relative overflow-hidden">
+      <div className="relative z-20 w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-16 flex justify-end items-center h-full pt-16 sm:pt-20 pb-8">
+        <div className="w-full max-w-[720px] text-left p-7 md:p-10 lg:p-12 rounded-2xl backdrop-blur-2xl bg-white/40 border border-white/60 shadow-[0_32px_64px_rgba(0,0,0,0.15)] relative overflow-hidden">
           
           {/* Subtle inner glow for the glass card */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50 pointer-events-none" />
@@ -225,6 +225,13 @@ export default function Hero() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Cream wave into science section (matches TheScience swoop geometry) */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-[15] pointer-events-none translate-y-px">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="block w-full h-[51px] md:h-[102px]">
+          <path d="M0,100 C480,62 960,62 1440,100 Z" fill="#fbfbf9" />
+        </svg>
       </div>
 
       {/* Scroll Indicator */}

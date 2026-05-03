@@ -48,7 +48,7 @@ export default function News() {
           </p>
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.5rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em' }}>
             Latest from{' '}
-            <span className="gradient-text-warm">Platypus Bio.</span>
+            <span className="gradient-text-warm">Platypus Bio</span>
           </h2>
         </div>
 
