@@ -270,7 +270,7 @@ export default function TheScience() {
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '24px', padding: '10px 28px', borderRadius: '99px', border: '1px solid rgba(45,212,191,0.2)', backgroundColor: 'rgba(45,212,191,0.05)' }}>
                 <span style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#0d9488', boxShadow: '0 0 12px rgba(13,148,136,0.6)' }} />
                 <span style={{ color: '#0d9488', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase' }}>
-                  Action Mechanism
+                  Mechanism of Action
                 </span>
               </div>
               
@@ -287,7 +287,7 @@ export default function TheScience() {
 
                 <div className="glass-card-light" style={{ display: 'flex', gap: '24px', position: 'relative', zIndex: 1, padding: '32px', borderRadius: '24px', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.8)', boxShadow: '0 8px 32px rgba(0,0,0,0.03)' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
-                    <div style={{ width: '40px', height: '40px', borderRadius: '12px', backgroundColor: '#0f172a', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 8px 16px rgba(15,23,42,0.2)', transform: 'rotate(-5deg)' }}>1</div>
+                    <div style={{ width: '40px', height: '40px', borderRadius: '12px', backgroundColor: '#0f172a', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 8px 16px rgba(15,23,42,0.2)' }}>1</div>
                   </div>
                   <div>
                     <h4 style={{ color: '#0f172a', fontSize: '1.25rem', fontWeight: 800, marginBottom: '12px', letterSpacing: '-0.01em' }}>Target Identification</h4>
@@ -299,7 +299,7 @@ export default function TheScience() {
 
                 <div className="glass-card-light" style={{ display: 'flex', gap: '24px', position: 'relative', zIndex: 1, padding: '32px', borderRadius: '24px', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.8)', boxShadow: '0 8px 32px rgba(0,0,0,0.03)' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
-                    <div style={{ width: '40px', height: '40px', borderRadius: '12px', backgroundColor: '#0f172a', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 8px 16px rgba(15,23,42,0.2)', transform: 'rotate(5deg)' }}>2</div>
+                    <div style={{ width: '40px', height: '40px', borderRadius: '12px', backgroundColor: '#0f172a', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 8px 16px rgba(15,23,42,0.2)' }}>2</div>
                   </div>
                   <div>
                     <h4 style={{ color: '#0f172a', fontSize: '1.25rem', fontWeight: 800, marginBottom: '12px', letterSpacing: '-0.01em' }}>Signal Amplification</h4>
@@ -311,7 +311,7 @@ export default function TheScience() {
 
                 <div className="glass-card-light" style={{ display: 'flex', gap: '24px', position: 'relative', zIndex: 1, padding: '32px', borderRadius: '24px', background: 'rgba(255,255,255,0.8)', border: '1px solid rgba(212,107,26,0.3)', boxShadow: '0 16px 48px rgba(212,107,26,0.08)' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
-                    <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'linear-gradient(135deg, #d46b1a, #f0a040)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 12px 24px rgba(212,107,26,0.3)', transform: 'rotate(-5deg)' }}>3</div>
+                    <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'linear-gradient(135deg, #d46b1a, #f0a040)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, boxShadow: '0 12px 24px rgba(212,107,26,0.3)' }}>3</div>
                   </div>
                   <div>
                     <h4 style={{ color: '#d46b1a', fontSize: '1.25rem', fontWeight: 800, marginBottom: '12px', letterSpacing: '-0.01em' }}>Controlled Cell Death</h4>
@@ -354,7 +354,7 @@ export default function TheScience() {
                 e.currentTarget.style.border = '1px solid rgba(255,255,255,0.8)';
               }}
               >
-                <img src="/diagram2.png" alt="Action Mechanism Diagram" style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }} />
+                <img src="/diagram2.png" alt="Mechanism of Action Diagram" style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }} />
               </div>
             </div>
           </div>
