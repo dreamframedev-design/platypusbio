@@ -76,7 +76,7 @@ export default function ContactSection() {
             </p>
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '32px' }}>
               Get in{' '}
-              <span className="gradient-text-warm">Touch</span>
+              <span className="gradient-text-cool">Touch</span>
             </h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '48px' }}>

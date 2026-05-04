@@ -258,7 +258,7 @@ export default function TheScience() {
       {/* ═══════════════════════════════════════════
           SECTION 6: TRICK TURNS MOLECULAR RECOGNITION INTO ACTION
           ═══════════════════════════════════════════ */}
-      <div style={{ position: 'relative', paddingTop: '100px', paddingBottom: '100px', backgroundColor: '#fbfbf9', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', paddingTop: '100px', paddingBottom: '100px', backgroundColor: '#fbfbf9', overflow: 'clip' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center top', backgroundAttachment: 'fixed', opacity: 0.15, filter: 'invert(1) contrast(1.2)', mixBlendMode: 'multiply', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.4) 20%, rgba(251,251,249,0.4) 80%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="ambient-glow" style={{ position: 'absolute', top: '10%', right: '-10%', width: '800px', height: '800px', background: 'rgba(45,212,191,0.04)', borderRadius: '50%', filter: 'blur(100px)', pointerEvents: 'none', zIndex: 0 }} />
@@ -469,8 +469,7 @@ export default function TheScience() {
               The Science
             </p>
             <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '48px' }}>
-              <span className="gradient-text-warm">TRICK is the Next Evolution</span>
-              {' '}of CRISPR Platforms
+              <span className="gradient-text-warm">TRICK is the Next Evolution of CRISPR Platforms</span>
             </h2>
           </div>
 

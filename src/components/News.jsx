@@ -3,18 +3,27 @@ import { useEffect, useRef } from 'react'
 const newsItems = [
   {
     headline: 'Ginkgo Bioworks Partners with Carnegie-Mellon University to Develop Innovative New Cancer Screening Approach',
-    description: 'Revolutionizing early cancer detection with at-home technology.',
-    date: '2025',
+    date: 'Apr 21, 2026',
     link: '#',
-    image: '/heros/rna-crisper-hero (5).webp',
   },
   {
     headline: 'NSW RNA Pipeline Grants 2025: Platypus Bio Selected as Recipient',
-    description: 'Platypus Bio receives support through the NSW RNA Pipeline Grants program to advance TRICK platform development.',
-    date: '2025',
+    date: 'Jan 15, 2025',
     link: 'https://www.nsw.gov.au/grants-and-funding/rna-pipeline-grants-2025/recipients',
-    image: '/heros/rna-crisper-hero (8).webp',
   },
+]
+
+const eventItems = [
+  {
+    headline: 'Platypus Bio to Present Final Phase II Data at the AACR Annual Meeting 2026',
+    date: 'Mar 17, 2026',
+    link: '#',
+  },
+  {
+    headline: 'Platypus Bio will host Capital Markets Day',
+    date: 'Jun 1, 2025',
+    link: '#',
+  }
 ]
 
 export default function News() {
@@ -42,92 +51,81 @@ export default function News() {
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
 
-        <div className="reveal" style={{ maxWidth: '800px', margin: '0 auto 80px', textAlign: 'center' }}>
+        <div className="reveal" style={{ maxWidth: '1000px', margin: '0 auto 80px', textAlign: 'center' }}>
           <p style={{ color: '#d46b1a', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '16px' }}>
-            News
+            Updates
           </p>
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.5rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em' }}>
-            Latest from{' '}
-            <span className="gradient-text-warm">Platypus Bio</span>
+            News &amp; <span className="gradient-text-warm">Events</span>
           </h2>
         </div>
 
-        {/* News Grid */}
-        <div className="news-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '32px' }}>
-          {newsItems.map((item, i) => (
-            <a
-              key={i}
-              href={item.link}
-              target={item.link.startsWith('http') ? '_blank' : undefined}
-              rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className="reveal glass-card-light hoverable"
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                textDecoration: 'none',
-                overflow: 'hidden',
-                transitionDelay: `${i * 0.1}s`,
-              }}
-            >
-              {/* Image placeholder */}
-              <div style={{
-                width: '100%',
-                height: '240px',
-                background: '#0c1a24',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderBottom: '1px solid rgba(0,0,0,0.05)',
-                position: 'relative',
-                overflow: 'hidden',
-              }}>
-                <div style={{ 
-                  position: 'absolute', 
-                  inset: 0, 
-                  background: `url("${item.image}") center/cover no-repeat`, 
-                  transition: 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)'
-                }} 
-                className="news-image-bg"
-                />
-              </div>
+        <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '64px' }}>
+          
+          {/* News Section */}
+          <div className="reveal glass-card-light" style={{ padding: '48px', borderRadius: '24px' }}>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginBottom: '32px', paddingBottom: '16px', borderBottom: '2px solid rgba(13,148,136,0.2)' }}>
+              Press Releases &amp; Other News
+            </h3>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0' }}>
+              {newsItems.map((item, i) => (
+                <li key={i} style={{ padding: '24px 0', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+                  <a href={item.link} target={item.link.startsWith('http') ? '_blank' : undefined} rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined} style={{ textDecoration: 'none', display: 'block' }} className="news-list-item">
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <span style={{ color: '#d46b1a', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.05em' }}>
+                        {item.date}
+                      </span>
+                      <h4 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#0f172a', lineHeight: 1.4, margin: 0, transition: 'color 0.2s ease' }} className="news-title">
+                        {item.headline}
+                      </h4>
+                      <span style={{ color: '#0d9488', fontSize: '0.875rem', fontWeight: 600, marginTop: '8px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                        Read more
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-              <div style={{ padding: '32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                {/* Date */}
-                <span style={{ color: '#d46b1a', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '12px' }}>
-                  {item.date}
-                </span>
+          {/* Events Section */}
+          <div className="reveal glass-card-light" style={{ padding: '48px', borderRadius: '24px' }}>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginBottom: '32px', paddingBottom: '16px', borderBottom: '2px solid rgba(212,107,26,0.2)' }}>
+              Events
+            </h3>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0' }}>
+              {eventItems.map((item, i) => (
+                <li key={i} style={{ padding: '24px 0', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+                  <a href={item.link} target={item.link.startsWith('http') ? '_blank' : undefined} rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined} style={{ textDecoration: 'none', display: 'block' }} className="news-list-item">
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <span style={{ color: '#0d9488', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.05em' }}>
+                        {item.date}
+                      </span>
+                      <h4 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#0f172a', lineHeight: 1.4, margin: 0, transition: 'color 0.2s ease' }} className="news-title">
+                        {item.headline}
+                      </h4>
+                      <span style={{ color: '#d46b1a', fontSize: '0.875rem', fontWeight: 600, marginTop: '8px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                        Read more
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-                {/* Headline */}
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', lineHeight: 1.35, letterSpacing: '-0.01em', marginBottom: '12px' }}>
-                  {item.headline}
-                </h3>
-
-                {/* Description */}
-                <p style={{ color: '#475569', fontSize: '0.9375rem', lineHeight: 1.65, marginBottom: '24px', flex: 1, fontWeight: 300 }}>
-                  {item.description}
-                </p>
-
-                {/* Read more */}
-                <span style={{ color: '#d46b1a', fontSize: '0.8125rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                  Read More
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
-              </div>
-            </a>
-          ))}
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 768px) {
-          .news-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-        .hoverable:hover .news-image-bg {
-          transform: scale(1.05);
+        .news-list-item:hover .news-title {
+          color: #d46b1a !important;
         }
       `}</style>
     </section>
