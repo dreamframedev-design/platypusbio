@@ -62,7 +62,9 @@ export default function ContactSection() {
   return (
     <section id="contact" ref={sectionRef} style={{ position: 'relative', paddingTop: '128px', paddingBottom: '160px', overflow: 'hidden', backgroundColor: '#fbfbf9' }}>
       {/* Background glow */}
-      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '900px', height: '500px', background: 'rgba(212,107,26,0.025)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '900px', height: '500px', pointerEvents: 'none' }}>
+        <div className="ambient-glow" style={{ width: '100%', height: '100%', background: 'rgba(212,107,26,0.025)', borderRadius: '50%', filter: 'blur(80px)' }} />
+      </div>
 
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         <div className="section-divider" style={{ marginBottom: '80px' }} />
@@ -81,7 +83,7 @@ export default function ContactSection() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '48px' }}>
               <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.8, fontWeight: 300 }}>
-                We are a pre-clinical biotechnology company developing TRICK, a first-in-class programmable CRISPR platform technology that kills cells based upon their transcriptome. The TRICK platform forms the intersection of precision and programmability.
+                We are a pre-clinical biotechnology company developing TRICK, a first-in-class programmable CRISPR platform technology that kills cells based upon their transcriptome. The TRICK platform forms the intersection of precision and programmability
               </p>
               <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.8, fontWeight: 300 }}>
                 If you are a potential investor, pharma partner, or scientific collaborator, we want to hear from you.
@@ -180,6 +182,13 @@ export default function ContactSection() {
       </div>
 
       <style>{`
+        @keyframes float-simple {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+        }
+        .ambient-glow {
+          animation: float-simple 8s ease-in-out infinite;
+        }
         @media (max-width: 900px) {
           .contact-layout {
             grid-template-columns: 1fr !important;

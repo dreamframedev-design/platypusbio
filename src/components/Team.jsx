@@ -28,7 +28,7 @@ const teamMembers = [
   {
     name: 'Simon Jackson',
     role: 'Co-Founder & COO',
-    bio: 'Operations leader with a track record in scaling deep-tech startups from lab to market.',
+    bio: '',
     photo: '/Simon Jackson Headshot.png',
     accentFrom: '#059669',
     accentTo: '#0d9488',
@@ -85,7 +85,7 @@ export default function Team() {
             <span className="bg-gradient-to-br from-[#d46b1a] to-[#f0a040] bg-clip-text text-transparent">Driven by&nbsp;Discovery.</span>
           </h2>
           <p className="text-slate-600 text-[1.1875rem] leading-[1.7] max-w-[640px] font-light">
-            The Platypus Bio founding team brings together the rarest combination in deep-tech biotech: world-leading academic science, CRISPR biology expertise, computational drug design, and the operational experience to take a platform technology into the clinic.
+            Our team brings deep expertise in CRISPR biology, translational science, discovery, and therapeutic development, with more than 30 years of collective CRISPR experience across the leadership team.
           </p>
         </div>
 
@@ -135,9 +135,11 @@ export default function Team() {
                 <h3 className="text-slate-900 text-[2rem] font-extrabold tracking-[-0.02em] mb-[24px]">
                   {member.name}
                 </h3>
-                <p className="text-slate-600 text-[1rem] leading-[1.8] font-light">
-                  {member.bio}
-                </p>
+                {member.bio && (
+                  <p className="text-slate-600 text-[1rem] leading-[1.8] font-light">
+                    {member.bio}
+                  </p>
+                )}
               </div>
             </div>
           ))}

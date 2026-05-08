@@ -28,6 +28,7 @@ export default function Home() {
       <TheScience />
       <Pipeline />
       <Team />
+      <div id="partners"></div>
       <News />
       <ContactSection />
     </main>

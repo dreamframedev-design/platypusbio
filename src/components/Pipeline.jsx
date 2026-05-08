@@ -9,16 +9,7 @@ const programs = [
     borderColor: 'rgba(212, 107, 26, 0.25)',
     glowColor: 'rgba(212, 107, 26, 0.05)',
     phase: 0, // 0 = Discovery
-  },
-  {
-    id: '02',
-    code: 'HCC',
-    name: 'HEPATOCELLULAR CARCINOMA',
-    accent: '#2dd4bf',
-    borderColor: 'rgba(45, 212, 191, 0.25)',
-    glowColor: 'rgba(45, 212, 191, 0.05)',
-    phase: 0,
-  },
+  }
 ]
 
 const phases = ['Discovery', 'Lead Optimization', 'IND-Enabling']
@@ -58,8 +49,8 @@ export default function Pipeline() {
         background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.4) 25%, rgba(251,251,249,0.4) 75%, #fbfbf9 100%)',
         pointerEvents: 'none',
       }} />
-      <div style={{ position: 'absolute', top: '25%', right: 0, width: '500px', height: '500px', background: 'rgba(45,212,191,0.03)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 1 }} />
-      <div style={{ position: 'absolute', bottom: '15%', left: 0, width: '600px', height: '600px', background: 'rgba(212,107,26,0.03)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 1 }} />
+      <div className="ambient-glow" style={{ position: 'absolute', top: '25%', right: 0, width: '500px', height: '500px', background: 'rgba(45,212,191,0.03)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 1 }} />
+      <div className="ambient-glow" style={{ position: 'absolute', bottom: '15%', left: 0, width: '600px', height: '600px', background: 'rgba(212,107,26,0.03)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 1 }} />
 
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         <div className="section-divider" style={{ marginBottom: '80px', opacity: 0.5 }} />
@@ -78,15 +69,22 @@ export default function Pipeline() {
         >
           {/* Header */}
           <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 28px' }}>
-            <p style={{ color: '#0d9488', fontSize: 'clamp(1.5rem, 3.2vw, 2rem)', fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: '0' }}>
+            <p style={{ color: '#0d9488', fontSize: 'clamp(1.5rem, 3.2vw, 2rem)', fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: '16px' }}>
               Pipeline
             </p>
+            <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '24px' }}>
+              Broad by Design,<br />
+              <span className="gradient-text-warm">Focused by Strategy</span>
+            </h2>
           </div>
 
           {/* Intro callout */}
           <div style={{ maxWidth: '780px', margin: '0 auto 36px', textAlign: 'center' }}>
+            <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300, marginBottom: '16px' }}>
+              Platypus Bio’s lead program is focused on acute myeloid leukemia, a cancer with high unmet need and strong technical fit for the TRICK platform.
+            </p>
             <p style={{ color: '#475569', fontSize: '1.0625rem', lineHeight: 1.85, fontWeight: 300 }}>
-              TRICK's first clinical applications target two cancers with defined RNA signatures, high unmet need, and established delivery pathways, proving the platform where it can make the fastest difference for patients and the clearest case for partners and investors.
+              AML is characterized by well-defined genetic mutations, making it an attractive first indication for programmable RNA-guided cell killing. The disease also has significant therapeutic need, with high relapse rates and limited curative options.
             </p>
           </div>
 
@@ -151,37 +149,60 @@ export default function Pipeline() {
                     const isCurrent = j === program.phase
                     return (
                       <div key={j} style={{ flex: 1, position: 'relative' }}>
-                        {/* Track */}
+                        {/* Base Track */}
                         <div style={{
-                          height: '4px',
-                          background: isActive
-                            ? `linear-gradient(90deg, ${program.accent}, ${program.accent}80)`
-                            : 'rgba(0,0,0,0.08)',
-                          borderRadius: j === 0 ? '2px 0 0 2px' : j === phases.length - 1 ? '0 2px 2px 0' : '0',
+                          height: '6px',
+                          background: 'rgba(0,0,0,0.06)',
+                          borderRadius: j === 0 ? '3px 0 0 3px' : j === phases.length - 1 ? '0 3px 3px 0' : '0',
                           position: 'relative',
+                          boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.05)'
                         }}>
+                          {/* Active Track Overlay */}
+                          {isActive && (
+                            <div className="pipe-animated" style={{
+                              position: 'absolute',
+                              top: 0, left: 0, bottom: 0,
+                              width: '0%',
+                              background: `linear-gradient(90deg, ${program.accent}, #f0a040, ${program.accent})`,
+                              backgroundSize: '200% auto',
+                              borderRadius: j === 0 ? '3px 0 0 3px' : j === phases.length - 1 ? '0 3px 3px 0' : '0',
+                              animationDelay: `${j * 0.4 + 0.4}s, 0s`,
+                              opacity: 0,
+                              boxShadow: `0 0 12px ${program.glowColor}`,
+                              transformOrigin: 'left center'
+                            }} />
+                          )}
+                          {/* Current Dot */}
                           {isCurrent && (
-                            <div style={{
+                            <div className="pipe-dot-animated" style={{
                               position: 'absolute',
                               right: 0,
                               top: '50%',
-                              transform: 'translate(50%, -50%)',
-                              width: '14px',
-                              height: '14px',
-                              borderRadius: '50%',
-                              background: program.accent,
-                              boxShadow: `0 0 16px ${program.accent}80`,
-                              border: '2px solid #ffffff',
-                            }} />
+                              transform: 'translate(50%, -50%) scale(0.5)',
+                              zIndex: 2,
+                              opacity: 0,
+                              animationDelay: `${(j * 0.4) + 0.8 + 0.4}s`
+                            }}>
+                              <div style={{
+                                width: '16px',
+                                height: '16px',
+                                borderRadius: '50%',
+                                background: program.accent,
+                                border: '3px solid #ffffff',
+                                animation: 'pulse-dot 2s infinite',
+                              }} />
+                            </div>
                           )}
                         </div>
                         <p style={{
                           color: isActive ? '#334155' : '#94a3b8',
                           fontSize: '0.6875rem',
-                          fontWeight: isActive ? 600 : 500,
+                          fontWeight: isActive ? 700 : 500,
                           marginTop: '12px',
                           textTransform: 'uppercase',
                           letterSpacing: '0.08em',
+                          transition: 'color 0.5s ease',
+                          transitionDelay: `${j * 0.4}s`
                         }}>
                           {phase}
                         </p>
@@ -197,6 +218,44 @@ export default function Pipeline() {
       </div>
 
       <style>{`
+        @keyframes pipeline-flow {
+          0% { background-position: 200% center; }
+          100% { background-position: -200% center; }
+        }
+        @keyframes pipe-grow {
+          0% { width: 0%; opacity: 0.5; }
+          100% { width: 100%; opacity: 1; }
+        }
+        @keyframes fade-in-dot {
+          0% { opacity: 0; transform: translate(50%, -50%) scale(0.5); }
+          100% { opacity: 1; transform: translate(50%, -50%) scale(1); }
+        }
+        .pipe-animated {
+          width: 0%;
+          opacity: 0;
+        }
+        .reveal.visible .pipe-animated {
+          animation: pipe-grow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards, pipeline-flow 3s linear infinite;
+        }
+        .pipe-dot-animated {
+          opacity: 0;
+          transform: translate(50%, -50%) scale(0.5);
+        }
+        .reveal.visible .pipe-dot-animated {
+          animation: fade-in-dot 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes pulse-dot {
+          0% { box-shadow: 0 0 0 0 rgba(212, 107, 26, 0.6); }
+          70% { box-shadow: 0 0 0 12px rgba(212, 107, 26, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(212, 107, 26, 0); }
+        }
+        @keyframes float-simple {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+        }
+        .ambient-glow {
+          animation: float-simple 8s ease-in-out infinite;
+        }
         @media (max-width: 768px) {
           #pipeline .glass-card {
             padding: 40px 28px !important;

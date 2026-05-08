@@ -175,6 +175,7 @@ export default function Footer() {
     { to: '#science', label: 'The Science' },
     { to: '#pipeline', label: 'Pipeline' },
     { to: '#team', label: 'Team' },
+    { to: '#partners', label: 'Partners' },
     { to: '#news', label: 'News' },
     { to: '#contact', label: 'Contact' },
   ]
@@ -368,7 +369,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div style={{ padding: '32px 0 64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '24px' }}>
           <p style={{ color: '#7e99a8', fontSize: '0.875rem', fontWeight: 400 }}>
-            &copy; {new Date().getFullYear()} Platypus Bio Pty Ltd. All rights reserved.
+            &copy; 2026 Platypus Bio Pty Ltd. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '40px' }}>
             <Link to="/privacy" style={{ color: '#7e99a8', fontSize: '0.875rem', fontWeight: 400, textDecoration: 'none', transition: 'color 0.2s' }}
