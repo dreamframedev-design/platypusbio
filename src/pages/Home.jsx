@@ -6,6 +6,16 @@ import Pipeline from '../components/Pipeline'
 import Team from '../components/Team'
 import News from '../components/News'
 import ContactSection from '../components/ContactSection'
+import Marquee from '../components/Marquee'
+
+const marqueeItems = [
+  'Trigger RNA-Induced Cell Killing',
+  'Programmable Precision Oncology',
+  'Intracellular Targeting',
+  'Multiplexable Architecture',
+  'Durable Cell Killing',
+  'TRICK Platform',
+]
 
 export default function Home() {
   const location = useLocation()
@@ -27,6 +37,15 @@ export default function Home() {
       <Hero />
       <TheScience />
       <Pipeline />
+      <div style={{ background: '#fbfbf9', position: 'relative' }}>
+        <Marquee
+          items={marqueeItems}
+          speed={70}
+          color="rgba(15,23,42,0.32)"
+          background="transparent"
+          border
+        />
+      </div>
       <Team />
       <div id="partners"></div>
       <News />

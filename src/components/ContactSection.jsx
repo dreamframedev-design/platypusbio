@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
+import ScrambleText from './ScrambleText'
+import useMagnetic from '../hooks/useMagnetic'
 
 export default function ContactSection() {
   const sectionRef = useRef(null)
+  const submitBtnRef = useMagnetic({ strength: 6 })
   const [name, setName] = useState('')
   const [organization, setOrganization] = useState('')
   const [email, setEmail] = useState('')
@@ -74,7 +77,7 @@ export default function ContactSection() {
           {/* Left: Section Info */}
           <div className="reveal">
             <p style={{ color: '#d46b1a', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '24px' }}>
-              Join the Frontier
+              <ScrambleText text="Join the Frontier" />
             </p>
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '32px' }}>
               Get in{' '}
@@ -172,7 +175,7 @@ export default function ContactSection() {
                   />
                 </div>
 
-                <button type="submit" className="cta-button hoverable" style={{ marginTop: '8px', width: '100%', justifyContent: 'center' }}>
+                <button ref={submitBtnRef} type="submit" className="cta-button hoverable" style={{ marginTop: '8px', width: '100%', justifyContent: 'center', willChange: 'transform' }}>
                   <span>Send</span>
                 </button>
               </form>

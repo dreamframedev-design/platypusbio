@@ -1,4 +1,8 @@
 import { useEffect, useRef } from 'react'
+import ScrambleText from './ScrambleText'
+import ShaderBackground from './ShaderBackground'
+import TrickAnimation from './TrickAnimation'
+import useTilt from '../hooks/useTilt'
 
 /* ── Icon SVGs ───────────────────────────────── */
 const PrecisionIcon = () => (
@@ -35,6 +39,32 @@ const EffectorIcon = () => (
     <path d="M16 6v4M16 22v4M6 16h4M22 16h4" stroke="currentColor" strokeWidth="1" opacity="0.2" strokeLinecap="round"/>
   </svg>
 )
+
+/* ── Pillar card with 3D tilt ────────────────── */
+const PillarCard = ({ p, i }) => {
+  const tiltRef = useTilt({ max: 5, scale: 1.01, glare: true })
+  return (
+    <div
+      ref={tiltRef}
+      className="reveal glass-card"
+      style={{
+        padding: '48px 40px',
+        position: 'relative',
+        overflow: 'hidden',
+        transitionDelay: `${i * 0.1}s`,
+      }}
+    >
+      <div style={{ position: 'absolute', top: 0, right: 0, width: '200px', height: '200px', background: `radial-gradient(circle, ${p.accent}10 0%, transparent 70%)`, filter: 'blur(40px)', pointerEvents: 'none' }} />
+      <div style={{ color: p.accent, marginBottom: '24px', position: 'relative', zIndex: 1 }}>{p.icon}</div>
+      <h3 style={{ fontSize: '1.375rem', fontWeight: 700, color: '#ffffff', marginBottom: '16px', letterSpacing: '-0.02em', position: 'relative', zIndex: 1 }}>
+        {p.title}
+      </h3>
+      <p style={{ color: '#7e99a8', fontSize: '1rem', lineHeight: 1.8, position: 'relative', zIndex: 1 }}>
+        {p.body}
+      </p>
+    </div>
+  )
+}
 
 /* ── Pillar data ─────────────────────────────── */
 const pillars = [
@@ -98,7 +128,6 @@ export default function TheScience() {
           position: 'absolute', inset: 0, zIndex: 0,
           backgroundImage: 'url(/abtract2.webp)',
           backgroundSize: 'cover', backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
           opacity: 0.15,
           filter: 'invert(1) contrast(1.2)',
           mixBlendMode: 'multiply',
@@ -115,7 +144,7 @@ export default function TheScience() {
 
           <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
             <p style={{ color: '#d46b1a', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '16px' }}>
-              The Science
+              <ScrambleText text="The Science" />
             </p>
             <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.5rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '40px' }}>
               <span className="gradient-text-cool">Reaching Disease Signals</span> Others Cannot
@@ -173,7 +202,7 @@ export default function TheScience() {
           SECTION 6: How TRICK Works
           ═══════════════════════════════════════════ */}
       <div style={{ position: 'relative', paddingTop: '100px', paddingBottom: '100px', backgroundColor: '#fbfbf9', overflow: 'clip' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center top', backgroundAttachment: 'fixed', opacity: 0.15, filter: 'invert(1) contrast(1.2)', mixBlendMode: 'multiply', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abtract2.webp)', backgroundSize: 'cover', backgroundPosition: 'center top', opacity: 0.15, filter: 'invert(1) contrast(1.2)', mixBlendMode: 'multiply', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, #fbfbf9 0%, rgba(251,251,249,0.4) 20%, rgba(251,251,249,0.4) 80%, #fbfbf9 100%)', pointerEvents: 'none' }} />
         <div className="ambient-glow" style={{ position: 'absolute', top: '10%', right: '-10%', width: '800px', height: '800px', background: 'rgba(45,212,191,0.04)', borderRadius: '50%', filter: 'blur(100px)', pointerEvents: 'none', zIndex: 0 }} />
 
@@ -284,46 +313,36 @@ export default function TheScience() {
           ═══════════════════════════════════════════ */}
       <div style={{ position: 'relative', paddingTop: '64px', paddingBottom: '128px', backgroundColor: 'var(--color-midnight)' }}>
         {/* Solid Swoop Edge from Light to Dark */}
-        <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none -translate-y-[99%]">
+        <div className="wave-divider absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none -translate-y-[99%]">
           <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="block w-full h-[51px] md:h-[102px]">
             <path d="M0,100 C480,62 960,62 1440,100 Z" fill="var(--color-midnight)" />
           </svg>
         </div>
         
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.15, mixBlendMode: 'screen', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, rgba(12, 26, 36, 0.5) 20%, rgba(12, 26, 36, 0.5) 80%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: 'url(/abstract%20background.webp)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.10, mixBlendMode: 'screen', pointerEvents: 'none' }} />
+        {/* WebGL animated noise field — adds living motion to the dark section */}
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
+          <ShaderBackground opacity={0.32} blendMode="screen" />
+        </div>
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, var(--color-midnight) 0%, rgba(12, 26, 36, 0.55) 20%, rgba(12, 26, 36, 0.55) 80%, var(--color-midnight) 100%)', pointerEvents: 'none' }} />
         <div className="ambient-glow" style={{ position: 'absolute', top: '30%', right: '0', width: '600px', height: '600px', background: 'rgba(45,212,191,0.02)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
 
         <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
-          <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto 80px', textAlign: 'center' }}>
+          <div className="reveal" style={{ maxWidth: '820px', margin: '0 auto 48px', textAlign: 'center' }}>
             <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '16px' }}>
               <span className="gradient-text-cool">TRICK</span> Platform Advantages
             </h2>
           </div>
 
+          {/* Mechanism animation — looping SVG of the TRICK cycle */}
+          <div className="reveal" style={{ marginBottom: '72px', transitionDelay: '0.1s' }}>
+            <TrickAnimation />
+          </div>
+
           {/* 4-Pillar Bento Grid */}
           <div className="pillars-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px', marginBottom: '64px' }}>
             {pillars.map((p, i) => (
-              <div
-                key={i}
-                className="reveal glass-card"
-                style={{
-                  padding: '48px 40px',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  transitionDelay: `${i * 0.1}s`,
-                }}
-              >
-                {/* Accent glow */}
-                <div style={{ position: 'absolute', top: 0, right: 0, width: '200px', height: '200px', background: `radial-gradient(circle, ${p.accent}10 0%, transparent 70%)`, filter: 'blur(40px)', pointerEvents: 'none' }} />
-                <div style={{ color: p.accent, marginBottom: '24px', position: 'relative', zIndex: 1 }}>{p.icon}</div>
-                <h3 style={{ fontSize: '1.375rem', fontWeight: 700, color: '#ffffff', marginBottom: '16px', letterSpacing: '-0.02em', position: 'relative', zIndex: 1 }}>
-                  {p.title}
-                </h3>
-                <p style={{ color: '#7e99a8', fontSize: '1rem', lineHeight: 1.8, position: 'relative', zIndex: 1 }}>
-                  {p.body}
-                </p>
-              </div>
+              <PillarCard key={i} p={p} i={i} />
             ))}
           </div>
         </div>

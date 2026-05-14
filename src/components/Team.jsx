@@ -1,4 +1,7 @@
 import { useEffect, useRef } from 'react'
+import ScrambleText from './ScrambleText'
+import Counter from './Counter'
+import useTilt from '../hooks/useTilt'
 
 const teamMembers = [
   {
@@ -64,7 +67,7 @@ export default function Team() {
       <div className="absolute top-[40%] right-[10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(13,148,136,0.06)_0%,transparent_70%)] blur-[100px] pointer-events-none z-0" />
 
       {/* Swooping Solid Divider Line */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
+      <div className="wave-divider absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="block w-full h-[40px] md:h-[70px]">
           <path d="M0,0 C480,100 960,100 1440,0" fill="none" stroke="rgba(212,107,26,0.3)" strokeWidth="2"></path>
         </svg>
@@ -78,7 +81,7 @@ export default function Team() {
         <div className="reveal max-w-[800px] mb-[100px]">
           <div className="inline-flex items-center gap-[12px] mb-[24px] px-[28px] py-[10px] rounded-full border border-orange-500/15 bg-orange-500/5">
             <span className="w-[10px] h-[10px] rounded-full bg-[#d46b1a] shadow-[0_0_12px_rgba(212,107,26,0.5)]" />
-            <span className="text-[#d46b1a] text-[1.125rem] font-extrabold tracking-[0.3em] uppercase">Our Team</span>
+            <span className="text-[#d46b1a] text-[1.125rem] font-extrabold tracking-[0.3em] uppercase"><ScrambleText text="Our Team" /></span>
           </div>
           <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-slate-900 leading-[1.05] tracking-[-0.03em] mb-[32px]">
             Built by Scientists,<br/>
@@ -87,6 +90,35 @@ export default function Team() {
           <p className="text-slate-600 text-[1.1875rem] leading-[1.7] max-w-[640px] font-light">
             Our team brings deep expertise in CRISPR biology, translational science, discovery, and therapeutic development, with more than 30 years of collective CRISPR experience across the leadership team.
           </p>
+
+          {/* Stat callout — animated counter pulled from the copy above */}
+          <div className="team-stats" style={{ display: 'flex', alignItems: 'flex-end', gap: '40px', marginTop: '56px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-end', gap: '14px' }}>
+              <span
+                className="gradient-text-warm"
+                style={{
+                  fontSize: 'clamp(4.5rem, 9vw, 7rem)',
+                  fontWeight: 900,
+                  lineHeight: 0.9,
+                  letterSpacing: '-0.05em',
+                  display: 'inline-block',
+                }}
+              >
+                <Counter to={30} duration={1700} />
+                <span style={{ fontSize: '0.55em', verticalAlign: 'super', marginLeft: '0.05em' }}>+</span>
+              </span>
+              <span style={{ paddingBottom: '14px', display: 'inline-flex', flexDirection: 'column', gap: '4px', maxWidth: '220px' }}>
+                <span style={{ color: '#0f172a', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+                  Years
+                </span>
+                <span style={{ color: '#475569', fontSize: '0.875rem', lineHeight: 1.45, fontWeight: 400 }}>
+                  Collective CRISPR experience across the leadership team
+                </span>
+              </span>
+            </div>
+
+            <div aria-hidden="true" style={{ flex: 1, minWidth: '120px', height: '1px', background: 'linear-gradient(90deg, rgba(212,107,26,0.35), rgba(45,212,191,0.25), transparent)', marginBottom: '28px' }} />
+          </div>
         </div>
 
         {/* Staggered Cinematic Grid */}

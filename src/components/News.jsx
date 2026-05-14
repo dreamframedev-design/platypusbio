@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import ScrambleText from './ScrambleText'
 
 const newsItems = [
   {
@@ -57,7 +58,7 @@ export default function News() {
 
         <div className="reveal" style={{ maxWidth: '1000px', margin: '0 auto 80px', textAlign: 'center' }}>
           <p style={{ color: '#d46b1a', fontSize: '1.125rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '16px' }}>
-            News
+            <ScrambleText text="News" />
           </p>
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.5rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em' }}>
             Latest from <span className="gradient-text-warm">Platypus Bio.</span>
@@ -69,8 +70,10 @@ export default function News() {
           {newsItems.map((item, i) => (
             <div key={i} className="reveal glass-card-light" style={{ display: 'flex', flexDirection: 'column', borderRadius: '24px', overflow: 'hidden', transitionDelay: `${i * 0.15}s`, padding: 0 }}>
               {/* Image Block */}
-              <div style={{ width: '100%', height: '240px', overflow: 'hidden' }}>
-                <img src={item.image} alt={item.headline} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }} className="news-image" />
+              <div style={{ width: '100%', height: '240px', overflow: 'hidden', position: 'relative' }}>
+                <img src={item.image} alt={item.headline} style={{ width: '100%', height: '100%', objectFit: 'cover' }} className="news-image" />
+                {/* Color sheen wipe — slides off as the card reveals */}
+                <div className="news-image-wipe" aria-hidden="true" />
               </div>
               
               <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flex: 1 }}>
@@ -97,6 +100,32 @@ export default function News() {
       </div>
 
       <style>{`
+        .news-image {
+          filter: grayscale(80%) contrast(1.05);
+          transform: scale(1.04);
+          transition: filter 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible .news-image {
+          filter: grayscale(0%) contrast(1);
+          transform: scale(1);
+        }
+        .news-image-wipe {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(115deg, transparent 0%, rgba(212,107,26,0.0) 30%, rgba(212,107,26,0.55) 50%, rgba(45,212,191,0.0) 70%, transparent 100%);
+          mix-blend-mode: overlay;
+          opacity: 0;
+          transform: translateX(-100%);
+          pointer-events: none;
+        }
+        .reveal.visible .news-image-wipe {
+          animation: news-wipe 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+        }
+        @keyframes news-wipe {
+          0%   { opacity: 0; transform: translateX(-100%); }
+          35%  { opacity: 1; }
+          100% { opacity: 0; transform: translateX(100%); }
+        }
         .glass-card-light:hover .news-image {
           transform: scale(1.05);
         }

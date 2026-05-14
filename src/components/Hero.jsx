@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
+import MaskedHeadline from './MaskedHeadline'
+import useMagnetic from '../hooks/useMagnetic'
 
 const BokehParticles = () => {
   const canvasRef = useRef(null)
@@ -138,6 +140,8 @@ const BokehParticles = () => {
 export default function Hero() {
   const [loaded, setLoaded] = useState(false)
   const parallaxRef = useRef(null)
+  const ctaPrimaryRef = useMagnetic({ strength: 8 })
+  const ctaSecondaryRef = useMagnetic({ strength: 8 })
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 100)
@@ -193,11 +197,17 @@ export default function Hero() {
           </div>
 
           <div className="relative z-10">
-            {/* Headline */}
-            <h1 className="animate-fade-in-up delay-300 text-[clamp(2.5rem,3.8vw,4rem)] font-black text-slate-900 leading-[1.05] tracking-[-0.04em] mb-[24px]">
-              <span className="drop-shadow-sm">Transforming <br className="hidden md:block" />
-              medicine with</span> <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-[#d46b1a] to-[#e88430] bg-clip-text text-transparent whitespace-nowrap" style={{ filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.15))' }}>precision cell killing</span>
+            {/* Headline — word-by-word mask reveal */}
+            <h1 className="text-[clamp(2.5rem,3.8vw,4rem)] font-black text-slate-900 leading-[1.05] tracking-[-0.04em] mb-[24px]">
+              <span className="drop-shadow-sm" style={{ display: 'inline-block' }}>
+                <MaskedHeadline text="Transforming" delay={300} wordStaggerMs={0} />
+                <br className="hidden md:block" />
+                <MaskedHeadline text="medicine with" delay={420} wordStaggerMs={70} />
+              </span>
+              <br className="hidden md:block" />
+              <span className="whitespace-nowrap" style={{ display: 'inline-block' }}>
+                <MaskedHeadline text="precision cell killing" delay={680} wordStaggerMs={90} gradient />
+              </span>
             </h1>
 
             {/* Sub */}
@@ -207,15 +217,16 @@ export default function Hero() {
 
             {/* CTA */}
             <div className="animate-fade-in-up delay-500 flex flex-wrap items-center gap-[16px]">
-              <a href="#contact" className="hoverable inline-flex items-center justify-center gap-2 px-[32px] py-[14px] rounded-full bg-slate-900 text-white font-semibold text-[1rem] shadow-[0_8px_24px_rgba(0,0,0,0.15)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-300">
+              <a ref={ctaPrimaryRef} href="#contact" className="hoverable inline-flex items-center justify-center gap-2 px-[32px] py-[14px] rounded-full bg-slate-900 text-white font-semibold text-[1rem] shadow-[0_8px_24px_rgba(0,0,0,0.15)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] hover:bg-slate-800 transition-[background,box-shadow,color] duration-300 will-change-transform">
                 Get in Touch
                 <svg className="w-[18px] h-[18px] relative z-1" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
               <a
+                ref={ctaSecondaryRef}
                 href="#science"
-                className="hoverable inline-flex items-center justify-center gap-2 px-[32px] py-[14px] rounded-full bg-white/50 border border-white/60 text-slate-900 font-semibold text-[1rem] backdrop-blur-md shadow-sm hover:bg-white hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                className="hoverable inline-flex items-center justify-center gap-2 px-[32px] py-[14px] rounded-full bg-white/50 border border-white/60 text-slate-900 font-semibold text-[1rem] backdrop-blur-md shadow-sm hover:bg-white hover:shadow-md transition-[background,box-shadow,color] duration-300 will-change-transform"
               >
                 Explore the Science
                 <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -228,7 +239,7 @@ export default function Hero() {
       </div>
 
       {/* Cream wave into science section (matches TheScience swoop geometry) */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-[15] pointer-events-none translate-y-px">
+      <div className="wave-divider absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-[15] pointer-events-none translate-y-px">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="block w-full h-[51px] md:h-[102px]">
           <path d="M0,100 C480,62 960,62 1440,100 Z" fill="#fbfbf9" />
         </svg>

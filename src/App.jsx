@@ -5,6 +5,10 @@ import Home from './pages/Home'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import Footer from './components/Footer'
+import SmoothScroll from './components/SmoothScroll'
+import ScrollProgress from './components/ScrollProgress'
+import LoadingCurtain from './components/LoadingCurtain'
+import KeyboardNav from './components/KeyboardNav'
 
 function App() {
   // Reveal Animations
@@ -39,6 +43,10 @@ function App() {
 
   return (
     <>
+      <SmoothScroll />
+      <LoadingCurtain />
+      <ScrollProgress />
+      <KeyboardNav />
       <div className="genomic-noise" />
       <Navbar />
       <Routes>

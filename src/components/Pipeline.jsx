@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import ScrambleText from './ScrambleText'
 
 const programs = [
   {
@@ -38,7 +39,6 @@ export default function Pipeline() {
         position: 'absolute', inset: 0, zIndex: 0,
         backgroundImage: 'url(/abstract%20background.webp)',
         backgroundSize: 'cover', backgroundPosition: 'center bottom',
-        backgroundAttachment: 'fixed',
         opacity: 0.15,
         filter: 'invert(1) contrast(1.2)',
         mixBlendMode: 'multiply',
@@ -70,7 +70,7 @@ export default function Pipeline() {
           {/* Header */}
           <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 28px' }}>
             <p style={{ color: '#0d9488', fontSize: 'clamp(1.5rem, 3.2vw, 2rem)', fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: '16px' }}>
-              Pipeline
+              <ScrambleText text="Pipeline" />
             </p>
             <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '24px' }}>
               Broad by Design,<br />

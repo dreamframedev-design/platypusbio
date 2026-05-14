@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(npx vite *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173/ -o /dev/null -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(curl -s http://localhost:5175/ -o /dev/null -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(curl -s \"http://localhost:5175/src/components/Hero.jsx?t=$\\(date +%s\\)\" -w \"\\\\nHTTP %{http_code}\\\\n\" -o /dev/null)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' 'http://localhost:5175/src/components/__TRACKED_VAR__.jsx?t=__CMDSUB_OUTPUT__')",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' 'http://localhost:5175/src/hooks/__TRACKED_VAR__.js?t=__CMDSUB_OUTPUT__')",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"vite\")"
     ]
   }
 }

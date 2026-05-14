@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Base ──────────────────────────────────── */
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior handled by Lenis; CSS smooth-scroll fights it */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -407,6 +407,45 @@ body {
 
 .glass-card:hover .headshot-container img {
   filter: grayscale(0%) contrast(1.1);
+}
+
+/* ── Animated wave dividers ──────────────── */
+/* Adds subtle, breathing motion to the static SVG wave shapes used between
+   sections. Two-layer parallax: the path itself rocks, while a faint accent
+   line shimmers across the top edge. */
+@keyframes wave-rock {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  50%      { transform: translateY(-3px) scaleY(1.04); }
+}
+@keyframes wave-shimmer {
+  0%   { background-position: -200% 0; opacity: 0; }
+  20%  { opacity: 0.7; }
+  80%  { opacity: 0.7; }
+  100% { background-position: 200% 0; opacity: 0; }
+}
+.wave-divider svg {
+  animation: wave-rock 9s ease-in-out infinite;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+.wave-divider {
+  position: relative;
+}
+.wave-divider::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,107,26,0.35) 30%, rgba(45,212,191,0.35) 70%, transparent);
+  background-size: 200% 100%;
+  animation: wave-shimmer 7s linear infinite;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wave-divider svg { animation: none; }
+  .wave-divider::after { animation: none; opacity: 0.4; }
 }
 
 /* ── Section divider ─────────────────────── */
